@@ -36,7 +36,7 @@ const getAiResponse = (userText: string): string => {
     return "Luteal phase + poor sleep = classic combo. Progesterone is supposed to be calming but when it drops, your sleep quality tanks. What might help tonight: no screens 30 min before bed, magnesium glycinate, and keep your room cool. Also, tart cherry juice is genuinely a game-changer for melatonin. Try it 💚";
   }
   if (lower.includes("mood") || lower.includes("sad") || lower.includes("crying") || lower.includes("emotional") || lower.includes("irritable") || lower.includes("angry")) {
-    return "You're not being dramatic. Estrogen and progesterone both drop before your period and they take serotonin with them. Literally — your happy chemical dips. What I'd try: omega-3s (salmon, walnuts), sunlight in the morning, and B6-rich foods. Also, crying is regulation, not weakness. Let it out 💚";
+    return "You're not being dramatic. Estrogen and progesterone both drop before your period and they take serotonin with them. Literally, your happy chemical dips. What I'd try: omega-3s (salmon, walnuts), sunlight in the morning, and B6-rich foods. Also, crying is regulation, not weakness. Let it out 💚";
   }
   if (lower.includes("exercise") || lower.includes("workout") || lower.includes("gym") || lower.includes("run")) {
     return "Okay hot take — this isn't the phase for PRs or intense HIIT. Your body is already under hormonal stress. What actually works in luteal: yoga, pilates, walking, light strength training. Save the beast mode for follicular phase when estrogen is high and you'll genuinely feel unstoppable 💚";
