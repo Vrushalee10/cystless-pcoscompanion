@@ -75,7 +75,7 @@ const Onboarding = () => {
               </p>
               <h1
                 className="font-display"
-                style={{ fontSize: 32, fontWeight: 800, color: "#111111", lineHeight: 1.2, marginTop: 10 }}
+                style={{ fontSize: 32, fontWeight: 800, color: "var(--text-ink)", lineHeight: 1.2, marginTop: 10 }}
               >
                 {screen.headline}
               </h1>
