@@ -236,7 +236,11 @@ const Plan = () => {
             <p className="font-body" style={{ fontSize: 13, color: "#4A5568" }}>
               Based on your last 14 days of logs, we've adjusted your focus areas.
             </p>
-            <p className="font-display" style={{ fontSize: 13, fontWeight: 600, color: "#0A3D3D", marginTop: 6, cursor: "pointer" }}>
+            <p
+              onClick={() => navigate("/plan-changes")}
+              className="font-display"
+              style={{ fontSize: 13, fontWeight: 600, color: "#0A3D3D", marginTop: 6, cursor: "pointer" }}
+            >
               See what changed →
             </p>
           </div>
