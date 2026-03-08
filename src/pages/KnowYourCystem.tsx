@@ -40,7 +40,7 @@ const KnowYourCystem = () => {
               className="font-display mt-2"
               style={{ fontSize: 28, fontWeight: 800, color: "var(--text-ink)", lineHeight: 1.2 }}
             >
-              Your cravings right now are hormonal — not weakness.
+              Your cravings right now are hormonal, not weakness.
             </h1>
             <div
               className="mt-3"
