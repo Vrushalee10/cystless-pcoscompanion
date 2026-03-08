@@ -81,7 +81,7 @@ const Log = () => {
 
   const getAckMessage = () => {
     if (mood !== null && mood <= 1 && sleepQuality === "broken")
-      return "Rough night — that makes total sense for this phase. You showed up anyway. I've noted this.";
+      return "Rough night, that makes total sense for this phase. You showed up anyway. I've noted this.";
     if (mood !== null && mood >= 3 && sleepH !== null && sleepH >= 7)
       return "Solid. Sleep and mood both strong — this is what working with your cycle looks like.";
     if (quickSelected.has("High sugar"))
