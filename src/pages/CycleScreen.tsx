@@ -67,7 +67,7 @@ const CycleScreen = () => {
             >
               Your cycle isn't the problem. Not knowing it is.
             </h1>
-            <div className="mt-3" style={{ width: 48, height: 4, borderRadius: 2, backgroundColor: "#D4614F" }} />
+            <div className="mt-3" style={{ width: 48, height: 4, borderRadius: 2, backgroundColor: "hsl(var(--accent))" }} />
             <p
               className="font-body mt-[14px]"
               style={{ fontSize: 15, color: "#4A5568", lineHeight: 1.6 }}
