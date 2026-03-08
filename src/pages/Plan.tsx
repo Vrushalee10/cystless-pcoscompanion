@@ -111,7 +111,7 @@ const NutritionTab = () => (
       <p style={{ fontSize: 11, textTransform: "uppercase", color: "hsl(var(--primary))", fontWeight: 700, letterSpacing: 1 }}>
         LUTEAL PHASE NOW
       </p>
-      <p className="font-body" style={{ fontSize: 14, color: "#0A3D3D", lineHeight: 1.6, marginTop: 6 }}>
+      <p className="font-body" style={{ fontSize: 14, color: "hsl(var(--primary))", lineHeight: 1.6, marginTop: 6 }}>
         Increase magnesium-rich foods this week. Your body is depleting magnesium faster right now, and this drives
         cravings and mood changes. Pumpkin seeds, spinach, dark chocolate and almonds all help.
       </p>
