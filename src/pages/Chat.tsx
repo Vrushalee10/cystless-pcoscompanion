@@ -57,7 +57,7 @@ const getAiResponse = (userText: string): string => {
     return "I got you. Based on where you are in your cycle right now, here's what I'd focus on today:\n\n🥑 Eat: protein + healthy fats at every meal, magnesium-rich snacks\n🚶‍♀️ Move: gentle, walk, yoga, stretching\n😴 Rest: prioritise sleep, no guilt about low energy\n💧 Hydrate: extra water, maybe some electrolytes\n\nSmall moves, big impact. You don't need to overhaul anything 💚";
   }
   if (lower.includes("thank") || lower.includes("thanks") || lower.includes("love")) {
-    return "Always here for you 💚 Seriously — no question is too small, no feeling is too much. We're in this together.";
+    return "Always here for you 💚 Seriously, no question is too small, no feeling is too much. We're in this together.";
   }
   return "I'm here, I'm listening, and honestly — nothing you say is going to surprise me. Tell me more 💚";
 };
