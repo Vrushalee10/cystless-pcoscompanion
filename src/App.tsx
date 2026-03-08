@@ -51,6 +51,7 @@ const App = () => (
             <Route path="/know-your-cystem" element={<KnowYourCystem />} />
             <Route path="/log" element={<Log />} />
             <Route path="/chat" element={<Chat />} />
+            <Route path="/plan" element={<Plan />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
