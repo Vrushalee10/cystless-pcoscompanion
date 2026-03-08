@@ -152,6 +152,32 @@ const Home = () => {
               yogurt, or a protein smoothie all work for your insulin resistance pattern.
             </p>
           </div>
+
+          {/* Wearable Banner */}
+          <button
+            onClick={() => navigate("/connect-device")}
+            className="w-full bg-card mt-4 flex items-center text-left"
+            style={{
+              borderRadius: 16, padding: 18,
+              boxShadow: "var(--shadow-card)",
+            }}
+          >
+            <span style={{ fontSize: 24, marginRight: 12 }}>⌚</span>
+            <div className="flex-1 min-w-0">
+              <p className="font-body" style={{ fontSize: 14, fontWeight: 700, color: "var(--text-ink)" }}>
+                Auto-track with your watch
+              </p>
+              <p className="font-body" style={{ fontSize: 12, color: "var(--text-muted)", marginTop: 2 }}>
+                Connect Apple Watch or Fitbit to log sleep, HRV and activity automatically.
+              </p>
+            </div>
+            <span
+              className="font-body shrink-0 ml-3"
+              style={{ fontSize: 13, fontWeight: 600, color: "hsl(var(--primary))" }}
+            >
+              Connect →
+            </span>
+          </button>
         </motion.div>
       </div>
 
