@@ -241,7 +241,57 @@ const InlineCheckIn = () => {
                   Save Check-in
                 </button>
               )}
-            </AnimatePresence>
+        {step === "nudge" && (
+          <motion.div
+            key="nudge"
+            variants={stepVariants}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            transition={{ duration: 0.25 }}
+            className="bg-card mt-3 p-5 text-center"
+            style={{ borderRadius: 14, boxShadow: "0 8px 30px rgba(0,0,0,0.12)" }}
+          >
+            <p className="font-body" style={{ fontSize: 16, fontWeight: 700, color: "hsl(var(--primary))" }}>
+              💚 Logged! Want to tell me more?
+            </p>
+            <p className="font-body mt-2" style={{ fontSize: 13, color: "var(--text-body)", lineHeight: 1.5 }}>
+              The more I know, the smarter your plan gets — takes 60 seconds.
+            </p>
+            <div className="flex gap-3 mt-4">
+              <button
+                onClick={handleDone}
+                className="flex-1 font-body transition-colors"
+                style={{
+                  height: 40,
+                  borderRadius: 18,
+                  backgroundColor: "hsl(var(--background))",
+                  color: "hsl(var(--primary))",
+                  border: "1.5px solid hsl(var(--primary))",
+                  fontSize: 14,
+                  fontWeight: 600,
+                }}
+              >
+                I'm done
+              </button>
+              <button
+                onClick={handleTellMore}
+                className="flex-1 font-body transition-colors"
+                style={{
+                  height: 40,
+                  borderRadius: 18,
+                  backgroundColor: "hsl(var(--primary))",
+                  color: "hsl(var(--primary-foreground))",
+                  fontSize: 14,
+                  fontWeight: 600,
+                }}
+              >
+                Tell me more →
+              </button>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
           </motion.div>
         )}
       </AnimatePresence>
