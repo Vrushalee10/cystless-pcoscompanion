@@ -233,7 +233,7 @@ const Plan = () => {
           <p className="font-body" style={{ fontSize: 14, color: "var(--text-muted)", marginTop: 4 }}>
             Insulin Resistance · Luteal Phase
           </p>
-          <div style={{ width: 48, height: 4, backgroundColor: "#D4614F", borderRadius: 2, marginTop: 10 }} />
+          <div style={{ width: 48, height: 4, backgroundColor: "hsl(var(--accent))", borderRadius: 2, marginTop: 10 }} />
 
           {/* Banner */}
           <div
