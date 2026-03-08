@@ -162,7 +162,7 @@ const MovementTab = () => (
           <p className="font-display" style={{ fontSize: 15, fontWeight: 600, color: "#111111" }}>
             {item.emoji} {item.title}
           </p>
-          <p className="font-body" style={{ fontSize: 12, color: "#94A3B8", marginTop: 2 }}>{item.freq}</p>
+          <p className="font-body" style={{ fontSize: 12, color: "var(--text-muted)", marginTop: 2 }}>{item.freq}</p>
           <p className="font-body" style={{ fontSize: 14, color: "#4A5568", marginTop: 4 }}>{item.desc}</p>
         </div>
       ))}
