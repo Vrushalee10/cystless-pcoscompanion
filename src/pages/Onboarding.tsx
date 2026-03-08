@@ -10,7 +10,7 @@ const screens = [
     image: onboarding1,
     label: "WELCOME TO CYSTLESS",
     headline: "Your body isn't broken. It's just unread.",
-    body: "Cystless helps you understand what your hormones are doing — and what to do about it.",
+    body: "Cystless helps you understand what your hormones are doing, and what to do about it.",
     button: "Continue",
     next: "/onboarding/2",
   },
