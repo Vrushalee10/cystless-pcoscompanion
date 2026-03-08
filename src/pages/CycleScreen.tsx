@@ -127,7 +127,7 @@ const CycleScreen = () => {
                     <p className="font-display" style={{ fontSize: 16, fontWeight: 700, color: "#111111" }}>
                       {phase.name} Phase
                     </p>
-                    <p className="font-body" style={{ fontSize: 12, color: "#94A3B8" }}>{phase.days}</p>
+                    <p className="font-body" style={{ fontSize: 12, color: "var(--text-muted)" }}>{phase.days}</p>
                   </div>
                   {phase.current && (
                     <span

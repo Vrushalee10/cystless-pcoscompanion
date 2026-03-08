@@ -127,7 +127,7 @@ const Onboarding = () => {
           <button
             onClick={() => navigate("/quiz/1")}
             className="w-full font-body text-center mt-3"
-            style={{ fontSize: 13, color: "#94A3B8" }}
+            style={{ fontSize: 13, color: "var(--text-muted)" }}
           >
             Skip →
           </button>

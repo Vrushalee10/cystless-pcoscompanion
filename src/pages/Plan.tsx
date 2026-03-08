@@ -271,7 +271,7 @@ const Plan = () => {
                 style={{
                   fontSize: 14,
                   fontWeight: activeTab === tab.key ? 700 : 400,
-                  color: activeTab === tab.key ? "#0A3D3D" : "#94A3B8",
+                  color: activeTab === tab.key ? "#0A3D3D" : "var(--text-muted)",
                   borderBottom: activeTab === tab.key ? "2px solid #0A3D3D" : "2px solid transparent",
                 }}
               >
