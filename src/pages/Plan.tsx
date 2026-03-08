@@ -249,7 +249,7 @@ const Plan = () => {
             <p style={{ fontSize: 11, textTransform: "uppercase", color: "hsl(var(--accent))", fontWeight: 700, letterSpacing: 1, marginBottom: 4 }}>
               PLAN UPDATED
             </p>
-            <p className="font-body" style={{ fontSize: 13, color: "#4A5568" }}>
+            <p className="font-body" style={{ fontSize: 13, color: "var(--text-body)" }}>
               Based on your last 14 days of logs, we've adjusted your focus areas.
             </p>
             <p
