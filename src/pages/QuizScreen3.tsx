@@ -50,7 +50,7 @@ const QuizScreen3 = () => {
           className="font-body italic text-center mt-5"
           style={{ fontSize: "13px", color: "var(--text-muted)" }}
         >
-          You'll get your full plan today regardless — we'll flag if updated tests would add clarity.
+          You'll get your full plan today regardless. We'll flag if updated tests would add clarity.
         </p>
       </div>
 

@@ -72,7 +72,7 @@ const CycleScreen = () => {
               className="font-body mt-[14px]"
               style={{ fontSize: 15, color: "#4A5568", lineHeight: 1.6 }}
             >
-              Your hormones shift across four distinct phases each cycle. Knowing where you are helps you eat, move, and rest in sync with your body — not against it.
+              Your hormones shift across four distinct phases each cycle. Knowing where you are helps you eat, move, and rest in sync with your body, not against it.
             </p>
           </div>
 

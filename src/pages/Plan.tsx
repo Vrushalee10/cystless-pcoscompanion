@@ -130,7 +130,7 @@ const MovementTab = () => (
     <FocusCard
       priority="PRIORITY"
       title="Strength + gentle walking this week."
-      body="You're in luteal phase — your body temperature is higher and energy is lower. Heavy HIIT training raises cortisol which worsens insulin resistance. Prioritise strength training and 20-30 min walks instead."
+      body="You're in luteal phase. Your body temperature is higher and energy is lower. Heavy HIIT training raises cortisol which worsens insulin resistance. Prioritise strength training and 20-30 min walks instead."
     />
 
     <div style={{ marginTop: 16 }}>

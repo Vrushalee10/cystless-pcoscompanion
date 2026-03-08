@@ -82,7 +82,7 @@ const KnowYourCystem = () => {
             </span>
             <p className="font-body" style={{ fontSize: 14, color: "var(--text-body)", lineHeight: 1.7 }}>
               Women with PCOS tend to have lower magnesium levels than women without it. Research also shows insulin
-              resistance temporarily worsens in the luteal phase — meaning your body is already working harder to
+              resistance temporarily worsens in the luteal phase, meaning your body is already working harder to
               manage blood sugar. The result: cravings that feel bigger and harder to ignore than they would for
               someone without PCOS. That's not in your head. That's your biology.
             </p>

@@ -59,7 +59,7 @@ const getAiResponse = (userText: string): string => {
   if (lower.includes("thank") || lower.includes("thanks") || lower.includes("love")) {
     return "Always here for you 💚 Seriously, no question is too small, no feeling is too much. We're in this together.";
   }
-  return "I'm here, I'm listening, and honestly — nothing you say is going to surprise me. Tell me more 💚";
+  return "I'm here, I'm listening, and honestly, nothing you say is going to surprise me. Tell me more 💚";
 };
 
 const formatTime = (): string => {
