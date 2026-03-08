@@ -7,7 +7,7 @@ const changeCards = [
     category: "NUTRITION",
     title: "↑ Magnesium-rich foods added to your plan",
     image: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800&q=80",
-    why: "Progesterone rising in your luteal phase accelerates magnesium depletion. Research shows women with PCOS already have lower baseline magnesium than average — making this phase especially impactful. Low magnesium directly worsens insulin resistance and drives carbohydrate cravings. A 2022 clinical trial found magnesium supplementation improved abnormal uterine bleeding and quality of life in women with PCOS.",
+    why: "Progesterone rising in your luteal phase accelerates magnesium depletion. Research shows women with PCOS already have lower baseline magnesium than average, making this phase especially impactful. Low magnesium directly worsens insulin resistance and drives carbohydrate cravings. A 2022 clinical trial found magnesium supplementation improved abnormal uterine bleeding and quality of life in women with PCOS.",
     note: "Food-based magnesium alongside low-GI eating has the strongest evidence. Supplements alone are not sufficient.",
   },
   {
