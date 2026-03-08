@@ -8,7 +8,7 @@ const phases = [
     days: "Days 1–5",
     emoji: "🩸",
     summary: "Your period. Hormone levels are at their lowest. Energy dips, and your body is shedding the uterine lining.",
-    tips: "Rest, gentle movement, iron-rich foods. This is your reset phase — honour the low energy.",
+    tips: "Rest, gentle movement, iron-rich foods. This is your reset phase, honour the low energy.",
   },
   {
     name: "Follicular",
