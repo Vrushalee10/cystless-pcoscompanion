@@ -126,12 +126,13 @@ const LogHistory = () => {
         >
           Your energy and mood tend to dip on days when sleep drops below 7hrs. You've also had higher sugar cravings the last 3 days, a classic luteal pattern for your type.
         </p>
-        <p
-          className="font-body"
+        <button
+          onClick={() => navigate("/insights")}
+          className="font-body text-left"
           style={{ fontSize: 13, fontWeight: 600, color: "hsl(var(--primary))", marginTop: 8 }}
         >
           See full pattern analysis →
-        </p>
+        </button>
       </div>
     </motion.div>
   );
