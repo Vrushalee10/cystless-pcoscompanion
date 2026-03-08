@@ -21,6 +21,7 @@ import Home from "./pages/Home";
 import KnowYourCystem from "./pages/KnowYourCystem";
 import Log from "./pages/Log";
 import Chat from "./pages/Chat";
+import Plan from "./pages/Plan";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -50,6 +51,7 @@ const App = () => (
             <Route path="/know-your-cystem" element={<KnowYourCystem />} />
             <Route path="/log" element={<Log />} />
             <Route path="/chat" element={<Chat />} />
+            <Route path="/plan" element={<Plan />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
