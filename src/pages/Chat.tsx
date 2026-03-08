@@ -48,7 +48,7 @@ const getAiResponse = (userText: string): string => {
     return "Pre-period breakouts? Androgens spike right before your period, which means more oil, more clogged pores. What actually helps: don't over-wash (it makes it worse), use a gentle salicylic acid, and zinc-rich foods (pumpkin seeds again — they're basically a PCOS superfood). This will calm down in a few days 💚";
   }
   if (lower.includes("period") || lower.includes("late") || lower.includes("irregular") || lower.includes("missed")) {
-    return "Irregular periods with PCOS are super common — it doesn't mean something is wrong with YOU. It means your hormones need some support. Blood sugar balance, stress management, and sleep are the big three. Want me to look at your recent logs and see if anything stands out? 💚";
+    return "Irregular periods with PCOS are super common, it doesn't mean something is wrong with YOU. It means your hormones need some support. Blood sugar balance, stress management, and sleep are the big three. Want me to look at your recent logs and see if anything stands out? 💚";
   }
   if (lower.includes("pain") || lower.includes("cramp") || lower.includes("headache") || lower.includes("migraine")) {
     return "Oof, I'm sorry. Prostaglandins (the chemicals that cause cramps) go up when progesterone drops. Anti-inflammatory foods help — think ginger tea, turmeric, fatty fish. Magnesium too (seeing a pattern? 😄). A heating pad on your lower belly genuinely works as well as ibuprofen for some people. Take it easy today 💚";
