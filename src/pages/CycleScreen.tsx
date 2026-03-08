@@ -50,7 +50,7 @@ const CycleScreen = () => {
             <button onClick={() => navigate("/home")}>
               <ArrowLeft className="h-5 w-5" style={{ color: "var(--text-muted)" }} />
             </button>
-            <span className="font-display text-base font-bold" style={{ color: "#111111" }}>
+            <span className="font-display text-base font-bold" style={{ color: "var(--text-ink)" }}>
               Know Your Cyst-em
             </span>
             <div className="w-5" />
