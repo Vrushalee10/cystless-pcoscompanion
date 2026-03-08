@@ -115,41 +115,8 @@ const InlineCheckIn = () => {
           </motion.div>
         )}
 
-        {step === "mood" && (
-          <motion.div
-            key="mood"
-            variants={stepVariants}
-            initial="initial"
-            animate="animate"
-            exit="exit"
-            transition={{ duration: 0.25 }}
-            className="bg-card mt-3 p-4"
-            style={{ borderRadius: 14, boxShadow: "var(--shadow-card)" }}
-          >
-            <p className="font-body" style={{ fontSize: 14, color: "var(--foreground)", marginBottom: 12 }}>
-              How are you feeling?
-            </p>
-            <div className="flex gap-2 justify-center">
-              {moods.map((emoji, i) => (
-                <button
-                  key={i}
-                  onClick={() => handleMoodSelect(i)}
-                  className="flex items-center justify-center transition-colors"
-                  style={{
-                    width: 40,
-                    height: 40,
-                    fontSize: 22,
-                    borderRadius: "50%",
-                    backgroundColor: selectedMood === i ? "hsl(var(--primary-light))" : "transparent",
-                    border: selectedMood === i ? "2px solid hsl(var(--primary))" : "2px solid transparent",
-                  }}
-                >
-                  {emoji}
-                </button>
-              ))}
-            </div>
-          </motion.div>
-        )}
+
+
 
         {step === "energy" && (
           <motion.div
