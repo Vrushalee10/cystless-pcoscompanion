@@ -451,7 +451,7 @@ const Log = () => {
                     <div className="relative mt-2">
                       <textarea
                         rows={3}
-                        placeholder="Tell me anything — how you're feeling, what happened, what you noticed..."
+                        placeholder="Tell me anything, how you're feeling, what happened, what you noticed..."
                         value={notes}
                         onChange={(e) => setNotes(e.target.value)}
                         className="w-full font-body resize-none focus:outline-none focus:ring-1 focus:ring-primary"

@@ -112,7 +112,7 @@ const NutritionTab = () => (
         LUTEAL PHASE NOW
       </p>
       <p className="font-body" style={{ fontSize: 14, color: "#0A3D3D", lineHeight: 1.6, marginTop: 6 }}>
-        Increase magnesium-rich foods this week. Your body is depleting magnesium faster right now — this drives
+        Increase magnesium-rich foods this week. Your body is depleting magnesium faster right now, and this drives
         cravings and mood changes. Pumpkin seeds, spinach, dark chocolate and almonds all help.
       </p>
     </div>

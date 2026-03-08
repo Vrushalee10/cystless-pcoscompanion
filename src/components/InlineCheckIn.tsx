@@ -316,7 +316,7 @@ const InlineCheckIn = () => {
                 boxShadow: "0 8px 30px rgba(0,0,0,0.12)",
               }}
             >
-              Got it. Keep going — you're building a pattern worth reading. 💚
+              Got it. Keep going, you're building a pattern worth reading. 💚
             </div>
           </motion.div>
         )}
