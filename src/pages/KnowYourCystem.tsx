@@ -26,7 +26,8 @@ const KnowYourCystem = () => {
               <ArrowLeft className="h-5 w-5 text-muted-foreground" />
             </button>
             <span className="font-display text-base font-bold" style={{ color: "var(--text-ink)" }}>
-              Know Your Cyst-em ✦
+              Know Your Cyst-em · Today's Insight
+            </span>
             </span>
             <div className="w-5" />
           </div>

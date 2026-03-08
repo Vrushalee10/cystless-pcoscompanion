@@ -51,6 +51,8 @@ const App = () => (
             <Route path="/results" element={<Results />} />
             <Route path="/home" element={<Home />} />
             <Route path="/know-your-cystem" element={<KnowYourCystem />} />
+            <Route path="/decystified" element={<KnowYourCystem />} />
+            <Route path="/cycle" element={<CycleScreen />} />
             <Route path="/log" element={<Log />} />
             <Route path="/chat" element={<Chat />} />
             <Route path="/plan" element={<Plan />} />
