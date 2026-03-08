@@ -84,7 +84,7 @@ const CycleScreen = () => {
                   key={phase.name}
                   className="flex-1 flex items-center justify-center font-display"
                   style={{
-                    fontSize: 10,
+                    fontSize: 11,
                     fontWeight: 600,
                     color: phase.current ? "white" : "#4A5568",
                     backgroundColor: phase.current ? "#0A3D3D" : "#E8E4DF",
