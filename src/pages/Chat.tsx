@@ -39,7 +39,7 @@ const getAiResponse = (userText: string): string => {
     return "You're not being dramatic. Estrogen and progesterone both drop before your period and they take serotonin with them. Literally, your happy chemical dips. What I'd try: omega-3s (salmon, walnuts), sunlight in the morning, and B6-rich foods. Also, crying is regulation, not weakness. Let it out 💚";
   }
   if (lower.includes("exercise") || lower.includes("workout") || lower.includes("gym") || lower.includes("run")) {
-    return "Okay hot take — this isn't the phase for PRs or intense HIIT. Your body is already under hormonal stress. What actually works in luteal: yoga, pilates, walking, light strength training. Save the beast mode for follicular phase when estrogen is high and you'll genuinely feel unstoppable 💚";
+    return "Okay hot take, this isn't the phase for PRs or intense HIIT. Your body is already under hormonal stress. What actually works in luteal: yoga, pilates, walking, light strength training. Save the beast mode for follicular phase when estrogen is high and you'll genuinely feel unstoppable 💚";
   }
   if (lower.includes("weight") || lower.includes("gained") || lower.includes("scale") || lower.includes("fat")) {
     return "Step away from the scale, bestie. Luteal phase water retention can add 2-5 lbs that literally disappear after your period. It's not real weight gain. If you're dealing with PCOS-related weight stuff long-term, that's a bigger convo — but today? Your body is just doing its thing. Be kind to it 💚";
