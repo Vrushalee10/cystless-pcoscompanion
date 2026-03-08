@@ -48,7 +48,7 @@ const CycleScreen = () => {
           {/* Header */}
           <div className="flex items-center justify-between mt-5">
             <button onClick={() => navigate("/home")}>
-              <ArrowLeft className="h-5 w-5" style={{ color: "#94A3B8" }} />
+              <ArrowLeft className="h-5 w-5" style={{ color: "var(--text-muted)" }} />
             </button>
             <span className="font-display text-base font-bold" style={{ color: "#111111" }}>
               Know Your Cyst-em
