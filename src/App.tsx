@@ -19,6 +19,7 @@ import Loading from "./pages/Loading";
 import Results from "./pages/Results";
 import Home from "./pages/Home";
 import KnowYourCystem from "./pages/KnowYourCystem";
+import CycleScreen from "./pages/CycleScreen";
 import Log from "./pages/Log";
 import Chat from "./pages/Chat";
 import Plan from "./pages/Plan";
@@ -50,6 +51,8 @@ const App = () => (
             <Route path="/results" element={<Results />} />
             <Route path="/home" element={<Home />} />
             <Route path="/know-your-cystem" element={<KnowYourCystem />} />
+            <Route path="/decystified" element={<KnowYourCystem />} />
+            <Route path="/cycle" element={<CycleScreen />} />
             <Route path="/log" element={<Log />} />
             <Route path="/chat" element={<Chat />} />
             <Route path="/plan" element={<Plan />} />
