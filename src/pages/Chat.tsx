@@ -27,7 +27,7 @@ const getAiResponse = (userText: string): string => {
     return "Not. Your. Fault. Low magnesium in luteal phase literally makes your brain demand sugar. It's chemistry, not weakness. Grab some dark chocolate (70%+) or pumpkin seeds, that's not giving in, that's giving your body what it actually needs.";
   }
   if (lower.includes("bloat") || lower.includes("bloating") || lower.includes("puffy") || lower.includes("swollen")) {
-    return "Ugh, luteal bloating is SO real. Progesterone makes your body hold onto water — it's not fat, it's fluid. What actually helps? Potassium-rich foods (banana, sweet potato), cutting back on salt today, and gentle movement. You'll feel lighter in a couple days, promise 💚";
+    return "Ugh, luteal bloating is SO real. Progesterone makes your body hold onto water, it's not fat, it's fluid. What actually helps? Potassium-rich foods (banana, sweet potato), cutting back on salt today, and gentle movement. You'll feel lighter in a couple days, promise 💚";
   }
   if (lower.includes("anxious") || lower.includes("anxiety") || lower.includes("worried") || lower.includes("stress") || lower.includes("overwhelm")) {
     return "Okay first — deep breath. You're not spiralling, your hormones are. Progesterone dropping in luteal phase directly affects GABA (your calm-down neurotransmitter). What I'd try: magnesium glycinate before bed, a 10-min walk outside, and honestly? Give yourself permission to do less today. You're not falling behind 💚";
