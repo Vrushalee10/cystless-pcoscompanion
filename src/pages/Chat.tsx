@@ -21,7 +21,7 @@ const initialMessages: Message[] = [
 const getAiResponse = (userText: string): string => {
   const lower = userText.toLowerCase();
   if (lower.includes("tired") || lower.includes("fatigue") || lower.includes("exhausted") || lower.includes("no energy") || lower.includes("drained")) {
-    return "Honestly? That's your luteal phase doing its thing — not you being lazy. Progesterone drops, magnesium goes with it, energy tanks. It's textbook. A protein snack and a short walk actually help more than coffee right now. Trust.";
+    return "Honestly? That's your luteal phase doing its thing, not you being lazy. Progesterone drops, magnesium goes with it, energy tanks. It's textbook. A protein snack and a short walk actually help more than coffee right now. Trust.";
   }
   if (lower.includes("craving") || lower.includes("sugar") || lower.includes("chocolate") || lower.includes("junk food") || lower.includes("hungry")) {
     return "Not. Your. Fault. Low magnesium in luteal phase literally makes your brain demand sugar. It's chemistry, not weakness. Grab some dark chocolate (70%+) or pumpkin seeds — that's not giving in, that's giving your body what it actually needs.";
