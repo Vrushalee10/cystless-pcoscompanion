@@ -18,7 +18,7 @@ const screens = [
     image: onboarding2,
     label: "YOUR CYCLE IS YOUR COMPASS",
     headline: "Every phase of your cycle changes what your body needs.",
-    body: "Cystless reads your phase and adjusts your nutrition, movement and mindset plan — automatically.",
+    body: "Cystless reads your phase and adjusts your nutrition, movement and mindset plan automatically.",
     button: "Continue",
     next: "/onboarding/3",
   },

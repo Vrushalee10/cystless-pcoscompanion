@@ -91,7 +91,7 @@ const QuizScreen9 = () => {
           className="font-body italic text-center mt-5"
           style={{ fontSize: "13px", color: "var(--text-muted)" }}
         >
-          Genetics and lifestyle both shape which PCOS pattern is most active — and both respond to the right support.
+          Genetics and lifestyle both shape which PCOS pattern is most active, and both respond to the right support.
         </p>
       </div>
 

@@ -53,7 +53,7 @@ const QuizScreen1 = () => {
           className="font-body italic text-center mt-5"
           style={{ fontSize: "13px", color: "var(--text-muted)" }}
         >
-          There are no wrong answers — this helps us understand where you are right now.
+          There are no wrong answers. This helps us understand where you are right now.
         </p>
       </div>
 

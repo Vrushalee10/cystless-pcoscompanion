@@ -104,7 +104,7 @@ const Home = () => {
               className="font-body"
               style={{ fontSize: 15, color: "var(--text-body)", lineHeight: 1.65 }}
             >
-              You're in your luteal phase. As progesterone rises, magnesium gets depleted — and low
+              You're in your luteal phase. As progesterone rises, magnesium gets depleted, and low
               magnesium directly triggers sugar cravings. A small magnesium-rich snack this afternoon
               can interrupt this cycle. Try almonds or two squares of dark chocolate.
             </p>
