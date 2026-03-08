@@ -58,7 +58,7 @@ const CycleScreen = () => {
 
           {/* Hero */}
           <div className="mt-6">
-            <p style={{ fontSize: 11, textTransform: "uppercase", color: "#94A3B8", letterSpacing: 1 }}>
+            <p style={{ fontSize: 11, textTransform: "uppercase", color: "var(--text-muted)", letterSpacing: 1 }}>
               YOUR CYCLE, DECODED
             </p>
             <h1
