@@ -45,7 +45,7 @@ const getAiResponse = (userText: string): string => {
     return "Step away from the scale, bestie. Luteal phase water retention can add 2-5 lbs that literally disappear after your period. It's not real weight gain. If you're dealing with PCOS-related weight stuff long-term, that's a bigger convo, but today? Your body is just doing its thing. Be kind to it 💚";
   }
   if (lower.includes("skin") || lower.includes("acne") || lower.includes("breakout") || lower.includes("pimple")) {
-    return "Pre-period breakouts? Androgens spike right before your period, which means more oil, more clogged pores. What actually helps: don't over-wash (it makes it worse), use a gentle salicylic acid, and zinc-rich foods (pumpkin seeds again — they're basically a PCOS superfood). This will calm down in a few days 💚";
+    return "Pre-period breakouts? Androgens spike right before your period, which means more oil, more clogged pores. What actually helps: don't over-wash (it makes it worse), use a gentle salicylic acid, and zinc-rich foods (pumpkin seeds again, they're basically a PCOS superfood). This will calm down in a few days 💚";
   }
   if (lower.includes("period") || lower.includes("late") || lower.includes("irregular") || lower.includes("missed")) {
     return "Irregular periods with PCOS are super common, it doesn't mean something is wrong with YOU. It means your hormones need some support. Blood sugar balance, stress management, and sleep are the big three. Want me to look at your recent logs and see if anything stands out? 💚";
