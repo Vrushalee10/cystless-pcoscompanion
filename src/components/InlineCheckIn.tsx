@@ -241,6 +241,10 @@ const InlineCheckIn = () => {
                   Save Check-in
                 </button>
               )}
+            </AnimatePresence>
+          </motion.div>
+        )}
+
         {step === "nudge" && (
           <motion.div
             key="nudge"
@@ -289,9 +293,6 @@ const InlineCheckIn = () => {
                 Tell me more →
               </button>
             </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
           </motion.div>
         )}
       </AnimatePresence>
