@@ -40,7 +40,7 @@ const Insights = () => {
 
   return (
     <div className="min-h-[100dvh] flex justify-center" style={{ backgroundColor: "#F7F4F0" }}>
-      <div className="w-full max-w-[390px] px-5 pb-6">
+      <div className="w-full max-w-[390px] px-5 pb-6 overflow-x-hidden">
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
