@@ -3,9 +3,9 @@ import { Home, ClipboardList, CalendarDays, MessageCircle } from "lucide-react";
 
 const tabs = [
   { id: "home", label: "Home", icon: Home, route: "/home" },
-  { id: "log", label: "Log", icon: ClipboardList, route: "/home" },
-  { id: "plan", label: "Plan", icon: CalendarDays, route: "/home" },
-  { id: "chat", label: "Chat", icon: MessageCircle, route: "/home" },
+  { id: "log", label: "Log", icon: ClipboardList, route: "/log" },
+  { id: "plan", label: "Plan", icon: CalendarDays, route: "/plan" },
+  { id: "chat", label: "Chat", icon: MessageCircle, route: "/chat" },
 ] as const;
 
 interface BottomNavProps {
