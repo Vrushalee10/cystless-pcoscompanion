@@ -6,61 +6,61 @@ const Index = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="flex flex-col min-h-[100dvh] bg-background px-5">
-      {/* Top bar */}
-      <div className="pt-6">
-        <span className="font-display text-[22px] font-bold text-primary">
-          Cystless
-        </span>
-      </div>
+    <div className="min-h-[100dvh] bg-background flex justify-center">
+      <div className="w-full max-w-[390px] min-h-[100dvh] relative flex flex-col px-5">
+        {/* Top bar */}
+        <div className="pt-6">
+          <span className="font-display text-[22px] font-bold text-primary">
+            Cystless
+          </span>
+        </div>
 
-      {/* Centre content — pulled slightly above centre */}
-      <div className="flex-1 flex flex-col justify-center -mt-[8vh]">
-        <h1
-          className="font-display font-bold leading-[1.1]"
-          style={{ fontSize: "44px", color: "var(--text-ink)" }}
-        >
-          Go Cystless.
-        </h1>
+        {/* Centre content — at ~40% from top */}
+        <div className="absolute left-5 right-5" style={{ top: '40%', transform: 'translateY(-50%)' }}>
+          <h1
+            className="font-display leading-[1.1]"
+            style={{ fontSize: '44px', fontWeight: 800, color: 'var(--text-ink)' }}
+          >
+            Go Cystless.
+          </h1>
 
-        {/* Accent bar */}
-        <div
-          className="w-12 h-1 bg-accent mt-[14px] rounded-full"
-        />
+          {/* Accent bar */}
+          <div className="w-12 h-1 bg-accent mt-[14px] rounded-full" />
 
-        <p
-          className="font-body mt-4"
-          style={{ fontSize: "19px", fontWeight: 400, color: "var(--text-body)" }}
-        >
-          Because less is more.
-        </p>
+          <p
+            className="font-body mt-4"
+            style={{ fontSize: '20px', fontWeight: 400, color: 'var(--text-body)' }}
+          >
+            Because less is more.
+          </p>
 
-        <p
-          className="font-body mt-[6px]"
-          style={{ fontSize: "14px", fontWeight: 400, color: "var(--text-muted)" }}
-        >
-          Your personalised PCOS companion.
-        </p>
-      </div>
+          <p
+            className="font-body mt-[6px]"
+            style={{ fontSize: '14px', fontWeight: 400, color: 'var(--text-muted)' }}
+          >
+            Your personalised PCOS companion.
+          </p>
+        </div>
 
-      {/* Bottom section */}
-      <div className="pb-9">
-        <Button
-          variant="hero"
-          size="hero"
-          onClick={() => navigate("/quiz/1")}
-          className="w-full relative"
-        >
-          Get Started
-          <ArrowRight className="absolute right-5 h-5 w-5" />
-        </Button>
+        {/* Bottom section — fixed to bottom of container */}
+        <div className="mt-auto pb-9">
+          <Button
+            variant="hero"
+            size="hero"
+            onClick={() => navigate("/quiz/1")}
+            className="w-full relative"
+          >
+            Get Started
+            <ArrowRight className="absolute right-5 h-5 w-5" />
+          </Button>
 
-        <p className="text-center mt-[14px] font-body" style={{ fontSize: "14px", color: "var(--text-muted)" }}>
-          Already have an account?{" "}
-          <button className="text-primary font-semibold hover:underline">
-            Sign in
-          </button>
-        </p>
+          <p className="text-center mt-[14px] font-body" style={{ fontSize: '14px', color: 'var(--text-muted)' }}>
+            Already have an account?{" "}
+            <button className="text-primary font-semibold hover:underline">
+              Sign in
+            </button>
+          </p>
+        </div>
       </div>
     </div>
   );
