@@ -319,7 +319,7 @@ const Results = () => {
             className="font-body italic text-center mt-4 px-5"
             style={{ fontSize: "12px", color: "var(--text-muted)", lineHeight: 1.6 }}
           >
-            This is a symptom-based pattern — not a clinical diagnosis. Cystless is a wellness companion. Always work with your healthcare provider for clinical decisions.
+            This is a symptom-based pattern, not a clinical diagnosis. Cystless is a wellness companion. Always work with your healthcare provider for clinical decisions.
           </p>
         </motion.div>
 
