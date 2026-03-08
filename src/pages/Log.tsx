@@ -3,6 +3,7 @@ import { useNavigate, useSearchParams } from "react-router-dom";
 import { Plus, Minus, Mic, ArrowLeft } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import BottomNav from "@/components/BottomNav";
+import LogHistory from "@/components/log/LogHistory";
 
 const moods = ["😞", "😕", "😐", "🙂", "😊"];
 const moodCopy = [
@@ -39,7 +40,9 @@ const Log = () => {
   const [searchParams] = useSearchParams();
   const startAtLayer2 = searchParams.get("layer") === "2";
 
-  // Layer 1 — pre-fill if coming from quick log
+  const [activeTab, setActiveTab] = useState<"today" | "history">("today");
+
+  // Layer 1
   const [mood, setMood] = useState<number | null>(startAtLayer2 ? 3 : null);
   const [energy, setEnergy] = useState(startAtLayer2 ? 3 : 0);
   const [sleepH, setSleepH] = useState<number | null>(startAtLayer2 ? 7 : null);
@@ -143,369 +146,402 @@ const Log = () => {
             Day 18 · Luteal Phase
           </div>
 
-          {/* LAYER 1 */}
-          <p className="text-label mt-6" style={{ color: "var(--text-muted)" }}>
-            HOW ARE YOU TODAY?
-          </p>
-
-          {/* Mood */}
-          <div className="bg-card mt-3 p-[22px]" style={{ borderRadius: 18, boxShadow: "var(--shadow-card)" }}>
-            <p className="font-body" style={{ fontSize: 16, fontWeight: 600, color: "var(--text-ink)", marginBottom: 14 }}>
-              How are you feeling?
-            </p>
-            <div className="flex justify-between">
-              {moods.map((emoji, i) => (
-                <button
-                  key={i}
-                  onClick={() => setMood(i)}
-                  className="flex items-center justify-center"
-                  style={{
-                    width: 44, height: 44, fontSize: 28, borderRadius: "50%",
-                    backgroundColor: mood === i ? "hsl(var(--primary-light))" : "transparent",
-                    transition: "background-color 0.15s",
-                  }}
-                >
-                  {emoji}
-                </button>
-              ))}
-            </div>
-            <AnimatePresence mode="wait">
-              {mood !== null && (
-                <motion.p
-                  key={mood}
-                  className="font-body italic mt-3"
-                  style={{ fontSize: 13, color: "var(--text-muted)" }}
-                  initial={{ opacity: 0, y: 4 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  {moodCopy[mood]}
-                </motion.p>
-              )}
-            </AnimatePresence>
-          </div>
-
-          {/* Energy */}
-          <div className="bg-card mt-[10px] p-[22px]" style={{ borderRadius: 18, boxShadow: "var(--shadow-card)" }}>
-            <p className="font-body" style={{ fontSize: 16, fontWeight: 600, color: "var(--text-ink)" }}>
-              Energy level today
-            </p>
-            <div className="flex items-center justify-center gap-4 mt-4">
-              {[1, 2, 3, 4, 5].map((level) => (
-                <button
-                  key={level}
-                  onClick={() => setEnergy(level)}
-                  className="rounded-full transition-colors"
-                  style={{
-                    width: 14, height: 14,
-                    backgroundColor: level <= energy ? "hsl(var(--primary))" : "hsl(var(--border))",
-                  }}
-                />
-              ))}
-            </div>
-            <div className="flex justify-between mt-2">
-              <span className="font-body" style={{ fontSize: 12, color: "var(--text-muted)" }}>Very low</span>
-              <span className="font-body" style={{ fontSize: 12, color: "var(--text-muted)" }}>High</span>
-            </div>
-          </div>
-
-          {/* Sleep */}
-          <div className="bg-card mt-[10px] p-[22px]" style={{ borderRadius: 18, boxShadow: "var(--shadow-card)" }}>
-            <p className="font-body" style={{ fontSize: 16, fontWeight: 600, color: "var(--text-ink)" }}>
-              Sleep last night
-            </p>
-            <div className="flex gap-2 mt-3 justify-center">
-              {sleepHours.map((h) => (
-                <button
-                  key={h}
-                  onClick={() => setSleepH(h)}
-                  className="font-body transition-colors"
-                  style={{
-                    width: 40, height: 36, borderRadius: 8, fontSize: 14, fontWeight: 600,
-                    backgroundColor: sleepH === h ? "hsl(var(--primary))" : "white",
-                    color: sleepH === h ? "white" : "var(--text-muted)",
-                    border: sleepH === h ? "none" : "1px solid hsl(var(--border))",
-                  }}
-                >
-                  {h}
-                </button>
-              ))}
-            </div>
-            <div className="flex gap-2 mt-3 justify-center">
-              {(["Restful", "Broken"] as const).map((q) => {
-                const val = q.toLowerCase() as "restful" | "broken";
-                const sel = sleepQuality === val;
-                return (
-                  <button
-                    key={q}
-                    onClick={() => setSleepQuality(val)}
-                    className="font-body px-5 py-2 rounded-full transition-colors"
-                    style={{
-                      fontSize: 13, fontWeight: 600,
-                      backgroundColor: sel ? "hsl(var(--primary))" : "white",
-                      color: sel ? "white" : "var(--text-muted)",
-                      border: sel ? "none" : "1px solid hsl(var(--border))",
-                    }}
-                  >
-                    {q}
-                  </button>
-                );
-              })}
-            </div>
-          </div>
-
-          {/* LAYER 2 — Food */}
-          <p className="text-label mt-7" style={{ color: "var(--text-muted)" }}>
-            HOW DID YOU EAT TODAY?
-          </p>
-          <p className="font-body mt-1" style={{ fontSize: 13, color: "var(--text-muted)" }}>
-            Any method works, whatever feels easiest right now.
-          </p>
-
-          <div className="grid grid-cols-2 gap-[10px] mt-3">
-            {foodMethods.map((m) => {
-              const sel = foodMethod === m.id;
+          {/* Pill Tabs */}
+          <div
+            className="flex gap-2 mt-5"
+            style={{ padding: 3, borderRadius: 100, border: "1px solid #E2DDD7", display: "inline-flex" }}
+          >
+            {(["today", "history"] as const).map((tab) => {
+              const active = activeTab === tab;
               return (
                 <button
-                  key={m.id}
-                  onClick={() => setFoodMethod(sel ? null : m.id)}
-                  className="bg-card flex flex-col items-center justify-center p-[18px] transition-all"
+                  key={tab}
+                  onClick={() => setActiveTab(tab)}
+                  className="font-body transition-colors"
                   style={{
-                    borderRadius: 14, boxShadow: "var(--shadow-card)",
-                    border: sel ? "2px solid hsl(var(--primary))" : "2px solid transparent",
-                    backgroundColor: sel ? "hsl(var(--primary-light))" : undefined,
+                    fontSize: 14, fontWeight: 600,
+                    padding: "8px 20px",
+                    borderRadius: 100,
+                    backgroundColor: active ? "hsl(var(--primary))" : "white",
+                    color: active ? "white" : "#94A3B8",
                   }}
                 >
-                  <span style={{ fontSize: 24 }}>{m.emoji}</span>
-                  <span className="font-body mt-[6px]" style={{ fontSize: 13, color: "var(--text-body)" }}>
-                    {m.label}
-                  </span>
+                  {tab === "today" ? "Today" : "History"}
                 </button>
               );
             })}
           </div>
+        </motion.div>
 
-          {/* Quick select tags */}
-          <AnimatePresence>
-            {foodMethod === "quick" && (
-              <motion.div
-                className="flex flex-wrap gap-2 mt-3"
-                initial={{ opacity: 0, height: 0 }}
-                animate={{ opacity: 1, height: "auto" }}
-                exit={{ opacity: 0, height: 0 }}
-                transition={{ duration: 0.25 }}
-              >
-                {quickTags.map((tag) => {
-                  const sel = quickSelected.has(tag);
+        {activeTab === "today" ? (
+          <motion.div
+            key="today"
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            {/* LAYER 1 */}
+            <p className="text-label mt-6" style={{ color: "var(--text-muted)" }}>
+              HOW ARE YOU TODAY?
+            </p>
+
+            {/* Mood */}
+            <div className="bg-card mt-3 p-[22px]" style={{ borderRadius: 18, boxShadow: "var(--shadow-card)" }}>
+              <p className="font-body" style={{ fontSize: 16, fontWeight: 600, color: "var(--text-ink)", marginBottom: 14 }}>
+                How are you feeling?
+              </p>
+              <div className="flex justify-between">
+                {moods.map((emoji, i) => (
+                  <button
+                    key={i}
+                    onClick={() => setMood(i)}
+                    className="flex items-center justify-center"
+                    style={{
+                      width: 44, height: 44, fontSize: 28, borderRadius: "50%",
+                      backgroundColor: mood === i ? "hsl(var(--primary-light))" : "transparent",
+                      transition: "background-color 0.15s",
+                    }}
+                  >
+                    {emoji}
+                  </button>
+                ))}
+              </div>
+              <AnimatePresence mode="wait">
+                {mood !== null && (
+                  <motion.p
+                    key={mood}
+                    className="font-body italic mt-3"
+                    style={{ fontSize: 13, color: "var(--text-muted)" }}
+                    initial={{ opacity: 0, y: 4 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    {moodCopy[mood]}
+                  </motion.p>
+                )}
+              </AnimatePresence>
+            </div>
+
+            {/* Energy */}
+            <div className="bg-card mt-[10px] p-[22px]" style={{ borderRadius: 18, boxShadow: "var(--shadow-card)" }}>
+              <p className="font-body" style={{ fontSize: 16, fontWeight: 600, color: "var(--text-ink)" }}>
+                Energy level today
+              </p>
+              <div className="flex items-center justify-center gap-4 mt-4">
+                {[1, 2, 3, 4, 5].map((level) => (
+                  <button
+                    key={level}
+                    onClick={() => setEnergy(level)}
+                    className="rounded-full transition-colors"
+                    style={{
+                      width: 14, height: 14,
+                      backgroundColor: level <= energy ? "hsl(var(--primary))" : "hsl(var(--border))",
+                    }}
+                  />
+                ))}
+              </div>
+              <div className="flex justify-between mt-2">
+                <span className="font-body" style={{ fontSize: 12, color: "var(--text-muted)" }}>Very low</span>
+                <span className="font-body" style={{ fontSize: 12, color: "var(--text-muted)" }}>High</span>
+              </div>
+            </div>
+
+            {/* Sleep */}
+            <div className="bg-card mt-[10px] p-[22px]" style={{ borderRadius: 18, boxShadow: "var(--shadow-card)" }}>
+              <p className="font-body" style={{ fontSize: 16, fontWeight: 600, color: "var(--text-ink)" }}>
+                Sleep last night
+              </p>
+              <div className="flex gap-2 mt-3 justify-center">
+                {sleepHours.map((h) => (
+                  <button
+                    key={h}
+                    onClick={() => setSleepH(h)}
+                    className="font-body transition-colors"
+                    style={{
+                      width: 40, height: 36, borderRadius: 8, fontSize: 14, fontWeight: 600,
+                      backgroundColor: sleepH === h ? "hsl(var(--primary))" : "white",
+                      color: sleepH === h ? "white" : "var(--text-muted)",
+                      border: sleepH === h ? "none" : "1px solid hsl(var(--border))",
+                    }}
+                  >
+                    {h}
+                  </button>
+                ))}
+              </div>
+              <div className="flex gap-2 mt-3 justify-center">
+                {(["Restful", "Broken"] as const).map((q) => {
+                  const val = q.toLowerCase() as "restful" | "broken";
+                  const sel = sleepQuality === val;
                   return (
                     <button
-                      key={tag}
-                      onClick={() => toggleQuickTag(tag)}
-                      className="font-body rounded-[10px] transition-colors"
+                      key={q}
+                      onClick={() => setSleepQuality(val)}
+                      className="font-body px-5 py-2 rounded-full transition-colors"
                       style={{
-                        fontSize: 13, padding: "8px 12px",
+                        fontSize: 13, fontWeight: 600,
                         backgroundColor: sel ? "hsl(var(--primary))" : "white",
                         color: sel ? "white" : "var(--text-muted)",
                         border: sel ? "none" : "1px solid hsl(var(--border))",
                       }}
                     >
-                      {tag}
+                      {q}
                     </button>
                   );
                 })}
-              </motion.div>
-            )}
-          </AnimatePresence>
+              </div>
+            </div>
 
-          {/* Type it textarea */}
-          <AnimatePresence>
-            {foodMethod === "type" && (
-              <motion.div
-                initial={{ opacity: 0, height: 0 }}
-                animate={{ opacity: 1, height: "auto" }}
-                exit={{ opacity: 0, height: 0 }}
-                transition={{ duration: 0.25 }}
-                className="mt-3"
-              >
-                <textarea
-                  rows={4}
-                  placeholder="What did you eat today? Anything you noticed?"
-                  value={typeText}
-                  onChange={(e) => setTypeText(e.target.value)}
-                  className="w-full font-body resize-none focus:outline-none focus:ring-1 focus:ring-primary"
-                  style={{
-                    fontSize: 15, padding: 16, borderRadius: 14,
-                    border: "1px solid hsl(var(--border))", backgroundColor: "white",
-                  }}
-                />
-              </motion.div>
-            )}
-          </AnimatePresence>
+            {/* LAYER 2 */}
+            <p className="text-label mt-7" style={{ color: "var(--text-muted)" }}>
+              HOW DID YOU EAT TODAY?
+            </p>
+            <p className="font-body mt-1" style={{ fontSize: 13, color: "var(--text-muted)" }}>
+              Any method works, whatever feels easiest right now.
+            </p>
 
-          {/* LAYER 3 — Optional depth */}
-          <div
-            className="bg-card mt-[14px]"
-            style={{ borderRadius: 18, boxShadow: "var(--shadow-card)", overflow: "hidden" }}
-          >
-            <button
-              onClick={() => setExpanded(!expanded)}
-              className="w-full flex items-center justify-between p-[18px]"
-            >
-              <span className="font-body" style={{ fontSize: 13, color: "var(--text-muted)" }}>
-                ADD MORE DETAIL
-              </span>
-              {expanded ? (
-                <Minus size={18} color="hsl(var(--primary))" />
-              ) : (
-                <Plus size={18} color="hsl(var(--primary))" />
-              )}
-            </button>
+            <div className="grid grid-cols-2 gap-[10px] mt-3">
+              {foodMethods.map((m) => {
+                const sel = foodMethod === m.id;
+                return (
+                  <button
+                    key={m.id}
+                    onClick={() => setFoodMethod(sel ? null : m.id)}
+                    className="bg-card flex flex-col items-center justify-center p-[18px] transition-all"
+                    style={{
+                      borderRadius: 14, boxShadow: "var(--shadow-card)",
+                      border: sel ? "2px solid hsl(var(--primary))" : "2px solid transparent",
+                      backgroundColor: sel ? "hsl(var(--primary-light))" : undefined,
+                    }}
+                  >
+                    <span style={{ fontSize: 24 }}>{m.emoji}</span>
+                    <span className="font-body mt-[6px]" style={{ fontSize: 13, color: "var(--text-body)" }}>
+                      {m.label}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
 
             <AnimatePresence>
-              {expanded && (
+              {foodMethod === "quick" && (
                 <motion.div
-                  initial={{ height: 0, opacity: 0 }}
-                  animate={{ height: "auto", opacity: 1 }}
-                  exit={{ height: 0, opacity: 0 }}
-                  transition={{ duration: 0.3 }}
-                  className="overflow-hidden"
+                  className="flex flex-wrap gap-2 mt-3"
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: "auto" }}
+                  exit={{ opacity: 0, height: 0 }}
+                  transition={{ duration: 0.25 }}
                 >
-                  <div className="px-[18px] pb-[18px]">
-                    {/* Symptoms */}
-                    <p className="font-body" style={{ fontSize: 14, fontWeight: 600, color: "var(--text-ink)", marginBottom: 10 }}>
-                      Any symptoms today?
-                    </p>
-                    <div className="flex flex-wrap gap-2">
-                      {symptomTags.map((s) => {
-                        const sel = symptoms.has(s);
-                        return (
-                          <button
-                            key={s}
-                            onClick={() => toggleSymptom(s)}
-                            className="font-body rounded-[10px] transition-colors"
-                            style={{
-                              fontSize: 13, padding: "8px 12px",
-                              backgroundColor: sel ? "hsl(var(--accent))" : "white",
-                              color: sel ? "white" : "var(--text-muted)",
-                              border: sel ? "none" : "1px solid hsl(var(--border))",
-                            }}
-                          >
-                            {s}
-                          </button>
-                        );
-                      })}
-                    </div>
-
-                    {/* Movement */}
-                    <p className="font-body mt-4" style={{ fontSize: 14, fontWeight: 600, color: "var(--text-ink)" }}>
-                      Movement today
-                    </p>
-                    <div className="flex flex-wrap gap-2 mt-2">
-                      {movementOptions.map((m) => {
-                        const sel = movement === m;
-                        return (
-                          <button
-                            key={m}
-                            onClick={() => setMovement(sel ? null : m)}
-                            className="font-body rounded-full px-4 py-2 transition-colors"
-                            style={{
-                              fontSize: 13, fontWeight: 600,
-                              backgroundColor: sel ? "hsl(var(--primary))" : "white",
-                              color: sel ? "white" : "var(--text-muted)",
-                              border: sel ? "none" : "1px solid hsl(var(--border))",
-                            }}
-                          >
-                            {m}
-                          </button>
-                        );
-                      })}
-                    </div>
-
-                    {/* Stress */}
-                    <p className="font-body mt-4" style={{ fontSize: 14, fontWeight: 600, color: "var(--text-ink)" }}>
-                      Stress today
-                    </p>
-                    <div className="flex items-center justify-center gap-4 mt-3">
-                      {[1, 2, 3, 4, 5].map((level) => (
-                        <button
-                          key={level}
-                          onClick={() => setStress(level)}
-                          className="rounded-full transition-colors"
-                          style={{
-                            width: 14, height: 14,
-                            backgroundColor: level <= stress ? "hsl(var(--primary))" : "hsl(var(--border))",
-                          }}
-                        />
-                      ))}
-                    </div>
-                    <div className="flex justify-between mt-2">
-                      <span className="font-body" style={{ fontSize: 12, color: "var(--text-muted)" }}>Calm</span>
-                      <span className="font-body" style={{ fontSize: 12, color: "var(--text-muted)" }}>Very stressed</span>
-                    </div>
-
-                    {/* Notes */}
-                    <p className="font-body mt-4" style={{ fontSize: 14, fontWeight: 600, color: "var(--text-ink)" }}>
-                      Anything else?
-                    </p>
-                    <div className="relative mt-2">
-                      <textarea
-                        rows={3}
-                        placeholder="Tell me anything, how you're feeling, what happened, what you noticed..."
-                        value={notes}
-                        onChange={(e) => setNotes(e.target.value)}
-                        className="w-full font-body resize-none focus:outline-none focus:ring-1 focus:ring-primary"
+                  {quickTags.map((tag) => {
+                    const sel = quickSelected.has(tag);
+                    return (
+                      <button
+                        key={tag}
+                        onClick={() => toggleQuickTag(tag)}
+                        className="font-body rounded-[10px] transition-colors"
                         style={{
-                          fontSize: 15, padding: 16, borderRadius: 14,
-                          border: "1px solid hsl(var(--border))", backgroundColor: "white",
+                          fontSize: 13, padding: "8px 12px",
+                          backgroundColor: sel ? "hsl(var(--primary))" : "white",
+                          color: sel ? "white" : "var(--text-muted)",
+                          border: sel ? "none" : "1px solid hsl(var(--border))",
                         }}
-                      />
-                      <Mic
-                        size={18}
-                        color="var(--text-muted)"
-                        className="absolute top-4 right-4"
-                      />
-                    </div>
-                  </div>
+                      >
+                        {tag}
+                      </button>
+                    );
+                  })}
                 </motion.div>
               )}
             </AnimatePresence>
-          </div>
-        </motion.div>
 
-        {/* Save button */}
-        <div className="sticky bottom-[64px] pb-4 pt-3 bg-background mt-auto z-10">
-          <button
-            disabled={!layer1Complete || saving}
-            onClick={handleSave}
-            className="w-full h-[58px] rounded-[18px] font-body flex items-center justify-center transition-colors"
-            style={{
-              fontSize: 16, fontWeight: layer1Complete ? 600 : 400,
-              backgroundColor: layer1Complete ? "hsl(var(--primary))" : "var(--disabled)",
-              color: layer1Complete ? "white" : "var(--text-muted)",
-            }}
-          >
-            {saving ? (
-              <span className="flex gap-1">
-                {[0, 1, 2].map((i) => (
-                  <span
-                    key={i}
-                    className="block rounded-full bg-white/70"
+            <AnimatePresence>
+              {foodMethod === "type" && (
+                <motion.div
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: "auto" }}
+                  exit={{ opacity: 0, height: 0 }}
+                  transition={{ duration: 0.25 }}
+                  className="mt-3"
+                >
+                  <textarea
+                    rows={4}
+                    placeholder="What did you eat today? Anything you noticed?"
+                    value={typeText}
+                    onChange={(e) => setTypeText(e.target.value)}
+                    className="w-full font-body resize-none focus:outline-none focus:ring-1 focus:ring-primary"
                     style={{
-                      width: 6, height: 6,
-                      animation: "dotPulse 0.6s ease-in-out infinite",
-                      animationDelay: `${i * 0.15}s`,
+                      fontSize: 15, padding: 16, borderRadius: 14,
+                      border: "1px solid hsl(var(--border))", backgroundColor: "white",
                     }}
                   />
-                ))}
-              </span>
-            ) : layer1Complete ? (
-              "Save Today's Log"
-            ) : (
-              "Complete check-in to save"
-            )}
-          </button>
-        </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+
+            {/* LAYER 3 */}
+            <div
+              className="bg-card mt-[14px]"
+              style={{ borderRadius: 18, boxShadow: "var(--shadow-card)", overflow: "hidden" }}
+            >
+              <button
+                onClick={() => setExpanded(!expanded)}
+                className="w-full flex items-center justify-between p-[18px]"
+              >
+                <span className="font-body" style={{ fontSize: 13, color: "var(--text-muted)" }}>
+                  ADD MORE DETAIL
+                </span>
+                {expanded ? (
+                  <Minus size={18} color="hsl(var(--primary))" />
+                ) : (
+                  <Plus size={18} color="hsl(var(--primary))" />
+                )}
+              </button>
+
+              <AnimatePresence>
+                {expanded && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="overflow-hidden"
+                  >
+                    <div className="px-[18px] pb-[18px]">
+                      <p className="font-body" style={{ fontSize: 14, fontWeight: 600, color: "var(--text-ink)", marginBottom: 10 }}>
+                        Any symptoms today?
+                      </p>
+                      <div className="flex flex-wrap gap-2">
+                        {symptomTags.map((s) => {
+                          const sel = symptoms.has(s);
+                          return (
+                            <button
+                              key={s}
+                              onClick={() => toggleSymptom(s)}
+                              className="font-body rounded-[10px] transition-colors"
+                              style={{
+                                fontSize: 13, padding: "8px 12px",
+                                backgroundColor: sel ? "hsl(var(--accent))" : "white",
+                                color: sel ? "white" : "var(--text-muted)",
+                                border: sel ? "none" : "1px solid hsl(var(--border))",
+                              }}
+                            >
+                              {s}
+                            </button>
+                          );
+                        })}
+                      </div>
+
+                      <p className="font-body mt-4" style={{ fontSize: 14, fontWeight: 600, color: "var(--text-ink)" }}>
+                        Movement today
+                      </p>
+                      <div className="flex flex-wrap gap-2 mt-2">
+                        {movementOptions.map((m) => {
+                          const sel = movement === m;
+                          return (
+                            <button
+                              key={m}
+                              onClick={() => setMovement(sel ? null : m)}
+                              className="font-body rounded-full px-4 py-2 transition-colors"
+                              style={{
+                                fontSize: 13, fontWeight: 600,
+                                backgroundColor: sel ? "hsl(var(--primary))" : "white",
+                                color: sel ? "white" : "var(--text-muted)",
+                                border: sel ? "none" : "1px solid hsl(var(--border))",
+                              }}
+                            >
+                              {m}
+                            </button>
+                          );
+                        })}
+                      </div>
+
+                      <p className="font-body mt-4" style={{ fontSize: 14, fontWeight: 600, color: "var(--text-ink)" }}>
+                        Stress today
+                      </p>
+                      <div className="flex items-center justify-center gap-4 mt-3">
+                        {[1, 2, 3, 4, 5].map((level) => (
+                          <button
+                            key={level}
+                            onClick={() => setStress(level)}
+                            className="rounded-full transition-colors"
+                            style={{
+                              width: 14, height: 14,
+                              backgroundColor: level <= stress ? "hsl(var(--primary))" : "hsl(var(--border))",
+                            }}
+                          />
+                        ))}
+                      </div>
+                      <div className="flex justify-between mt-2">
+                        <span className="font-body" style={{ fontSize: 12, color: "var(--text-muted)" }}>Calm</span>
+                        <span className="font-body" style={{ fontSize: 12, color: "var(--text-muted)" }}>Very stressed</span>
+                      </div>
+
+                      <p className="font-body mt-4" style={{ fontSize: 14, fontWeight: 600, color: "var(--text-ink)" }}>
+                        Anything else?
+                      </p>
+                      <div className="relative mt-2">
+                        <textarea
+                          rows={3}
+                          placeholder="Tell me anything, how you're feeling, what happened, what you noticed..."
+                          value={notes}
+                          onChange={(e) => setNotes(e.target.value)}
+                          className="w-full font-body resize-none focus:outline-none focus:ring-1 focus:ring-primary"
+                          style={{
+                            fontSize: 15, padding: 16, borderRadius: 14,
+                            border: "1px solid hsl(var(--border))", backgroundColor: "white",
+                          }}
+                        />
+                        <Mic
+                          size={18}
+                          color="var(--text-muted)"
+                          className="absolute top-4 right-4"
+                        />
+                      </div>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+          </motion.div>
+        ) : (
+          <LogHistory />
+        )}
+
+        {/* Save button — only on Today tab */}
+        {activeTab === "today" && (
+          <div className="sticky bottom-[64px] pb-4 pt-3 bg-background mt-auto z-10">
+            <button
+              disabled={!layer1Complete || saving}
+              onClick={handleSave}
+              className="w-full h-[58px] rounded-[18px] font-body flex items-center justify-center transition-colors"
+              style={{
+                fontSize: 16, fontWeight: layer1Complete ? 600 : 400,
+                backgroundColor: layer1Complete ? "hsl(var(--primary))" : "var(--disabled)",
+                color: layer1Complete ? "white" : "var(--text-muted)",
+              }}
+            >
+              {saving ? (
+                <span className="flex gap-1">
+                  {[0, 1, 2].map((i) => (
+                    <span
+                      key={i}
+                      className="block rounded-full bg-white/70"
+                      style={{
+                        width: 6, height: 6,
+                        animation: "dotPulse 0.6s ease-in-out infinite",
+                        animationDelay: `${i * 0.15}s`,
+                      }}
+                    />
+                  ))}
+                </span>
+              ) : layer1Complete ? (
+                "Save Today's Log"
+              ) : (
+                "Complete check-in to save"
+              )}
+            </button>
+          </div>
+        )}
       </div>
 
       {/* Acknowledgement card */}
