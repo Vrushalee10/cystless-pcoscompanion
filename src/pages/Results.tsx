@@ -39,7 +39,7 @@ const TYPE_DATA: Record<keyof Scores, {
   IN: {
     name: "Inflammatory",
     tag: "Often Overlooked Pattern",
-    description: "Chronic low-grade inflammation appears to be stimulating excess androgen production in your ovaries. Research shows CRP — an inflammation marker — is significantly elevated in most women with PCOS, independent of weight. Symptoms like joint pain, headaches, skin sensitivity and gut issues are key signals of this pattern.",
+    description: "Chronic low-grade inflammation appears to be stimulating excess androgen production in your ovaries. Research shows CRP, an inflammation marker, is significantly elevated in most women with PCOS, independent of weight. Symptoms like joint pain, headaches, skin sensitivity and gut issues are key signals of this pattern.",
     focusareas: [
       "Anti-inflammatory nutrition (Mediterranean-style eating)",
       "Gut health support — fibre, fermented foods, omega-3s",
