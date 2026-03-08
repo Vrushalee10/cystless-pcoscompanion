@@ -227,7 +227,7 @@ const Plan = () => {
       <div className="w-full max-w-[390px] min-h-[100dvh] flex flex-col pb-20">
         <div className="px-5">
           {/* Header */}
-          <h1 className="font-display" style={{ fontSize: 32, fontWeight: 800, color: "#111111", marginTop: 20 }}>
+          <h1 className="font-display" style={{ fontSize: 32, fontWeight: 800, color: "var(--text-ink)", marginTop: 20 }}>
             Your Plan
           </h1>
           <p className="font-body" style={{ fontSize: 14, color: "var(--text-muted)", marginTop: 4 }}>
