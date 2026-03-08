@@ -64,28 +64,21 @@ const InlineCheckIn = () => {
         <span className="text-label" style={{ color: "var(--text-muted)" }}>
           TODAY'S CHECK-IN
         </span>
-        {step === "idle" && (
-          <button
-            onClick={() => !logged && setStep("mood")}
-            className="font-body flex items-center gap-0.5"
-            style={{
-              fontSize: 13,
-              fontWeight: 600,
-              color: "hsl(var(--primary))",
-              cursor: logged ? "default" : "pointer",
-            }}
-            disabled={logged}
+        {logged && (
+          <span
+            className="font-body"
+            style={{ fontSize: 13, fontWeight: 600, color: "hsl(var(--primary))" }}
           >
-            {logged ? "Logged today ✓" : <>Quick log <ArrowRight className="h-3.5 w-3.5" /></>}
-          </button>
+            Logged today ✓
+          </span>
         )}
       </div>
 
       {/* Single AnimatePresence — only one child visible at a time */}
       <AnimatePresence mode="wait">
-        {step === "idle" && (
+        {step === "idle" && !logged && (
           <motion.div
-            key="idle-cards"
+            key="idle-mood"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -99,21 +92,23 @@ const InlineCheckIn = () => {
               <span className="text-label" style={{ fontSize: 11, color: "var(--text-muted)", marginBottom: 8, display: "block", textAlign: "center" }}>
                 MOOD
               </span>
-              <div className="flex gap-1 justify-center">
+              <div className="flex gap-2 justify-center">
                 {moods.map((emoji, i) => (
-                  <span
+                  <button
                     key={i}
-                    className="flex items-center justify-center"
+                    onClick={() => handleMoodSelect(i)}
+                    className="flex items-center justify-center transition-colors"
                     style={{
-                      width: 32,
-                      height: 32,
-                      fontSize: 20,
+                      width: 40,
+                      height: 40,
+                      fontSize: 22,
                       borderRadius: "50%",
-                      backgroundColor: logged && selectedMood === i ? "hsl(var(--primary-light))" : "transparent",
+                      backgroundColor: selectedMood === i ? "hsl(var(--primary-light))" : "transparent",
+                      border: selectedMood === i ? "2px solid hsl(var(--primary))" : "2px solid transparent",
                     }}
                   >
                     {emoji}
-                  </span>
+                  </button>
                 ))}
               </div>
             </div>
