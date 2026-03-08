@@ -50,7 +50,7 @@ const CycleScreen = () => {
             <button onClick={() => navigate("/home")}>
               <ArrowLeft className="h-5 w-5" style={{ color: "var(--text-muted)" }} />
             </button>
-            <span className="font-display text-base font-bold" style={{ color: "#111111" }}>
+            <span className="font-display text-base font-bold" style={{ color: "var(--text-ink)" }}>
               Know Your Cyst-em
             </span>
             <div className="w-5" />
@@ -63,14 +63,14 @@ const CycleScreen = () => {
             </p>
             <h1
               className="font-display mt-2"
-              style={{ fontSize: 28, fontWeight: 800, color: "#111111", lineHeight: 1.2 }}
+              style={{ fontSize: 28, fontWeight: 800, color: "var(--text-ink)", lineHeight: 1.2 }}
             >
               Your cycle isn't the problem. Not knowing it is.
             </h1>
-            <div className="mt-3" style={{ width: 48, height: 4, borderRadius: 2, backgroundColor: "#D4614F" }} />
+            <div className="mt-3" style={{ width: 48, height: 4, borderRadius: 2, backgroundColor: "hsl(var(--accent))" }} />
             <p
               className="font-body mt-[14px]"
-              style={{ fontSize: 15, color: "#4A5568", lineHeight: 1.6 }}
+              style={{ fontSize: 15, color: "var(--text-body)", lineHeight: 1.6 }}
             >
               Your hormones shift across four distinct phases each cycle. Knowing where you are helps you eat, move, and rest in sync with your body, not against it.
             </p>
@@ -84,10 +84,10 @@ const CycleScreen = () => {
                   key={phase.name}
                   className="flex-1 flex items-center justify-center font-display"
                   style={{
-                    fontSize: 10,
+                    fontSize: 11,
                     fontWeight: 600,
-                    color: phase.current ? "white" : "#4A5568",
-                    backgroundColor: phase.current ? "#0A3D3D" : "#E8E4DF",
+                    color: phase.current ? "white" : "var(--text-body)",
+                    backgroundColor: phase.current ? "hsl(var(--primary))" : "hsl(var(--border))",
                     position: "relative",
                   }}
                 >
@@ -99,7 +99,7 @@ const CycleScreen = () => {
               {phases.map((phase) => (
                 <div key={phase.name} className="flex-1 text-center">
                   {phase.current && (
-                    <span className="font-display" style={{ fontSize: 9, color: "#0A3D3D", fontWeight: 700 }}>
+                    <span className="font-display" style={{ fontSize: 10, color: "hsl(var(--primary))", fontWeight: 700 }}>
                       ▲ YOU ARE HERE
                     </span>
                   )}
@@ -124,7 +124,7 @@ const CycleScreen = () => {
                 <div className="flex items-center gap-2">
                   <span style={{ fontSize: 20 }}>{phase.emoji}</span>
                   <div>
-                    <p className="font-display" style={{ fontSize: 16, fontWeight: 700, color: "#111111" }}>
+                    <p className="font-display" style={{ fontSize: 16, fontWeight: 700, color: "var(--text-ink)" }}>
                       {phase.name} Phase
                     </p>
                     <p className="font-body" style={{ fontSize: 12, color: "var(--text-muted)" }}>{phase.days}</p>
@@ -133,10 +133,10 @@ const CycleScreen = () => {
                     <span
                       className="ml-auto font-display"
                       style={{
-                        fontSize: 10,
+                        fontSize: 11,
                         fontWeight: 700,
-                        color: "#0A3D3D",
-                        backgroundColor: "#EAF3F3",
+                        color: "hsl(var(--primary))",
+                        backgroundColor: "hsl(var(--primary-light))",
                         padding: "3px 8px",
                         borderRadius: 100,
                       }}
@@ -145,11 +145,11 @@ const CycleScreen = () => {
                     </span>
                   )}
                 </div>
-                <p className="font-body mt-3" style={{ fontSize: 14, color: "#4A5568", lineHeight: 1.6 }}>
+                <p className="font-body mt-3" style={{ fontSize: 14, color: "var(--text-body)", lineHeight: 1.6 }}>
                   {phase.summary}
                 </p>
                 <div className="mt-3" style={{ backgroundColor: "#F7F4F0", borderRadius: 12, padding: 12 }}>
-                  <p className="font-body" style={{ fontSize: 13, color: "#4A5568", lineHeight: 1.5 }}>
+                  <p className="font-body" style={{ fontSize: 13, color: "var(--text-body)", lineHeight: 1.5 }}>
                     💡 {phase.tips}
                   </p>
                 </div>

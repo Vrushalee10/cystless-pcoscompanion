@@ -70,18 +70,18 @@ const Onboarding = () => {
 
             {/* Content */}
             <div className="px-5 flex-1 flex flex-col" style={{ marginTop: 32 }}>
-              <p style={{ fontSize: 11, textTransform: "uppercase", letterSpacing: 1.8, color: "#0A3D3D", fontWeight: 700 }}>
+              <p style={{ fontSize: 11, textTransform: "uppercase", letterSpacing: 1.8, color: "hsl(var(--primary))", fontWeight: 700 }}>
                 {screen.label}
               </p>
               <h1
                 className="font-display"
-                style={{ fontSize: 32, fontWeight: 800, color: "#111111", lineHeight: 1.2, marginTop: 10 }}
+                style={{ fontSize: 32, fontWeight: 800, color: "var(--text-ink)", lineHeight: 1.2, marginTop: 10 }}
               >
                 {screen.headline}
               </h1>
               <p
                 className="font-body"
-                style={{ fontSize: 16, color: "#4A5568", lineHeight: 1.6, marginTop: 14 }}
+                style={{ fontSize: 16, color: "var(--text-body)", lineHeight: 1.6, marginTop: 14 }}
               >
                 {screen.body}
               </p>
@@ -100,7 +100,7 @@ const Onboarding = () => {
                   width: 8,
                   height: 8,
                   borderRadius: "50%",
-                  backgroundColor: i === index ? "#0A3D3D" : "#E2DDD7",
+                  backgroundColor: i === index ? "hsl(var(--primary))" : "hsl(var(--border))",
                   transition: "background-color 0.3s",
                 }}
               />
@@ -114,7 +114,7 @@ const Onboarding = () => {
             style={{
               height: 58,
               borderRadius: 18,
-              backgroundColor: "#0A3D3D",
+              backgroundColor: "hsl(var(--primary))",
               color: "white",
               fontSize: 16,
               fontWeight: 700,

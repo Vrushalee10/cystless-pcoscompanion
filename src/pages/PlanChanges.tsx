@@ -35,7 +35,7 @@ const PlanChanges = () => {
           <button onClick={() => navigate("/plan")}>
             <ArrowLeft className="h-5 w-5" style={{ color: "var(--text-muted)" }} />
           </button>
-          <span className="font-display" style={{ fontSize: 16, fontWeight: 700, color: "#111111" }}>
+          <span className="font-display" style={{ fontSize: 16, fontWeight: 700, color: "var(--text-ink)" }}>
             What Changed & Why
           </span>
           <div style={{ width: 20 }} />
@@ -49,14 +49,14 @@ const PlanChanges = () => {
           transition={{ duration: 0.3 }}
         >
           <div style={{ marginTop: 24 }}>
-            <p style={{ fontSize: 11, textTransform: "uppercase", color: "#D4614F", fontWeight: 700, letterSpacing: 1 }}>
+            <p style={{ fontSize: 11, textTransform: "uppercase", color: "hsl(var(--accent))", fontWeight: 700, letterSpacing: 1 }}>
               PLAN UPDATED
             </p>
-            <h1 className="font-display" style={{ fontSize: 28, fontWeight: 800, color: "#111111", lineHeight: 1.2, marginTop: 8 }}>
+            <h1 className="font-display" style={{ fontSize: 28, fontWeight: 800, color: "var(--text-ink)", lineHeight: 1.2, marginTop: 8 }}>
               Your plan shifted for luteal phase.
             </h1>
-            <div style={{ width: 48, height: 4, backgroundColor: "#D4614F", borderRadius: 2, marginTop: 12 }} />
-            <p className="font-body" style={{ fontSize: 15, color: "#4A5568", marginTop: 14, marginBottom: 24, lineHeight: 1.6 }}>
+            <div style={{ width: 48, height: 4, backgroundColor: "hsl(var(--accent))", borderRadius: 2, marginTop: 12 }} />
+            <p className="font-body" style={{ fontSize: 15, color: "var(--text-body)", marginTop: 14, marginBottom: 24, lineHeight: 1.6 }}>
               Here's exactly what we adjusted and the science behind each change.
             </p>
           </div>
@@ -77,13 +77,13 @@ const PlanChanges = () => {
               <p style={{ fontSize: 11, textTransform: "uppercase", color: "var(--text-muted)", letterSpacing: 1 }}>
                 {card.category}
               </p>
-              <p className="font-display" style={{ fontSize: 16, fontWeight: 700, color: "#111111", marginTop: 6 }}>
+              <p className="font-display" style={{ fontSize: 16, fontWeight: 700, color: "var(--text-ink)", marginTop: 6 }}>
                 {card.title}
               </p>
-              <p style={{ fontSize: 10, textTransform: "uppercase", color: "#D4614F", fontWeight: 700, letterSpacing: 1, marginTop: 12 }}>
+              <p style={{ fontSize: 11, textTransform: "uppercase", color: "hsl(var(--accent))", fontWeight: 700, letterSpacing: 1, marginTop: 12 }}>
                 WHY:
               </p>
-              <p className="font-body" style={{ fontSize: 14, color: "#4A5568", lineHeight: 1.65, marginTop: 4 }}>
+              <p className="font-body" style={{ fontSize: 14, color: "var(--text-body)", lineHeight: 1.65, marginTop: 4 }}>
                 {card.why}
               </p>
               {card.note && (
@@ -98,11 +98,11 @@ const PlanChanges = () => {
           ))}
 
           {/* Next update card */}
-          <div style={{ backgroundColor: "#EAF3F3", borderRadius: 18, padding: 18, marginTop: 4, marginBottom: 24 }}>
-            <p style={{ fontSize: 11, textTransform: "uppercase", color: "#0A3D3D", fontWeight: 700, letterSpacing: 1, marginBottom: 8 }}>
+          <div style={{ backgroundColor: "hsl(var(--primary-light))", borderRadius: 18, padding: 18, marginTop: 4, marginBottom: 24 }}>
+            <p style={{ fontSize: 11, textTransform: "uppercase", color: "hsl(var(--primary))", fontWeight: 700, letterSpacing: 1, marginBottom: 8 }}>
               NEXT PLAN UPDATE
             </p>
-            <p className="font-body" style={{ fontSize: 14, color: "#0A3D3D", lineHeight: 1.6 }}>
+            <p className="font-body" style={{ fontSize: 14, color: "hsl(var(--primary))", lineHeight: 1.6 }}>
               Your plan will automatically update when you move into your follicular phase, roughly 10 days from now.
               In follicular phase, oestrogen rises and insulin sensitivity improves, so your nutrition and movement
               targets will shift to take advantage of that window.

@@ -22,13 +22,13 @@ const FocusCard = ({ priority, title, body }: { priority: string; title: string;
     className="bg-card"
     style={{ borderRadius: 18, padding: 20, boxShadow: "var(--shadow-card)", marginTop: 10 }}
   >
-    <p style={{ fontSize: 10, textTransform: "uppercase", color: "#D4614F", fontWeight: 700, letterSpacing: 1 }}>
+    <p style={{ fontSize: 11, textTransform: "uppercase", color: "hsl(var(--accent))", fontWeight: 700, letterSpacing: 1 }}>
       {priority}
     </p>
-    <p className="font-display" style={{ fontSize: 18, fontWeight: 700, color: "#111111", marginTop: 6 }}>
+    <p className="font-display" style={{ fontSize: 18, fontWeight: 700, color: "var(--text-ink)", marginTop: 6 }}>
       {title}
     </p>
-    <p className="font-body" style={{ fontSize: 14, color: "#4A5568", lineHeight: 1.6, marginTop: 8 }}>
+    <p className="font-body" style={{ fontSize: 14, color: "var(--text-body)", lineHeight: 1.6, marginTop: 8 }}>
       {body}
     </p>
   </div>
@@ -61,7 +61,7 @@ const NutritionTab = () => (
           style={{ borderRadius: 14, padding: 14, boxShadow: "var(--shadow-card)" }}
         >
           <span style={{ fontSize: 28 }}>{c.emoji}</span>
-          <span className="font-display" style={{ fontSize: 13, fontWeight: 600, color: "#111111", marginTop: 6 }}>
+          <span className="font-display" style={{ fontSize: 13, fontWeight: 600, color: "var(--text-ink)", marginTop: 6 }}>
             {c.label}
           </span>
           <span className="font-body" style={{ fontSize: 11, color: "var(--text-muted)", marginTop: 2 }}>
@@ -89,11 +89,11 @@ const NutritionTab = () => (
       >
         <span
           className="flex-shrink-0"
-          style={{ width: 8, height: 8, borderRadius: "50%", backgroundColor: "#D4614F", marginTop: 5 }}
+          style={{ width: 8, height: 8, borderRadius: "50%", backgroundColor: "hsl(var(--accent))", marginTop: 5 }}
         />
         <div>
-          <p className="font-display" style={{ fontSize: 15, fontWeight: 600, color: "#111111" }}>{item.title}</p>
-          <p className="font-body" style={{ fontSize: 13, color: "#4A5568", marginTop: 2 }}>{item.desc}</p>
+          <p className="font-display" style={{ fontSize: 15, fontWeight: 600, color: "var(--text-ink)" }}>{item.title}</p>
+          <p className="font-body" style={{ fontSize: 13, color: "var(--text-body)", marginTop: 2 }}>{item.desc}</p>
         </div>
       </div>
     ))}
@@ -108,10 +108,10 @@ const NutritionTab = () => (
         marginBottom: 20,
       }}
     >
-      <p style={{ fontSize: 10, textTransform: "uppercase", color: "#0A3D3D", fontWeight: 700, letterSpacing: 1 }}>
+      <p style={{ fontSize: 11, textTransform: "uppercase", color: "hsl(var(--primary))", fontWeight: 700, letterSpacing: 1 }}>
         LUTEAL PHASE NOW
       </p>
-      <p className="font-body" style={{ fontSize: 14, color: "#0A3D3D", lineHeight: 1.6, marginTop: 6 }}>
+      <p className="font-body" style={{ fontSize: 14, color: "hsl(var(--primary))", lineHeight: 1.6, marginTop: 6 }}>
         Increase magnesium-rich foods this week. Your body is depleting magnesium faster right now, and this drives
         cravings and mood changes. Pumpkin seeds, spinach, dark chocolate and almonds all help.
       </p>
@@ -159,11 +159,11 @@ const MovementTab = () => (
           className="bg-card"
           style={{ borderRadius: 18, padding: 16, boxShadow: "var(--shadow-card)", marginBottom: 10 }}
         >
-          <p className="font-display" style={{ fontSize: 15, fontWeight: 600, color: "#111111" }}>
+          <p className="font-display" style={{ fontSize: 15, fontWeight: 600, color: "var(--text-ink)" }}>
             {item.emoji} {item.title}
           </p>
           <p className="font-body" style={{ fontSize: 12, color: "var(--text-muted)", marginTop: 2 }}>{item.freq}</p>
-          <p className="font-body" style={{ fontSize: 14, color: "#4A5568", marginTop: 4 }}>{item.desc}</p>
+          <p className="font-body" style={{ fontSize: 14, color: "var(--text-body)", marginTop: 4 }}>{item.desc}</p>
         </div>
       ))}
     </div>
@@ -202,10 +202,10 @@ const MindsetTab = () => (
           className="bg-card"
           style={{ borderRadius: 18, padding: 16, boxShadow: "var(--shadow-card)", marginBottom: 10 }}
         >
-          <p className="font-display" style={{ fontSize: 15, fontWeight: 600, color: "#111111" }}>
+          <p className="font-display" style={{ fontSize: 15, fontWeight: 600, color: "var(--text-ink)" }}>
             {item.emoji} {item.title}
           </p>
-          <p className="font-body" style={{ fontSize: 14, color: "#4A5568", marginTop: 4 }}>{item.desc}</p>
+          <p className="font-body" style={{ fontSize: 14, color: "var(--text-body)", marginTop: 4 }}>{item.desc}</p>
         </div>
       ))}
     </div>
@@ -227,13 +227,13 @@ const Plan = () => {
       <div className="w-full max-w-[390px] min-h-[100dvh] flex flex-col pb-20">
         <div className="px-5">
           {/* Header */}
-          <h1 className="font-display" style={{ fontSize: 32, fontWeight: 800, color: "#111111", marginTop: 20 }}>
+          <h1 className="font-display" style={{ fontSize: 32, fontWeight: 800, color: "var(--text-ink)", marginTop: 20 }}>
             Your Plan
           </h1>
           <p className="font-body" style={{ fontSize: 14, color: "var(--text-muted)", marginTop: 4 }}>
             Insulin Resistance · Luteal Phase
           </p>
-          <div style={{ width: 48, height: 4, backgroundColor: "#D4614F", borderRadius: 2, marginTop: 10 }} />
+          <div style={{ width: 48, height: 4, backgroundColor: "hsl(var(--accent))", borderRadius: 2, marginTop: 10 }} />
 
           {/* Banner */}
           <div
@@ -246,16 +246,16 @@ const Plan = () => {
               marginTop: 20,
             }}
           >
-            <p style={{ fontSize: 10, textTransform: "uppercase", color: "#D4614F", fontWeight: 700, letterSpacing: 1, marginBottom: 4 }}>
+            <p style={{ fontSize: 11, textTransform: "uppercase", color: "hsl(var(--accent))", fontWeight: 700, letterSpacing: 1, marginBottom: 4 }}>
               PLAN UPDATED
             </p>
-            <p className="font-body" style={{ fontSize: 13, color: "#4A5568" }}>
+            <p className="font-body" style={{ fontSize: 13, color: "var(--text-body)" }}>
               Based on your last 14 days of logs, we've adjusted your focus areas.
             </p>
             <p
               onClick={() => navigate("/plan-changes")}
               className="font-display"
-              style={{ fontSize: 13, fontWeight: 600, color: "#0A3D3D", marginTop: 6, cursor: "pointer" }}
+              style={{ fontSize: 13, fontWeight: 600, color: "hsl(var(--primary))", marginTop: 6, cursor: "pointer" }}
             >
               See what changed →
             </p>
@@ -271,8 +271,8 @@ const Plan = () => {
                 style={{
                   fontSize: 14,
                   fontWeight: activeTab === tab.key ? 700 : 400,
-                  color: activeTab === tab.key ? "#0A3D3D" : "var(--text-muted)",
-                  borderBottom: activeTab === tab.key ? "2px solid #0A3D3D" : "2px solid transparent",
+                  color: activeTab === tab.key ? "hsl(var(--primary))" : "var(--text-muted)",
+                  borderBottom: activeTab === tab.key ? "2px solid hsl(var(--primary))" : "2px solid transparent",
                 }}
               >
                 {tab.label}
