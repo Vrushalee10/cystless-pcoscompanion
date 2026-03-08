@@ -108,7 +108,7 @@ const NutritionTab = () => (
         marginBottom: 20,
       }}
     >
-      <p style={{ fontSize: 10, textTransform: "uppercase", color: "#0A3D3D", fontWeight: 700, letterSpacing: 1 }}>
+      <p style={{ fontSize: 11, textTransform: "uppercase", color: "hsl(var(--primary))", fontWeight: 700, letterSpacing: 1 }}>
         LUTEAL PHASE NOW
       </p>
       <p className="font-body" style={{ fontSize: 14, color: "#0A3D3D", lineHeight: 1.6, marginTop: 6 }}>
