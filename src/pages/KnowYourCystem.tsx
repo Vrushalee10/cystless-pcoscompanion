@@ -68,7 +68,7 @@ const KnowYourCystem = () => {
               You're in your luteal phase, and your body is doing exactly what it's designed to do.
             </p>
             <p className="font-body mt-[10px]" style={{ fontSize: 14, color: "var(--text-body)", lineHeight: 1.7 }}>
-              After ovulation, progesterone rises sharply. This increases your body's demand for magnesium — a mineral
+              After ovulation, progesterone rises sharply. This increases your body's demand for magnesium, a mineral
               that regulates blood sugar, insulin sensitivity and dopamine. As magnesium dips, your brain sends a
               craving signal for fast-release carbohydrates to restore energy quickly. It's not a lack of willpower.
               It's chemistry.
