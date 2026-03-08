@@ -184,21 +184,6 @@ const Home = () => {
                 ))}
               </div>
             </div>
-
-            {/* Sleep */}
-            <div
-              className="flex-1 bg-card flex flex-col items-center justify-center p-[14px_10px]"
-              style={{ borderRadius: 14, boxShadow: "var(--shadow-card)", minHeight: 80 }}
-            >
-              <span style={{ fontSize: 20 }}>🌙</span>
-              <button
-                className="font-body mt-1 flex items-center gap-0.5"
-                style={{ fontSize: 12, fontWeight: 600, color: "hsl(var(--primary))" }}
-              >
-                Log
-                <ArrowRight className="h-3 w-3" />
-              </button>
-            </div>
           </div>
 
           {/* Today's Focus */}

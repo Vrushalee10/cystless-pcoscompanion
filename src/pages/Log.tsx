@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { Plus, Minus, Mic } from "lucide-react";
+import { Plus, Minus, Mic, ArrowLeft } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import BottomNav from "@/components/BottomNav";
 
@@ -116,12 +116,17 @@ const Log = () => {
           transition={{ duration: 0.4 }}
         >
           {/* Header */}
-          <h1
-            className="font-display mt-5"
-            style={{ fontSize: 32, fontWeight: 700, color: "var(--text-ink)" }}
-          >
-            Log Today
-          </h1>
+          <div className="flex items-center gap-3 mt-5">
+            <button onClick={() => navigate("/home")}>
+              <ArrowLeft className="h-5 w-5 text-muted-foreground" />
+            </button>
+            <h1
+              className="font-display"
+              style={{ fontSize: 32, fontWeight: 700, color: "var(--text-ink)" }}
+            >
+              Log Today
+            </h1>
+          </div>
           <p className="font-body mt-1" style={{ fontSize: 14, color: "var(--text-muted)" }}>
             Sunday, 8 March
           </p>
