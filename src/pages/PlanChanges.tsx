@@ -33,7 +33,7 @@ const PlanChanges = () => {
         {/* Header */}
         <div className="flex items-center justify-between px-5 pt-4 pb-3">
           <button onClick={() => navigate("/plan")}>
-            <ArrowLeft className="h-5 w-5" style={{ color: "#94A3B8" }} />
+            <ArrowLeft className="h-5 w-5" style={{ color: "var(--text-muted)" }} />
           </button>
           <span className="font-display" style={{ fontSize: 16, fontWeight: 700, color: "#111111" }}>
             What Changed & Why
