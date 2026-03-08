@@ -6,9 +6,6 @@ import InlineCheckIn from "@/components/InlineCheckIn";
 
 const Home = () => {
   const navigate = useNavigate();
-  const [selectedMood, setSelectedMood] = useState<number | null>(null);
-  const [energy, setEnergy] = useState<number>(0);
-
   return (
     <div className="min-h-[100dvh] bg-background flex justify-center">
       <div className="w-full max-w-[390px] min-h-[100dvh] flex flex-col px-5 pb-[80px]">
