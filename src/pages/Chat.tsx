@@ -13,7 +13,7 @@ interface Message {
 const initialMessages: Message[] = [
   {
     role: "ai",
-    text: "Hey Vrushali 💚 No sugar-coating, no judgement — just us. You're on Day 18, deep in luteal phase. Your body is doing a lot right now. What's on your mind?",
+    text: "Hey Vrushali 💚 No sugar-coating, no judgement, just us. You're on Day 18, deep in luteal phase. Your body is doing a lot right now. What's on your mind?",
     time: "9:02 AM",
   },
 ];
