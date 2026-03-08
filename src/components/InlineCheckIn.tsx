@@ -1,13 +1,15 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, Check } from "lucide-react";
 
 const moods = ["😞", "😕", "😐", "🙂", "😊"];
 const sleepHours = [4, 5, 6, 7, 8, 9, 10];
 
-type CheckInStep = "idle" | "mood" | "energy" | "sleep" | "saved";
+type CheckInStep = "idle" | "mood" | "energy" | "sleep" | "nudge";
 
 const InlineCheckIn = () => {
+  const navigate = useNavigate();
   const [step, setStep] = useState<CheckInStep>("idle");
   const [selectedMood, setSelectedMood] = useState<number | null>(null);
   const [energy, setEnergy] = useState<number>(0);
@@ -33,11 +35,20 @@ const InlineCheckIn = () => {
     setShowConfirmation(true);
     setTimeout(() => {
       setShowConfirmation(false);
-      setLogged(true);
-      setStep("idle");
-      setShowCysta(true);
-      setTimeout(() => setShowCysta(false), 3000);
-    }, 2000);
+      setStep("nudge");
+    }, 1500);
+  };
+
+  const handleDone = () => {
+    setLogged(true);
+    setStep("idle");
+    setShowCysta(true);
+    setTimeout(() => setShowCysta(false), 3000);
+  };
+
+  const handleTellMore = () => {
+    setLogged(true);
+    navigate("/log?layer=2");
   };
 
   const stepVariants = {
