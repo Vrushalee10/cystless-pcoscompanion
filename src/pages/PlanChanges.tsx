@@ -88,7 +88,7 @@ const PlanChanges = () => {
               </p>
               {card.note && (
                 <div style={{ backgroundColor: "#F7F4F0", borderRadius: 12, padding: 12, marginTop: 10 }}>
-                  <p className="font-body" style={{ fontSize: 12, fontStyle: "italic", color: "#94A3B8" }}>
+                  <p className="font-body" style={{ fontSize: 12, fontStyle: "italic", color: "var(--text-muted)" }}>
                     {card.note}
                   </p>
                 </div>
