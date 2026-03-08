@@ -96,50 +96,25 @@ const InlineCheckIn = () => {
               className="bg-card p-4"
               style={{ borderRadius: 14, boxShadow: "var(--shadow-card)" }}
             >
-              <div className="flex items-center justify-between">
-                <div className="flex flex-col items-center flex-1">
-                  <span className="text-label" style={{ fontSize: 11, color: "var(--text-muted)", marginBottom: 8 }}>
-                    MOOD
+              <span className="text-label" style={{ fontSize: 11, color: "var(--text-muted)", marginBottom: 8, display: "block", textAlign: "center" }}>
+                MOOD
+              </span>
+              <div className="flex gap-1 justify-center">
+                {moods.map((emoji, i) => (
+                  <span
+                    key={i}
+                    className="flex items-center justify-center"
+                    style={{
+                      width: 32,
+                      height: 32,
+                      fontSize: 20,
+                      borderRadius: "50%",
+                      backgroundColor: logged && selectedMood === i ? "hsl(var(--primary-light))" : "transparent",
+                    }}
+                  >
+                    {emoji}
                   </span>
-                  <div className="flex gap-1">
-                    {moods.map((emoji, i) => (
-                      <span
-                        key={i}
-                        className="flex items-center justify-center"
-                        style={{
-                          width: 32,
-                          height: 32,
-                          fontSize: 20,
-                          borderRadius: "50%",
-                          backgroundColor: logged && selectedMood === i ? "hsl(var(--primary-light))" : "transparent",
-                        }}
-                      >
-                        {emoji}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-                <div
-                  style={{ width: 1, height: 40, backgroundColor: "hsl(var(--border))" }}
-                />
-                <div className="flex flex-col items-center flex-1">
-                  <span className="text-label" style={{ fontSize: 11, color: "var(--text-muted)", marginBottom: 8 }}>
-                    ENERGY
-                  </span>
-                  <div className="flex gap-[6px] mt-1">
-                    {[1, 2, 3, 4, 5].map((level) => (
-                      <span
-                        key={level}
-                        className="rounded-full"
-                        style={{
-                          width: 10,
-                          height: 10,
-                          backgroundColor: level <= energy ? "hsl(var(--primary))" : "hsl(var(--border))",
-                        }}
-                      />
-                    ))}
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
           </motion.div>
