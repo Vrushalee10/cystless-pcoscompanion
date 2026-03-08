@@ -22,6 +22,7 @@ import KnowYourCystem from "./pages/KnowYourCystem";
 import Log from "./pages/Log";
 import Chat from "./pages/Chat";
 import Plan from "./pages/Plan";
+import PlanChanges from "./pages/PlanChanges";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -52,6 +53,7 @@ const App = () => (
             <Route path="/log" element={<Log />} />
             <Route path="/chat" element={<Chat />} />
             <Route path="/plan" element={<Plan />} />
+            <Route path="/plan-changes" element={<PlanChanges />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>

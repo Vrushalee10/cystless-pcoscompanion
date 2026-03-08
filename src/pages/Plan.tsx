@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import BottomNav from "@/components/BottomNav";
 
@@ -203,6 +204,7 @@ const tabContent: Record<Tab, React.ReactNode> = {
 };
 
 const Plan = () => {
+  const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState<Tab>("nutrition");
 
   return (
@@ -235,7 +237,11 @@ const Plan = () => {
             <p className="font-body" style={{ fontSize: 13, color: "#4A5568" }}>
               Based on your last 14 days of logs, we've adjusted your focus areas.
             </p>
-            <p className="font-display" style={{ fontSize: 13, fontWeight: 600, color: "#0A3D3D", marginTop: 6, cursor: "pointer" }}>
+            <p
+              onClick={() => navigate("/plan-changes")}
+              className="font-display"
+              style={{ fontSize: 13, fontWeight: 600, color: "#0A3D3D", marginTop: 6, cursor: "pointer" }}
+            >
               See what changed →
             </p>
           </div>
