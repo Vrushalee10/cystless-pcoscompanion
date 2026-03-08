@@ -90,7 +90,7 @@ const QuizScreen5 = () => {
           className="font-body italic text-center mt-5"
           style={{ fontSize: "13px", color: "var(--text-muted)" }}
         >
-          Chronic low-grade inflammation is found in most women with PCOS — and is often the missing piece.
+          Chronic low-grade inflammation is found in most women with PCOS, and is often the missing piece.
         </p>
       </div>
 

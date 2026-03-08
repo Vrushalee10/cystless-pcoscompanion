@@ -51,7 +51,7 @@ const QuizScreen2 = () => {
           className="font-body italic text-center mt-5"
           style={{ fontSize: "13px", color: "var(--text-muted)" }}
         >
-          The pill can suppress PCOS symptoms — stopping it sometimes reveals patterns that were always there.
+          The pill can suppress PCOS symptoms. Stopping it sometimes reveals patterns that were always there.
         </p>
       </div>
 

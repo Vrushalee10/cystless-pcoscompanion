@@ -48,7 +48,7 @@ const QuizScreen7 = () => {
           className="font-body italic text-center mt-5"
           style={{ fontSize: "13px", color: "var(--text-muted)" }}
         >
-          Chronic stress raises cortisol and DHEA-S — two hormones that directly worsen PCOS symptoms.
+          Chronic stress raises cortisol and DHEA-S, two hormones that directly worsen PCOS symptoms.
         </p>
       </div>
 
