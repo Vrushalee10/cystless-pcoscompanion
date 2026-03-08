@@ -1,3 +1,4 @@
+import { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { ArrowLeft, Send } from "lucide-react";
 import { motion } from "framer-motion";
@@ -9,7 +10,7 @@ interface Message {
   time: string;
 }
 
-const messages: Message[] = [
+const initialMessages: Message[] = [
   {
     role: "ai",
     text: "Good morning Vrushali. You're on Day 18 — deep in your luteal phase. How are you feeling today?",
@@ -36,6 +37,22 @@ const messages: Message[] = [
     time: "9:05 AM",
   },
 ];
+
+const getAiResponse = (userText: string): string => {
+  const lower = userText.toLowerCase();
+  if (lower.includes("tired") || lower.includes("fatigue")) {
+    return "That tracks for Day 18. In luteal phase, progesterone peaks then drops — this directly affects energy. Your logs show this has been a pattern for you the last few days. Try a protein-rich snack this afternoon and a short walk — both help stabilise energy without spiking cortisol.";
+  }
+  if (lower.includes("craving") || lower.includes("sugar")) {
+    return "Completely hormonal — not willpower. Low magnesium in luteal phase triggers carb cravings directly. A small handful of pumpkin seeds or dark chocolate (70%+) can interrupt this within 20 minutes.";
+  }
+  return "I'm still learning your full pattern — but based on your cycle phase and PCOS type, I'd look at your logs from the last few days for clues. Want me to walk you through what I'm seeing?";
+};
+
+const formatTime = (): string => {
+  const now = new Date();
+  return now.toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit", hour12: true });
+};
 
 const AiAvatar = ({ size = 28 }: { size?: number }) => (
   <div
@@ -83,6 +100,42 @@ const TypingIndicator = () => (
 
 const Chat = () => {
   const navigate = useNavigate();
+  const [messages, setMessages] = useState<Message[]>(initialMessages);
+  const [input, setInput] = useState("");
+  const [isTyping, setIsTyping] = useState(false);
+  const chatEndRef = useRef<HTMLDivElement>(null);
+
+  const scrollToBottom = () => {
+    chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [messages, isTyping]);
+
+  const handleSend = () => {
+    const text = input.trim();
+    if (!text) return;
+
+    const userMsg: Message = { role: "user", text, time: formatTime() };
+    setMessages((prev) => [...prev, userMsg]);
+    setInput("");
+
+    setTimeout(() => setIsTyping(true), 1500);
+
+    setTimeout(() => {
+      setIsTyping(false);
+      const aiMsg: Message = { role: "ai", text: getAiResponse(text), time: formatTime() };
+      setMessages((prev) => [...prev, aiMsg]);
+    }, 4000);
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === "Enter" && !e.shiftKey) {
+      e.preventDefault();
+      handleSend();
+    }
+  };
 
   return (
     <div className="min-h-[100dvh] bg-background flex justify-center">
@@ -108,11 +161,7 @@ const Chat = () => {
 
         {/* Chat area */}
         <div className="flex-1 overflow-y-auto px-5 py-4" style={{ paddingBottom: 140 }}>
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.3 }}
-          >
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.3 }}>
             {messages.map((msg, idx) =>
               msg.role === "ai" ? (
                 <div key={idx} className="flex items-end gap-2 mb-4">
@@ -132,10 +181,7 @@ const Chat = () => {
                     >
                       {msg.text}
                     </div>
-                    <span
-                      className="font-body mt-1"
-                      style={{ fontSize: 11, color: "var(--text-muted)" }}
-                    >
+                    <span className="font-body mt-1" style={{ fontSize: 11, color: "var(--text-muted)" }}>
                       {msg.time}
                     </span>
                   </div>
@@ -156,16 +202,14 @@ const Chat = () => {
                   >
                     {msg.text}
                   </div>
-                  <span
-                    className="font-body mt-1"
-                    style={{ fontSize: 11, color: "var(--text-muted)" }}
-                  >
+                  <span className="font-body mt-1" style={{ fontSize: 11, color: "var(--text-muted)" }}>
                     {msg.time}
                   </span>
                 </div>
               )
             )}
-            <TypingIndicator />
+            {isTyping && <TypingIndicator />}
+            <div ref={chatEndRef} />
           </motion.div>
         </div>
 
@@ -177,6 +221,9 @@ const Chat = () => {
           <div className="w-full max-w-[390px] flex items-center gap-[10px] px-4 py-3">
             <input
               type="text"
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              onKeyDown={handleKeyDown}
               placeholder="Ask anything about your PCOS..."
               className="flex-1 font-body outline-none"
               style={{
@@ -188,6 +235,7 @@ const Chat = () => {
               }}
             />
             <button
+              onClick={handleSend}
               className="flex-shrink-0 flex items-center justify-center"
               style={{
                 width: 44,
