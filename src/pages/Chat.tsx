@@ -126,7 +126,7 @@ const Chat = () => {
           style={{ boxShadow: "0 2px 8px rgba(0,0,0,0.05)", zIndex: 10 }}
         >
           <div className="w-full flex items-center justify-between">
-            <button onClick={() => navigate(-1)}>
+            <button onClick={() => navigate("/home")}>
               <ArrowLeft className="h-5 w-5" style={{ color: "var(--text-muted)" }} />
             </button>
             <span className="font-display text-base font-bold" style={{ color: "var(--text-ink)" }}>
