@@ -202,7 +202,7 @@ const MindsetTab = () => (
           className="bg-card"
           style={{ borderRadius: 18, padding: 16, boxShadow: "var(--shadow-card)", marginBottom: 10 }}
         >
-          <p className="font-display" style={{ fontSize: 15, fontWeight: 600, color: "#111111" }}>
+          <p className="font-display" style={{ fontSize: 15, fontWeight: 600, color: "var(--text-ink)" }}>
             {item.emoji} {item.title}
           </p>
           <p className="font-body" style={{ fontSize: 14, color: "#4A5568", marginTop: 4 }}>{item.desc}</p>
