@@ -25,6 +25,7 @@ import Chat from "./pages/Chat";
 import Plan from "./pages/Plan";
 import PlanChanges from "./pages/PlanChanges";
 import Insights from "./pages/Insights";
+import ConnectDevice from "./pages/ConnectDevice";
 import Onboarding from "./pages/Onboarding";
 import NotFound from "./pages/NotFound";
 
@@ -61,6 +62,7 @@ const App = () => (
             <Route path="/plan" element={<Plan />} />
             <Route path="/plan-changes" element={<PlanChanges />} />
             <Route path="/insights" element={<Insights />} />
+            <Route path="/connect-device" element={<ConnectDevice />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
