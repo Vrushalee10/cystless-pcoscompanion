@@ -74,7 +74,7 @@ const PlanChanges = () => {
                 style={{ width: "100%", height: 80, objectFit: "cover" }}
               />
               <div style={{ padding: 20 }}>
-              <p style={{ fontSize: 11, textTransform: "uppercase", color: "#94A3B8", letterSpacing: 1 }}>
+              <p style={{ fontSize: 11, textTransform: "uppercase", color: "var(--text-muted)", letterSpacing: 1 }}>
                 {card.category}
               </p>
               <p className="font-display" style={{ fontSize: 16, fontWeight: 700, color: "#111111", marginTop: 6 }}>
