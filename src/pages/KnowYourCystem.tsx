@@ -3,10 +3,10 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 
 const actionItems = [
-  "Dark chocolate (70%+) — highest food source of magnesium",
-  "Pumpkin seeds or almonds — magnesium-rich and blood-sugar stabilising",
-  "Spinach or leafy greens — magnesium plus fibre, the best combo",
-  "Protein-rich snack — slows glucose absorption, reduces craving intensity",
+  "Dark chocolate (70%+), the highest food source of magnesium",
+  "Pumpkin seeds or almonds, magnesium-rich and blood-sugar stabilising",
+  "Spinach or leafy greens, magnesium plus fibre, the best combo",
+  "Protein-rich snack, slows glucose absorption and reduces craving intensity",
 ];
 
 const KnowYourCystem = () => {
