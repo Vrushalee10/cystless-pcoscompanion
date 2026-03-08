@@ -24,6 +24,7 @@ import Log from "./pages/Log";
 import Chat from "./pages/Chat";
 import Plan from "./pages/Plan";
 import PlanChanges from "./pages/PlanChanges";
+import Onboarding from "./pages/Onboarding";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -37,6 +38,7 @@ const App = () => (
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Index />} />
+            <Route path="/onboarding/:step" element={<Onboarding />} />
             <Route path="/quiz/1" element={<QuizScreen1 />} />
             <Route path="/quiz/2" element={<QuizScreen2 />} />
             <Route path="/quiz/3" element={<QuizScreen3 />} />
