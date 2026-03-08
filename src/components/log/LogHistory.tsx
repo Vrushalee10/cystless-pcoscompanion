@@ -36,6 +36,7 @@ const EnergyDots = ({ level }: { level: number }) => (
 );
 
 const LogHistory = () => {
+  const navigate = useNavigate();
   return (
     <motion.div
       initial={{ opacity: 0, y: 8 }}
