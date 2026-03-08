@@ -66,7 +66,7 @@ const QuizScreen9 = () => {
           className="font-display"
           style={{ fontSize: "30px", fontWeight: 700, color: "var(--text-ink)", lineHeight: 1.25 }}
         >
-          Last few things — does any of this apply to you?
+          Last few things, does any of this apply to you?
         </h1>
         <p className="font-body mt-2" style={{ fontSize: "14px", color: "var(--text-body)" }}>
           Select all that apply.
