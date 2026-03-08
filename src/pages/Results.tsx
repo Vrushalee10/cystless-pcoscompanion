@@ -51,7 +51,7 @@ const TYPE_DATA: Record<keyof Scores, {
   PP: {
     name: "Post-Pill",
     tag: "Transition Pattern",
-    description: "Stopping hormonal contraceptives can unmask PCOS symptoms the pill was suppressing — or trigger a temporary hormonal rebound. Symptoms like acne, hair changes and irregular cycles often appear 1–3 months after stopping. This pattern is often temporary, but needs specific nutritional support to resolve.",
+    description: "Stopping hormonal contraceptives can unmask PCOS symptoms the pill was suppressing, or trigger a temporary hormonal rebound. Symptoms like acne, hair changes and irregular cycles often appear 1–3 months after stopping. This pattern is often temporary, but needs specific nutritional support to resolve.",
     focusareas: [
       "Hormone rebalancing and cycle restoration",
       "Zinc and B6 repletion (commonly depleted by the pill)",
