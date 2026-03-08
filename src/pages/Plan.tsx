@@ -28,7 +28,7 @@ const FocusCard = ({ priority, title, body }: { priority: string; title: string;
     <p className="font-display" style={{ fontSize: 18, fontWeight: 700, color: "var(--text-ink)", marginTop: 6 }}>
       {title}
     </p>
-    <p className="font-body" style={{ fontSize: 14, color: "#4A5568", lineHeight: 1.6, marginTop: 8 }}>
+    <p className="font-body" style={{ fontSize: 14, color: "var(--text-body)", lineHeight: 1.6, marginTop: 8 }}>
       {body}
     </p>
   </div>
