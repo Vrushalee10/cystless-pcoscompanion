@@ -1,0 +1,319 @@
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ArrowRight, Check } from "lucide-react";
+
+const moods = ["😞", "😕", "😐", "🙂", "😊"];
+const sleepHours = [4, 5, 6, 7, 8, 9, 10];
+
+type CheckInStep = "idle" | "mood" | "energy" | "sleep" | "saved";
+
+const InlineCheckIn = () => {
+  const [step, setStep] = useState<CheckInStep>("idle");
+  const [selectedMood, setSelectedMood] = useState<number | null>(null);
+  const [energy, setEnergy] = useState<number>(0);
+  const [sleepHour, setSleepHour] = useState<number | null>(null);
+  const [sleepQuality, setSleepQuality] = useState<"restful" | "broken" | null>(null);
+  const [showConfirmation, setShowConfirmation] = useState(false);
+  const [logged, setLogged] = useState(false);
+  const [showCysta, setShowCysta] = useState(false);
+
+  const handleMoodSelect = (i: number) => {
+    setSelectedMood(i);
+    setTimeout(() => setStep("energy"), 500);
+  };
+
+  const handleEnergySelect = (level: number) => {
+    setEnergy(level);
+    setTimeout(() => setStep("sleep"), 500);
+  };
+
+  const canSave = sleepHour !== null && sleepQuality !== null;
+
+  const handleSave = () => {
+    setShowConfirmation(true);
+    setTimeout(() => {
+      setShowConfirmation(false);
+      setLogged(true);
+      setStep("idle");
+      setShowCysta(true);
+      setTimeout(() => setShowCysta(false), 3000);
+    }, 2000);
+  };
+
+  const stepVariants = {
+    initial: { opacity: 0, x: 40 },
+    animate: { opacity: 1, x: 0 },
+    exit: { opacity: 0, x: -40 },
+  };
+
+  return (
+    <>
+      {/* Header */}
+      <div className="flex items-center justify-between mt-7">
+        <span className="text-label" style={{ color: "var(--text-muted)" }}>
+          TODAY'S CHECK-IN
+        </span>
+        {step === "idle" && (
+          <button
+            onClick={() => !logged && setStep("mood")}
+            className="font-body flex items-center gap-0.5"
+            style={{
+              fontSize: 13,
+              fontWeight: 600,
+              color: "hsl(var(--primary))",
+              cursor: logged ? "default" : "pointer",
+            }}
+            disabled={logged}
+          >
+            {logged ? "Logged today ✓" : <>Quick log <ArrowRight className="h-3.5 w-3.5" /></>}
+          </button>
+        )}
+      </div>
+
+      {/* Expanded check-in flow */}
+      <AnimatePresence mode="wait">
+        {step === "mood" && (
+          <motion.div
+            key="mood"
+            variants={stepVariants}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            transition={{ duration: 0.25 }}
+            className="bg-card mt-3 p-4"
+            style={{ borderRadius: 14, boxShadow: "var(--shadow-card)" }}
+          >
+            <p className="font-body" style={{ fontSize: 14, color: "#111111", marginBottom: 12 }}>
+              How are you feeling?
+            </p>
+            <div className="flex gap-2 justify-center">
+              {moods.map((emoji, i) => (
+                <button
+                  key={i}
+                  onClick={() => handleMoodSelect(i)}
+                  className="flex items-center justify-center transition-colors"
+                  style={{
+                    width: 40,
+                    height: 40,
+                    fontSize: 22,
+                    borderRadius: "50%",
+                    backgroundColor: selectedMood === i ? "hsl(var(--primary-light))" : "transparent",
+                    border: selectedMood === i ? "2px solid hsl(var(--primary))" : "2px solid transparent",
+                  }}
+                >
+                  {emoji}
+                </button>
+              ))}
+            </div>
+          </motion.div>
+        )}
+
+        {step === "energy" && (
+          <motion.div
+            key="energy"
+            variants={stepVariants}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            transition={{ duration: 0.25 }}
+            className="bg-card mt-3 p-4"
+            style={{ borderRadius: 14, boxShadow: "var(--shadow-card)" }}
+          >
+            <p className="font-body" style={{ fontSize: 14, color: "#111111", marginBottom: 12 }}>
+              Energy today?
+            </p>
+            <div className="flex gap-3 justify-center">
+              {[1, 2, 3, 4, 5].map((level) => (
+                <button
+                  key={level}
+                  onClick={() => handleEnergySelect(level)}
+                  className="rounded-full transition-colors"
+                  style={{
+                    width: 14,
+                    height: 14,
+                    backgroundColor: level <= energy ? "hsl(var(--primary))" : "hsl(var(--border))",
+                  }}
+                />
+              ))}
+            </div>
+          </motion.div>
+        )}
+
+        {step === "sleep" && (
+          <motion.div
+            key="sleep"
+            variants={stepVariants}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            transition={{ duration: 0.25 }}
+            className="bg-card mt-3 p-4"
+            style={{ borderRadius: 14, boxShadow: "var(--shadow-card)" }}
+          >
+            <p className="font-body" style={{ fontSize: 14, color: "#111111", marginBottom: 12 }}>
+              Sleep last night?
+            </p>
+            <div className="flex gap-2 justify-center mb-3">
+              {sleepHours.map((h) => (
+                <button
+                  key={h}
+                  onClick={() => setSleepHour(h)}
+                  className="font-body flex items-center justify-center transition-colors"
+                  style={{
+                    width: 36,
+                    height: 36,
+                    fontSize: 14,
+                    fontWeight: 600,
+                    borderRadius: 10,
+                    backgroundColor: sleepHour === h ? "hsl(var(--primary))" : "hsl(var(--muted))",
+                    color: sleepHour === h ? "white" : "var(--text-body)",
+                  }}
+                >
+                  {h}
+                </button>
+              ))}
+            </div>
+            <div className="flex gap-2 justify-center mb-4">
+              {(["restful", "broken"] as const).map((q) => (
+                <button
+                  key={q}
+                  onClick={() => setSleepQuality(q)}
+                  className="font-body transition-colors"
+                  style={{
+                    fontSize: 13,
+                    fontWeight: 600,
+                    padding: "6px 16px",
+                    borderRadius: 100,
+                    backgroundColor: sleepQuality === q ? "hsl(var(--primary))" : "hsl(var(--muted))",
+                    color: sleepQuality === q ? "white" : "var(--text-body)",
+                  }}
+                >
+                  {q === "restful" ? "Restful" : "Broken"}
+                </button>
+              ))}
+            </div>
+
+            <AnimatePresence>
+              {showConfirmation ? (
+                <motion.div
+                  key="confirm"
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  className="flex items-center justify-center gap-2 py-3"
+                >
+                  <motion.div
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    transition={{ type: "spring", stiffness: 300, damping: 15 }}
+                  >
+                    <Check className="h-5 w-5" style={{ color: "#16a34a" }} />
+                  </motion.div>
+                  <span className="font-body" style={{ fontSize: 13, color: "hsl(var(--primary))" }}>
+                    Logged ✓ — I've noted today.
+                  </span>
+                </motion.div>
+              ) : (
+                <button
+                  onClick={handleSave}
+                  disabled={!canSave}
+                  className="w-full font-body transition-opacity"
+                  style={{
+                    height: 40,
+                    borderRadius: 18,
+                    backgroundColor: "hsl(var(--primary))",
+                    color: "white",
+                    fontSize: 15,
+                    fontWeight: 600,
+                    opacity: canSave ? 1 : 0.4,
+                  }}
+                >
+                  Save Check-in
+                </button>
+              )}
+            </AnimatePresence>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Compact cards when idle */}
+      {step === "idle" && (
+        <div className="flex gap-[10px] mt-3">
+          <div
+            className="flex-1 bg-card flex flex-col items-center p-[14px_10px]"
+            style={{ borderRadius: 14, boxShadow: "var(--shadow-card)", minHeight: 80 }}
+          >
+            <span className="text-label" style={{ fontSize: 11, color: "var(--text-muted)", marginBottom: 8 }}>
+              MOOD
+            </span>
+            <div className="flex gap-1">
+              {moods.map((emoji, i) => (
+                <span
+                  key={i}
+                  className="flex items-center justify-center"
+                  style={{
+                    width: 32,
+                    height: 32,
+                    fontSize: 20,
+                    borderRadius: "50%",
+                    backgroundColor: logged && selectedMood === i ? "hsl(var(--primary-light))" : "transparent",
+                  }}
+                >
+                  {emoji}
+                </span>
+              ))}
+            </div>
+          </div>
+          <div
+            className="flex-1 bg-card flex flex-col items-center p-[14px_10px]"
+            style={{ borderRadius: 14, boxShadow: "var(--shadow-card)", minHeight: 80 }}
+          >
+            <span className="text-label" style={{ fontSize: 11, color: "var(--text-muted)", marginBottom: 8 }}>
+              ENERGY
+            </span>
+            <div className="flex gap-[6px] mt-1">
+              {[1, 2, 3, 4, 5].map((level) => (
+                <span
+                  key={level}
+                  className="rounded-full"
+                  style={{
+                    width: 10,
+                    height: 10,
+                    backgroundColor: level <= energy ? "hsl(var(--primary))" : "hsl(var(--border))",
+                  }}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Cysta toast */}
+      <AnimatePresence>
+        {showCysta && (
+          <motion.div
+            initial={{ y: 100, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: 100, opacity: 0 }}
+            transition={{ type: "spring", stiffness: 300, damping: 25 }}
+            className="fixed bottom-24 left-0 right-0 flex justify-center z-50 px-5"
+          >
+            <div
+              className="bg-card font-body w-full max-w-[370px] text-center"
+              style={{
+                fontSize: 14,
+                color: "hsl(var(--primary))",
+                padding: "14px 20px",
+                borderRadius: 16,
+                boxShadow: "0 8px 30px rgba(0,0,0,0.12)",
+              }}
+            >
+              Got it. Keep going — you're building a pattern worth reading. 💚
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
+  );
+};
+
+export default InlineCheckIn;

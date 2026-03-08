@@ -1,16 +1,11 @@
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import BottomNav from "@/components/BottomNav";
-
-const moods = ["😞", "😕", "😐", "🙂", "😊"];
+import InlineCheckIn from "@/components/InlineCheckIn";
 
 const Home = () => {
   const navigate = useNavigate();
-  const [selectedMood, setSelectedMood] = useState<number | null>(null);
-  const [energy, setEnergy] = useState<number>(0);
-
   return (
     <div className="min-h-[100dvh] bg-background flex justify-center">
       <div className="w-full max-w-[390px] min-h-[100dvh] flex flex-col px-5 pb-[80px]">
@@ -130,76 +125,7 @@ const Home = () => {
             </button>
           </div>
 
-          {/* Daily Check-in */}
-          <div className="flex items-center justify-between mt-7">
-            <span className="text-label" style={{ color: "var(--text-muted)" }}>
-              TODAY'S CHECK-IN
-            </span>
-            <button
-              onClick={() => navigate("/log")}
-              className="font-body flex items-center gap-0.5"
-              style={{ fontSize: 13, fontWeight: 600, color: "hsl(var(--primary))" }}
-            >
-              Quick log
-              <ArrowRight className="h-3.5 w-3.5" />
-            </button>
-          </div>
-
-          <div className="flex gap-[10px] mt-3">
-            {/* Mood */}
-            <div
-              className="flex-1 bg-card flex flex-col items-center p-[14px_10px]"
-              style={{ borderRadius: 14, boxShadow: "var(--shadow-card)", minHeight: 80 }}
-            >
-              <span className="text-label" style={{ fontSize: 11, color: "var(--text-muted)", marginBottom: 8 }}>
-                MOOD
-              </span>
-              <div className="flex gap-1">
-                {moods.map((emoji, i) => (
-                  <button
-                    key={i}
-                    onClick={() => setSelectedMood(i)}
-                    className="flex items-center justify-center"
-                    style={{
-                      width: 32,
-                      height: 32,
-                      fontSize: 20,
-                      borderRadius: "50%",
-                      backgroundColor: selectedMood === i ? "hsl(var(--primary-light))" : "transparent",
-                      transition: "background-color 0.15s",
-                    }}
-                  >
-                    {emoji}
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            {/* Energy */}
-            <div
-              className="flex-1 bg-card flex flex-col items-center p-[14px_10px]"
-              style={{ borderRadius: 14, boxShadow: "var(--shadow-card)", minHeight: 80 }}
-            >
-              <span className="text-label" style={{ fontSize: 11, color: "var(--text-muted)", marginBottom: 8 }}>
-                ENERGY
-              </span>
-              <div className="flex gap-[6px] mt-1">
-                {[1, 2, 3, 4, 5].map((level) => (
-                  <button
-                    key={level}
-                    onClick={() => setEnergy(level)}
-                    className="rounded-full transition-colors"
-                    style={{
-                      width: 10,
-                      height: 10,
-                      backgroundColor:
-                        level <= energy ? "hsl(var(--primary))" : "hsl(var(--border))",
-                    }}
-                  />
-                ))}
-              </div>
-            </div>
-          </div>
+          <InlineCheckIn />
 
           {/* Today's Focus */}
           <p className="text-label mt-7" style={{ color: "var(--text-muted)" }}>
