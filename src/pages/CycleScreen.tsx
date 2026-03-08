@@ -124,7 +124,7 @@ const CycleScreen = () => {
                 <div className="flex items-center gap-2">
                   <span style={{ fontSize: 20 }}>{phase.emoji}</span>
                   <div>
-                    <p className="font-display" style={{ fontSize: 16, fontWeight: 700, color: "#111111" }}>
+                    <p className="font-display" style={{ fontSize: 16, fontWeight: 700, color: "var(--text-ink)" }}>
                       {phase.name} Phase
                     </p>
                     <p className="font-body" style={{ fontSize: 12, color: "var(--text-muted)" }}>{phase.days}</p>
