@@ -10,7 +10,13 @@ import QuizScreen2 from "./pages/QuizScreen2";
 import QuizScreen3 from "./pages/QuizScreen3";
 import QuizScreen4 from "./pages/QuizScreen4";
 import QuizScreen5 from "./pages/QuizScreen5";
+import QuizScreen6 from "./pages/QuizScreen6";
+import QuizScreen7 from "./pages/QuizScreen7";
+import QuizScreen8 from "./pages/QuizScreen8";
+import QuizScreen9 from "./pages/QuizScreen9";
 import QuizEmpathy from "./pages/QuizEmpathy";
+import Loading from "./pages/Loading";
+import Results from "./pages/Results";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -29,7 +35,13 @@ const App = () => (
             <Route path="/quiz/3" element={<QuizScreen3 />} />
             <Route path="/quiz/4" element={<QuizScreen4 />} />
             <Route path="/quiz/5" element={<QuizScreen5 />} />
+            <Route path="/quiz/6" element={<QuizScreen6 />} />
+            <Route path="/quiz/7" element={<QuizScreen7 />} />
+            <Route path="/quiz/8" element={<QuizScreen8 />} />
+            <Route path="/quiz/9" element={<QuizScreen9 />} />
             <Route path="/quiz/empathy" element={<QuizEmpathy />} />
+            <Route path="/loading" element={<Loading />} />
+            <Route path="/results" element={<Results />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
