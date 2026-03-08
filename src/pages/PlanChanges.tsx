@@ -98,8 +98,8 @@ const PlanChanges = () => {
           ))}
 
           {/* Next update card */}
-          <div style={{ backgroundColor: "#EAF3F3", borderRadius: 18, padding: 18, marginTop: 4, marginBottom: 24 }}>
-            <p style={{ fontSize: 11, textTransform: "uppercase", color: "#0A3D3D", fontWeight: 700, letterSpacing: 1, marginBottom: 8 }}>
+          <div style={{ backgroundColor: "hsl(var(--primary-light))", borderRadius: 18, padding: 18, marginTop: 4, marginBottom: 24 }}>
+            <p style={{ fontSize: 11, textTransform: "uppercase", color: "hsl(var(--primary))", fontWeight: 700, letterSpacing: 1, marginBottom: 8 }}>
               NEXT PLAN UPDATE
             </p>
             <p className="font-body" style={{ fontSize: 14, color: "#0A3D3D", lineHeight: 1.6 }}>
