@@ -83,7 +83,7 @@ const PlanChanges = () => {
               <p style={{ fontSize: 11, textTransform: "uppercase", color: "hsl(var(--accent))", fontWeight: 700, letterSpacing: 1, marginTop: 12 }}>
                 WHY:
               </p>
-              <p className="font-body" style={{ fontSize: 14, color: "#4A5568", lineHeight: 1.65, marginTop: 4 }}>
+              <p className="font-body" style={{ fontSize: 14, color: "var(--text-body)", lineHeight: 1.65, marginTop: 4 }}>
                 {card.why}
               </p>
               {card.note && (
