@@ -61,7 +61,7 @@ const NutritionTab = () => (
           style={{ borderRadius: 14, padding: 14, boxShadow: "var(--shadow-card)" }}
         >
           <span style={{ fontSize: 28 }}>{c.emoji}</span>
-          <span className="font-display" style={{ fontSize: 13, fontWeight: 600, color: "#111111", marginTop: 6 }}>
+          <span className="font-display" style={{ fontSize: 13, fontWeight: 600, color: "var(--text-ink)", marginTop: 6 }}>
             {c.label}
           </span>
           <span className="font-body" style={{ fontSize: 11, color: "var(--text-muted)", marginTop: 2 }}>
