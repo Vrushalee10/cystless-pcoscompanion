@@ -81,8 +81,66 @@ const InlineCheckIn = () => {
         )}
       </div>
 
-      {/* Expanded check-in flow */}
+      {/* Single AnimatePresence — only one child visible at a time */}
       <AnimatePresence mode="wait">
+        {step === "idle" && (
+          <motion.div
+            key="idle-cards"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.15 }}
+            className="flex gap-[10px] mt-3"
+          >
+            <div
+              className="flex-1 bg-card flex flex-col items-center p-[14px_10px]"
+              style={{ borderRadius: 14, boxShadow: "var(--shadow-card)", minHeight: 80 }}
+            >
+              <span className="text-label" style={{ fontSize: 11, color: "var(--text-muted)", marginBottom: 8 }}>
+                MOOD
+              </span>
+              <div className="flex gap-1">
+                {moods.map((emoji, i) => (
+                  <span
+                    key={i}
+                    className="flex items-center justify-center"
+                    style={{
+                      width: 32,
+                      height: 32,
+                      fontSize: 20,
+                      borderRadius: "50%",
+                      backgroundColor: logged && selectedMood === i ? "hsl(var(--primary-light))" : "transparent",
+                    }}
+                  >
+                    {emoji}
+                  </span>
+                ))}
+              </div>
+            </div>
+            <div
+              className="flex-1 bg-card flex flex-col items-center p-[14px_10px]"
+              style={{ borderRadius: 14, boxShadow: "var(--shadow-card)", minHeight: 80 }}
+            >
+              <span className="text-label" style={{ fontSize: 11, color: "var(--text-muted)", marginBottom: 8 }}>
+                ENERGY
+              </span>
+              <div className="flex gap-[6px] mt-1">
+                {[1, 2, 3, 4, 5].map((level) => (
+                  <span
+                    key={level}
+                    className="rounded-full"
+                    style={{
+                      width: 10,
+                      height: 10,
+                      backgroundColor: level <= energy ? "hsl(var(--primary))" : "hsl(var(--border))",
+                    }}
+                  />
+                ))}
+              </div>
+            </div>
+          </motion.div>
+        )}
+
         {step === "mood" && (
           <motion.div
             key="mood"
@@ -94,7 +152,7 @@ const InlineCheckIn = () => {
             className="bg-card mt-3 p-4"
             style={{ borderRadius: 14, boxShadow: "var(--shadow-card)" }}
           >
-            <p className="font-body" style={{ fontSize: 14, color: "#111111", marginBottom: 12 }}>
+            <p className="font-body" style={{ fontSize: 14, color: "var(--foreground)", marginBottom: 12 }}>
               How are you feeling?
             </p>
             <div className="flex gap-2 justify-center">
@@ -130,7 +188,7 @@ const InlineCheckIn = () => {
             className="bg-card mt-3 p-4"
             style={{ borderRadius: 14, boxShadow: "var(--shadow-card)" }}
           >
-            <p className="font-body" style={{ fontSize: 14, color: "#111111", marginBottom: 12 }}>
+            <p className="font-body" style={{ fontSize: 14, color: "var(--foreground)", marginBottom: 12 }}>
               Energy today?
             </p>
             <div className="flex gap-3 justify-center">
@@ -161,7 +219,7 @@ const InlineCheckIn = () => {
             className="bg-card mt-3 p-4"
             style={{ borderRadius: 14, boxShadow: "var(--shadow-card)" }}
           >
-            <p className="font-body" style={{ fontSize: 14, color: "#111111", marginBottom: 12 }}>
+            <p className="font-body" style={{ fontSize: 14, color: "var(--foreground)", marginBottom: 12 }}>
               Sleep last night?
             </p>
             <div className="flex gap-2 justify-center mb-3">
@@ -177,7 +235,7 @@ const InlineCheckIn = () => {
                     fontWeight: 600,
                     borderRadius: 10,
                     backgroundColor: sleepHour === h ? "hsl(var(--primary))" : "hsl(var(--muted))",
-                    color: sleepHour === h ? "white" : "var(--text-body)",
+                    color: sleepHour === h ? "hsl(var(--primary-foreground))" : "var(--text-body)",
                   }}
                 >
                   {h}
@@ -196,7 +254,7 @@ const InlineCheckIn = () => {
                     padding: "6px 16px",
                     borderRadius: 100,
                     backgroundColor: sleepQuality === q ? "hsl(var(--primary))" : "hsl(var(--muted))",
-                    color: sleepQuality === q ? "white" : "var(--text-body)",
+                    color: sleepQuality === q ? "hsl(var(--primary-foreground))" : "var(--text-body)",
                   }}
                 >
                   {q === "restful" ? "Restful" : "Broken"}
@@ -232,7 +290,7 @@ const InlineCheckIn = () => {
                     height: 40,
                     borderRadius: 18,
                     backgroundColor: "hsl(var(--primary))",
-                    color: "white",
+                    color: "hsl(var(--primary-foreground))",
                     fontSize: 15,
                     fontWeight: 600,
                     opacity: canSave ? 1 : 0.4,
@@ -296,58 +354,6 @@ const InlineCheckIn = () => {
           </motion.div>
         )}
       </AnimatePresence>
-
-      {/* Compact cards when idle */}
-      {step === "idle" && (
-        <div className="flex gap-[10px] mt-3">
-          <div
-            className="flex-1 bg-card flex flex-col items-center p-[14px_10px]"
-            style={{ borderRadius: 14, boxShadow: "var(--shadow-card)", minHeight: 80 }}
-          >
-            <span className="text-label" style={{ fontSize: 11, color: "var(--text-muted)", marginBottom: 8 }}>
-              MOOD
-            </span>
-            <div className="flex gap-1">
-              {moods.map((emoji, i) => (
-                <span
-                  key={i}
-                  className="flex items-center justify-center"
-                  style={{
-                    width: 32,
-                    height: 32,
-                    fontSize: 20,
-                    borderRadius: "50%",
-                    backgroundColor: logged && selectedMood === i ? "hsl(var(--primary-light))" : "transparent",
-                  }}
-                >
-                  {emoji}
-                </span>
-              ))}
-            </div>
-          </div>
-          <div
-            className="flex-1 bg-card flex flex-col items-center p-[14px_10px]"
-            style={{ borderRadius: 14, boxShadow: "var(--shadow-card)", minHeight: 80 }}
-          >
-            <span className="text-label" style={{ fontSize: 11, color: "var(--text-muted)", marginBottom: 8 }}>
-              ENERGY
-            </span>
-            <div className="flex gap-[6px] mt-1">
-              {[1, 2, 3, 4, 5].map((level) => (
-                <span
-                  key={level}
-                  className="rounded-full"
-                  style={{
-                    width: 10,
-                    height: 10,
-                    backgroundColor: level <= energy ? "hsl(var(--primary))" : "hsl(var(--border))",
-                  }}
-                />
-              ))}
-            </div>
-          </div>
-        </div>
-      )}
 
       {/* Cysta toast */}
       <AnimatePresence>
