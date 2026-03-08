@@ -14,7 +14,7 @@ const changeCards = [
     category: "MOVEMENT",
     title: "↓ High-intensity training reduced this week",
     image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&q=80",
-    why: "HIIT and high-intensity training spike cortisol. In the luteal phase your body temperature is already elevated and cortisol is more reactive — making intense exercise counterproductive for your insulin resistance pattern. A 2025 systematic review confirmed resistance training and moderate aerobic exercise improve insulin sensitivity in PCOS without the cortisol cost of HIIT. Strength training 2–3x per week plus daily walking is the evidence-backed approach for this phase.",
+    why: "HIIT and high-intensity training spike cortisol. In the luteal phase your body temperature is already elevated and cortisol is more reactive, making intense exercise counterproductive for your insulin resistance pattern. A 2025 systematic review confirmed resistance training and moderate aerobic exercise improve insulin sensitivity in PCOS without the cortisol cost of HIIT. Strength training 2–3x per week plus daily walking is the evidence-backed approach for this phase.",
   },
   {
     category: "MINDSET",
