@@ -219,7 +219,7 @@ const InlineCheckIn = () => {
                     <Check className="h-5 w-5" style={{ color: "#16a34a" }} />
                   </motion.div>
                   <span className="font-body" style={{ fontSize: 13, color: "hsl(var(--primary))" }}>
-                    Logged ✓ — I've noted today.
+                    Logged ✓ I've noted today.
                   </span>
                 </motion.div>
               ) : (
