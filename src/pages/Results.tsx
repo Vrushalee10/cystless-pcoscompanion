@@ -21,7 +21,7 @@ const TYPE_DATA: Record<keyof Scores, {
       "Insulin-sensitising movement (strength + walking)",
       "Reducing processed sugar and refined carbohydrates",
     ],
-    clinicalnote: "In clinical settings, this pattern most commonly maps to Rotterdam Phenotypes A or B — the most studied and most treatable PCOS presentations.",
+    clinicalnote: "In clinical settings, this pattern most commonly maps to Rotterdam Phenotypes A or B, the most studied and most treatable PCOS presentations.",
     secondarySummary: "Blood sugar and insulin patterns are also contributing to your symptoms.",
   },
   AD: {
