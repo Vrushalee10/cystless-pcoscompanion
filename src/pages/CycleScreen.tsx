@@ -63,7 +63,7 @@ const CycleScreen = () => {
             </p>
             <h1
               className="font-display mt-2"
-              style={{ fontSize: 28, fontWeight: 800, color: "#111111", lineHeight: 1.2 }}
+              style={{ fontSize: 28, fontWeight: 800, color: "var(--text-ink)", lineHeight: 1.2 }}
             >
               Your cycle isn't the problem. Not knowing it is.
             </h1>
