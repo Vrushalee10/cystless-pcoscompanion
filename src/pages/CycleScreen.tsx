@@ -70,7 +70,7 @@ const CycleScreen = () => {
             <div className="mt-3" style={{ width: 48, height: 4, borderRadius: 2, backgroundColor: "hsl(var(--accent))" }} />
             <p
               className="font-body mt-[14px]"
-              style={{ fontSize: 15, color: "#4A5568", lineHeight: 1.6 }}
+              style={{ fontSize: 15, color: "var(--text-body)", lineHeight: 1.6 }}
             >
               Your hormones shift across four distinct phases each cycle. Knowing where you are helps you eat, move, and rest in sync with your body, not against it.
             </p>
