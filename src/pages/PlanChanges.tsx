@@ -33,7 +33,7 @@ const PlanChanges = () => {
         {/* Header */}
         <div className="flex items-center justify-between px-5 pt-4 pb-3">
           <button onClick={() => navigate("/plan")}>
-            <ArrowLeft className="h-5 w-5" style={{ color: "#94A3B8" }} />
+            <ArrowLeft className="h-5 w-5" style={{ color: "var(--text-muted)" }} />
           </button>
           <span className="font-display" style={{ fontSize: 16, fontWeight: 700, color: "#111111" }}>
             What Changed & Why
@@ -74,7 +74,7 @@ const PlanChanges = () => {
                 style={{ width: "100%", height: 80, objectFit: "cover" }}
               />
               <div style={{ padding: 20 }}>
-              <p style={{ fontSize: 11, textTransform: "uppercase", color: "#94A3B8", letterSpacing: 1 }}>
+              <p style={{ fontSize: 11, textTransform: "uppercase", color: "var(--text-muted)", letterSpacing: 1 }}>
                 {card.category}
               </p>
               <p className="font-display" style={{ fontSize: 16, fontWeight: 700, color: "#111111", marginTop: 6 }}>
@@ -88,7 +88,7 @@ const PlanChanges = () => {
               </p>
               {card.note && (
                 <div style={{ backgroundColor: "#F7F4F0", borderRadius: 12, padding: 12, marginTop: 10 }}>
-                  <p className="font-body" style={{ fontSize: 12, fontStyle: "italic", color: "#94A3B8" }}>
+                  <p className="font-body" style={{ fontSize: 12, fontStyle: "italic", color: "var(--text-muted)" }}>
                     {card.note}
                   </p>
                 </div>
@@ -112,7 +112,7 @@ const PlanChanges = () => {
           {/* Disclaimer */}
           <p
             className="font-body text-center"
-            style={{ fontSize: 12, fontStyle: "italic", color: "#94A3B8", lineHeight: 1.6, marginBottom: 32 }}
+            style={{ fontSize: 12, fontStyle: "italic", color: "var(--text-muted)", lineHeight: 1.6, marginBottom: 32 }}
           >
             Plan updates are based on your logged data, PCOS pattern and current cycle phase. Not medical advice — work
             with your healthcare provider for clinical decisions.

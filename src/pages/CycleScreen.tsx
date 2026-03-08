@@ -48,7 +48,7 @@ const CycleScreen = () => {
           {/* Header */}
           <div className="flex items-center justify-between mt-5">
             <button onClick={() => navigate("/home")}>
-              <ArrowLeft className="h-5 w-5" style={{ color: "#94A3B8" }} />
+              <ArrowLeft className="h-5 w-5" style={{ color: "var(--text-muted)" }} />
             </button>
             <span className="font-display text-base font-bold" style={{ color: "#111111" }}>
               Know Your Cyst-em
@@ -58,7 +58,7 @@ const CycleScreen = () => {
 
           {/* Hero */}
           <div className="mt-6">
-            <p style={{ fontSize: 11, textTransform: "uppercase", color: "#94A3B8", letterSpacing: 1 }}>
+            <p style={{ fontSize: 11, textTransform: "uppercase", color: "var(--text-muted)", letterSpacing: 1 }}>
               YOUR CYCLE, DECODED
             </p>
             <h1
@@ -127,7 +127,7 @@ const CycleScreen = () => {
                     <p className="font-display" style={{ fontSize: 16, fontWeight: 700, color: "#111111" }}>
                       {phase.name} Phase
                     </p>
-                    <p className="font-body" style={{ fontSize: 12, color: "#94A3B8" }}>{phase.days}</p>
+                    <p className="font-body" style={{ fontSize: 12, color: "var(--text-muted)" }}>{phase.days}</p>
                   </div>
                   {phase.current && (
                     <span

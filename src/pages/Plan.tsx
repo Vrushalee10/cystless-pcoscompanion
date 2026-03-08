@@ -12,7 +12,7 @@ const tabs: { key: Tab; label: string }[] = [
 ];
 
 const SectionLabel = ({ children }: { children: string }) => (
-  <p style={{ fontSize: 11, color: "#94A3B8", textTransform: "uppercase", letterSpacing: 1, marginTop: 20 }}>
+  <p style={{ fontSize: 11, color: "var(--text-muted)", textTransform: "uppercase", letterSpacing: 1, marginTop: 20 }}>
     {children}
   </p>
 );
@@ -64,7 +64,7 @@ const NutritionTab = () => (
           <span className="font-display" style={{ fontSize: 13, fontWeight: 600, color: "#111111", marginTop: 6 }}>
             {c.label}
           </span>
-          <span className="font-body" style={{ fontSize: 11, color: "#94A3B8", marginTop: 2 }}>
+          <span className="font-body" style={{ fontSize: 11, color: "var(--text-muted)", marginTop: 2 }}>
             {c.desc}
           </span>
         </div>
@@ -162,7 +162,7 @@ const MovementTab = () => (
           <p className="font-display" style={{ fontSize: 15, fontWeight: 600, color: "#111111" }}>
             {item.emoji} {item.title}
           </p>
-          <p className="font-body" style={{ fontSize: 12, color: "#94A3B8", marginTop: 2 }}>{item.freq}</p>
+          <p className="font-body" style={{ fontSize: 12, color: "var(--text-muted)", marginTop: 2 }}>{item.freq}</p>
           <p className="font-body" style={{ fontSize: 14, color: "#4A5568", marginTop: 4 }}>{item.desc}</p>
         </div>
       ))}
@@ -230,7 +230,7 @@ const Plan = () => {
           <h1 className="font-display" style={{ fontSize: 32, fontWeight: 800, color: "#111111", marginTop: 20 }}>
             Your Plan
           </h1>
-          <p className="font-body" style={{ fontSize: 14, color: "#94A3B8", marginTop: 4 }}>
+          <p className="font-body" style={{ fontSize: 14, color: "var(--text-muted)", marginTop: 4 }}>
             Insulin Resistance · Luteal Phase
           </p>
           <div style={{ width: 48, height: 4, backgroundColor: "#D4614F", borderRadius: 2, marginTop: 10 }} />
@@ -271,7 +271,7 @@ const Plan = () => {
                 style={{
                   fontSize: 14,
                   fontWeight: activeTab === tab.key ? 700 : 400,
-                  color: activeTab === tab.key ? "#0A3D3D" : "#94A3B8",
+                  color: activeTab === tab.key ? "#0A3D3D" : "var(--text-muted)",
                   borderBottom: activeTab === tab.key ? "2px solid #0A3D3D" : "2px solid transparent",
                 }}
               >

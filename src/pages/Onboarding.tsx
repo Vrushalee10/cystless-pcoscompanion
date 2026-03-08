@@ -46,7 +46,7 @@ const Onboarding = () => {
           <button
             onClick={() => navigate("/onboarding/2")}
             className="absolute top-4 left-4 z-10"
-            style={{ color: "#94A3B8" }}
+            style={{ color: "var(--text-muted)" }}
           >
             <ArrowLeft className="h-5 w-5" />
           </button>
@@ -127,7 +127,7 @@ const Onboarding = () => {
           <button
             onClick={() => navigate("/quiz/1")}
             className="w-full font-body text-center mt-3"
-            style={{ fontSize: 13, color: "#94A3B8" }}
+            style={{ fontSize: 13, color: "var(--text-muted)" }}
           >
             Skip →
           </button>
