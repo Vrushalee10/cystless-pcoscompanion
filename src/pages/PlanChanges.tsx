@@ -65,9 +65,15 @@ const PlanChanges = () => {
           {changeCards.map((card) => (
             <div
               key={card.category}
-              className="bg-card"
-              style={{ borderRadius: 18, padding: 20, boxShadow: "var(--shadow-card)", marginBottom: 12 }}
+              className="bg-card overflow-hidden"
+              style={{ borderRadius: 18, boxShadow: "var(--shadow-card)", marginBottom: 12 }}
             >
+              <img
+                src={card.image}
+                alt={card.category}
+                style={{ width: "100%", height: 80, objectFit: "cover" }}
+              />
+              <div style={{ padding: 20 }}>
               <p style={{ fontSize: 11, textTransform: "uppercase", color: "#94A3B8", letterSpacing: 1 }}>
                 {card.category}
               </p>
