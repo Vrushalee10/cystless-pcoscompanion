@@ -42,7 +42,7 @@ const TYPE_DATA: Record<keyof Scores, {
     description: "Chronic low-grade inflammation appears to be stimulating excess androgen production in your ovaries. Research shows CRP, an inflammation marker, is significantly elevated in most women with PCOS, independent of weight. Symptoms like joint pain, headaches, skin sensitivity and gut issues are key signals of this pattern.",
     focusareas: [
       "Anti-inflammatory nutrition (Mediterranean-style eating)",
-      "Gut health support — fibre, fermented foods, omega-3s",
+      "Gut health support: fibre, fermented foods, omega-3s",
       "Identifying and reducing personal inflammation triggers",
     ],
     clinicalnote: "Inflammatory PCOS is associated with elevated CRP and IL-6 markers on blood testing. A dietary inflammatory index can help assess the impact of food choices.",
