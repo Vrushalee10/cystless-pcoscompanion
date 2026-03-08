@@ -259,7 +259,7 @@ const InlineCheckIn = () => {
               💚 Logged! Want to tell me more?
             </p>
             <p className="font-body mt-2" style={{ fontSize: 13, color: "var(--text-body)", lineHeight: 1.5 }}>
-              The more I know, the smarter your plan gets — takes 60 seconds.
+              The more I know, the smarter your plan gets. Takes 60 seconds.
             </p>
             <div className="flex gap-3 mt-4">
               <button
