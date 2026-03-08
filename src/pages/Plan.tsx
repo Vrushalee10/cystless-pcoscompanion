@@ -36,6 +36,11 @@ const FocusCard = ({ priority, title, body }: { priority: string; title: string;
 
 const NutritionTab = () => (
   <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.25 }}>
+    <img
+      src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&q=80"
+      alt="Colourful vegetables and healthy food"
+      style={{ width: "100%", height: 160, objectFit: "cover", borderRadius: 16, marginTop: 16 }}
+    />
     <SectionLabel>THIS WEEK'S FOCUS</SectionLabel>
     <FocusCard
       priority="PRIORITY"
