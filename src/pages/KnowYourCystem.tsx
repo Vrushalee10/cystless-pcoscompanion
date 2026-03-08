@@ -65,7 +65,7 @@ const KnowYourCystem = () => {
               WHAT'S HAPPENING
             </span>
             <p className="font-display" style={{ fontSize: 16, fontWeight: 700, color: "var(--text-ink)" }}>
-              You're in your luteal phase — and your body is doing exactly what it's designed to do.
+              You're in your luteal phase, and your body is doing exactly what it's designed to do.
             </p>
             <p className="font-body mt-[10px]" style={{ fontSize: 14, color: "var(--text-body)", lineHeight: 1.7 }}>
               After ovulation, progesterone rises sharply. This increases your body's demand for magnesium — a mineral
