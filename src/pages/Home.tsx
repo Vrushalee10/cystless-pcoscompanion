@@ -7,6 +7,7 @@ import BottomNav from "@/components/BottomNav";
 const moods = ["😞", "😕", "😐", "🙂", "😊"];
 
 const Home = () => {
+  const navigate = useNavigate();
   const [selectedMood, setSelectedMood] = useState<number | null>(null);
   const [energy, setEnergy] = useState<number>(0);
 
