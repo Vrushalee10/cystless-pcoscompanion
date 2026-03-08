@@ -17,6 +17,7 @@ import QuizScreen9 from "./pages/QuizScreen9";
 import QuizEmpathy from "./pages/QuizEmpathy";
 import Loading from "./pages/Loading";
 import Results from "./pages/Results";
+import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -42,6 +43,7 @@ const App = () => (
             <Route path="/quiz/empathy" element={<QuizEmpathy />} />
             <Route path="/loading" element={<Loading />} />
             <Route path="/results" element={<Results />} />
+            <Route path="/home" element={<Home />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
