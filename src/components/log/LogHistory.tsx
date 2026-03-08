@@ -107,34 +107,16 @@ const LogHistory = () => {
       </div>
 
       {/* Cysta Pattern Card */}
-      <div
-        style={{
-          backgroundColor: "#EAF3F3",
-          borderRadius: 16,
-          padding: 18,
-          marginTop: 4,
-          marginBottom: 20,
-        }}
-      >
-        <p
-          className="font-body uppercase"
-          style={{ fontSize: 11, color: "hsl(var(--primary))", marginBottom: 8 }}
-        >
-          CYSTA NOTICED 👀
-        </p>
-        <p
-          className="font-body"
-          style={{ fontSize: 14, color: "hsl(var(--primary))", lineHeight: 1.6 }}
-        >
-          Your energy and mood tend to dip on days when sleep drops below 7hrs. You've also had higher sugar cravings the last 3 days, a classic luteal pattern for your type.
-        </p>
-        <button
-          onClick={() => navigate("/insights")}
-          className="font-body text-left"
-          style={{ fontSize: 13, fontWeight: 600, color: "hsl(var(--primary))", marginTop: 8 }}
-        >
-          See full pattern analysis →
-        </button>
+      <div style={{ marginTop: 4, marginBottom: 20 }}>
+        <CystaPatternCard title="CYSTA NOTICED 👀">
+          <button
+            onClick={() => navigate("/insights")}
+            className="font-body text-left w-full"
+            style={{ fontSize: 13, fontWeight: 600, color: "hsl(var(--primary))", marginTop: 10 }}
+          >
+            See full pattern analysis →
+          </button>
+        </CystaPatternCard>
       </div>
     </motion.div>
   );

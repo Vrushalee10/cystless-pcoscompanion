@@ -205,20 +205,8 @@ const Insights = () => {
           </div>
 
           {/* Cysta Insight Card */}
-          <div
-            style={{
-              backgroundColor: "#EAF3F3",
-              borderRadius: 18,
-              padding: 18,
-              marginTop: 12,
-            }}
-          >
-            <p className="font-body uppercase" style={{ fontSize: 11, color: "hsl(var(--primary))", marginBottom: 8 }}>
-              CYSTA'S READ 👀
-            </p>
-            <p className="font-body" style={{ fontSize: 14, color: "hsl(var(--primary))", lineHeight: 1.6 }}>
-              Your energy dips consistently on days after broken sleep, especially mid-luteal. Sugar cravings peak when both sleep and energy are low together. This is a clear pattern worth addressing. Your plan has been updated to prioritise magnesium and earlier wind-down this week.
-            </p>
+          <div style={{ marginTop: 12 }}>
+            <CystaPatternCard title="CYSTA'S READ 👀" />
           </div>
 
           {/* Disclaimer */}
