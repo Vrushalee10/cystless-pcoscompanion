@@ -87,7 +87,7 @@ const Log = () => {
     if (quickSelected.has("High sugar"))
       return "Got it. I'll track how your energy compares tomorrow. No action needed now.";
     if (quickSelected.has("Skipped meals"))
-      return "Noted — skipped meals can spike cortisol for your pattern. I'll flag if I see a trend.";
+      return "Noted, skipped meals can spike cortisol for your pattern. I'll flag if I see a trend.";
     return "Logged. Every day you show up is a day your body thanks you.";
   };
 
