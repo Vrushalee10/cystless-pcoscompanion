@@ -230,7 +230,7 @@ const Plan = () => {
           <h1 className="font-display" style={{ fontSize: 32, fontWeight: 800, color: "#111111", marginTop: 20 }}>
             Your Plan
           </h1>
-          <p className="font-body" style={{ fontSize: 14, color: "#94A3B8", marginTop: 4 }}>
+          <p className="font-body" style={{ fontSize: 14, color: "var(--text-muted)", marginTop: 4 }}>
             Insulin Resistance · Luteal Phase
           </p>
           <div style={{ width: 48, height: 4, backgroundColor: "#D4614F", borderRadius: 2, marginTop: 10 }} />
