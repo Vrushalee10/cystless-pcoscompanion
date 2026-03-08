@@ -12,7 +12,7 @@ const tabs: { key: Tab; label: string }[] = [
 ];
 
 const SectionLabel = ({ children }: { children: string }) => (
-  <p style={{ fontSize: 11, color: "#94A3B8", textTransform: "uppercase", letterSpacing: 1, marginTop: 20 }}>
+  <p style={{ fontSize: 11, color: "var(--text-muted)", textTransform: "uppercase", letterSpacing: 1, marginTop: 20 }}>
     {children}
   </p>
 );
