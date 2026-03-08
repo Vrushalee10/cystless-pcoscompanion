@@ -93,6 +93,7 @@ const PlanChanges = () => {
                   </p>
                 </div>
               )}
+              </div>
             </div>
           ))}
 
