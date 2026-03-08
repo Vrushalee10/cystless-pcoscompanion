@@ -43,6 +43,7 @@ const App = () => (
             <Route path="/quiz/empathy" element={<QuizEmpathy />} />
             <Route path="/loading" element={<Loading />} />
             <Route path="/results" element={<Results />} />
+            <Route path="/home" element={<Home />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
