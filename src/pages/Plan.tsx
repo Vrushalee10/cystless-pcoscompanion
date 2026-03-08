@@ -45,7 +45,7 @@ const NutritionTab = () => (
     <FocusCard
       priority="PRIORITY"
       title="Stabilise blood sugar at every meal."
-      body="For your insulin resistance pattern, keeping blood sugar stable is the single most impactful thing you can do. Aim for protein + fat + fibre at every meal — especially breakfast."
+      body="For your insulin resistance pattern, keeping blood sugar stable is the single most impactful thing you can do. Aim for protein + fat + fibre at every meal, especially breakfast."
     />
 
     <SectionLabel>WHAT TO EAT MORE OF</SectionLabel>
