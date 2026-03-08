@@ -260,7 +260,7 @@ const Log = () => {
             HOW DID YOU EAT TODAY?
           </p>
           <p className="font-body mt-1" style={{ fontSize: 13, color: "var(--text-muted)" }}>
-            Any method works — whatever feels easiest right now.
+            Any method works, whatever feels easiest right now.
           </p>
 
           <div className="grid grid-cols-2 gap-[10px] mt-3">
