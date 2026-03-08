@@ -52,7 +52,7 @@ const PlanChanges = () => {
             <p style={{ fontSize: 11, textTransform: "uppercase", color: "hsl(var(--accent))", fontWeight: 700, letterSpacing: 1 }}>
               PLAN UPDATED
             </p>
-            <h1 className="font-display" style={{ fontSize: 28, fontWeight: 800, color: "#111111", lineHeight: 1.2, marginTop: 8 }}>
+            <h1 className="font-display" style={{ fontSize: 28, fontWeight: 800, color: "var(--text-ink)", lineHeight: 1.2, marginTop: 8 }}>
               Your plan shifted for luteal phase.
             </h1>
             <div style={{ width: 48, height: 4, backgroundColor: "#D4614F", borderRadius: 2, marginTop: 12 }} />
