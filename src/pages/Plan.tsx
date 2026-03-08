@@ -92,8 +92,8 @@ const NutritionTab = () => (
           style={{ width: 8, height: 8, borderRadius: "50%", backgroundColor: "hsl(var(--accent))", marginTop: 5 }}
         />
         <div>
-          <p className="font-display" style={{ fontSize: 15, fontWeight: 600, color: "#111111" }}>{item.title}</p>
-          <p className="font-body" style={{ fontSize: 13, color: "#4A5568", marginTop: 2 }}>{item.desc}</p>
+          <p className="font-display" style={{ fontSize: 15, fontWeight: 600, color: "var(--text-ink)" }}>{item.title}</p>
+          <p className="font-body" style={{ fontSize: 13, color: "var(--text-body)", marginTop: 2 }}>{item.desc}</p>
         </div>
       </div>
     ))}
