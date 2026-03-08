@@ -121,6 +121,11 @@ const NutritionTab = () => (
 
 const MovementTab = () => (
   <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.25 }}>
+    <img
+      src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80"
+      alt="Woman doing gentle yoga movement"
+      style={{ width: "100%", height: 160, objectFit: "cover", borderRadius: 16, marginTop: 16 }}
+    />
     <SectionLabel>THIS WEEK'S APPROACH</SectionLabel>
     <FocusCard
       priority="PRIORITY"
