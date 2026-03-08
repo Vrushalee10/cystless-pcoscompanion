@@ -221,7 +221,7 @@ const Results = () => {
                 className="font-body"
                 style={{ fontSize: "14px", color: "hsl(var(--amber-text))", lineHeight: 1.6 }}
               >
-                You recently stopped the pill. Your body may take 3–6 months to recalibrate — we'll factor this into your plan throughout.
+                You recently stopped the pill. Your body may take 3–6 months to recalibrate, and we'll factor this into your plan throughout.
               </p>
             </div>
           )}
