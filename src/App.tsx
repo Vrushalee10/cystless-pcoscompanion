@@ -46,6 +46,7 @@ const App = () => (
             <Route path="/loading" element={<Loading />} />
             <Route path="/results" element={<Results />} />
             <Route path="/home" element={<Home />} />
+            <Route path="/know-your-cystem" element={<KnowYourCystem />} />
             <Route path="/log" element={<Log />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
