@@ -13,28 +13,8 @@ interface Message {
 const initialMessages: Message[] = [
   {
     role: "ai",
-    text: "Good morning Vrushali. You're on Day 18 — deep in your luteal phase. How are you feeling today?",
+    text: "Hey Vrushali 💚 No sugar-coating, no judgement — just us. You're on Day 18, deep in luteal phase. Your body is doing a lot right now. What's on your mind?",
     time: "9:02 AM",
-  },
-  {
-    role: "user",
-    text: "Pretty tired honestly. I had a lot of sugar cravings yesterday.",
-    time: "9:04 AM",
-  },
-  {
-    role: "ai",
-    text: "That makes total sense for this phase. In luteal, progesterone rises and then drops — this depletes magnesium, which directly drives sugar cravings. It's not a willpower issue. It's chemistry.\n\nTry adding a small magnesium-rich snack today — almonds, pumpkin seeds, or dark chocolate all work. Want me to suggest some meal ideas?",
-    time: "9:04 AM",
-  },
-  {
-    role: "user",
-    text: "Yes please!",
-    time: "9:05 AM",
-  },
-  {
-    role: "ai",
-    text: "Here are 3 easy options for today:\n\n🥣 Breakfast — Greek yogurt with a handful of pumpkin seeds and berries\n\n🥗 Lunch — Big salad with chickpeas, avocado and olive oil dressing\n\n🍫 Afternoon snack — 2 squares dark chocolate (70%+) with almonds\n\nAll low-glycaemic, all magnesium-supporting. How does that sound?",
-    time: "9:05 AM",
   },
 ];
 
