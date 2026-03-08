@@ -114,7 +114,6 @@ const Home = () => {
               style={{ fontSize: 14, fontWeight: 600, color: "hsl(var(--primary))" }}
             >
               Why does this happen?
-              <ArrowRight className="h-4 w-4" />
             </button>
             <button
               onClick={() => navigate("/decystified")}
