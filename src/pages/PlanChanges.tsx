@@ -49,7 +49,7 @@ const PlanChanges = () => {
           transition={{ duration: 0.3 }}
         >
           <div style={{ marginTop: 24 }}>
-            <p style={{ fontSize: 11, textTransform: "uppercase", color: "#D4614F", fontWeight: 700, letterSpacing: 1 }}>
+            <p style={{ fontSize: 11, textTransform: "uppercase", color: "hsl(var(--accent))", fontWeight: 700, letterSpacing: 1 }}>
               PLAN UPDATED
             </p>
             <h1 className="font-display" style={{ fontSize: 28, fontWeight: 800, color: "#111111", lineHeight: 1.2, marginTop: 8 }}>
