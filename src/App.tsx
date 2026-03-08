@@ -17,6 +17,7 @@ import QuizScreen9 from "./pages/QuizScreen9";
 import QuizEmpathy from "./pages/QuizEmpathy";
 import Loading from "./pages/Loading";
 import Results from "./pages/Results";
+import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
