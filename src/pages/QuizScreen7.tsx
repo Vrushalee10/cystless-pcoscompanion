@@ -9,7 +9,7 @@ const options: { id: string; text: string; scores: Partial<Scores> }[] = [
   { id: "A", text: "Generally manageable, most days feel okay", scores: {} },
   { id: "B", text: "Moderate, some tough periods but okay", scores: { AD: 1 } },
   { id: "C", text: "High, I feel overwhelmed regularly", scores: { AD: 3, IN: 1 } },
-  { id: "D", text: "Very high — stress feels relentless", scores: { AD: 3, IN: 2 } },
+  { id: "D", text: "Very high, stress feels relentless", scores: { AD: 3, IN: 2 } },
 ];
 
 const QuizScreen7 = () => {
