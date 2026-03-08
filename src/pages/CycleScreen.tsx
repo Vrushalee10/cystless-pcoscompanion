@@ -149,7 +149,7 @@ const CycleScreen = () => {
                   {phase.summary}
                 </p>
                 <div className="mt-3" style={{ backgroundColor: "#F7F4F0", borderRadius: 12, padding: 12 }}>
-                  <p className="font-body" style={{ fontSize: 13, color: "#4A5568", lineHeight: 1.5 }}>
+                  <p className="font-body" style={{ fontSize: 13, color: "var(--text-body)", lineHeight: 1.5 }}>
                     💡 {phase.tips}
                   </p>
                 </div>

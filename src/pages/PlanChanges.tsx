@@ -102,7 +102,7 @@ const PlanChanges = () => {
             <p style={{ fontSize: 11, textTransform: "uppercase", color: "hsl(var(--primary))", fontWeight: 700, letterSpacing: 1, marginBottom: 8 }}>
               NEXT PLAN UPDATE
             </p>
-            <p className="font-body" style={{ fontSize: 14, color: "#0A3D3D", lineHeight: 1.6 }}>
+            <p className="font-body" style={{ fontSize: 14, color: "hsl(var(--primary))", lineHeight: 1.6 }}>
               Your plan will automatically update when you move into your follicular phase, roughly 10 days from now.
               In follicular phase, oestrogen rises and insulin sensitivity improves, so your nutrition and movement
               targets will shift to take advantage of that window.

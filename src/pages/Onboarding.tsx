@@ -114,7 +114,7 @@ const Onboarding = () => {
             style={{
               height: 58,
               borderRadius: 18,
-              backgroundColor: "#0A3D3D",
+              backgroundColor: "hsl(var(--primary))",
               color: "white",
               fontSize: 16,
               fontWeight: 700,
