@@ -145,7 +145,7 @@ const CycleScreen = () => {
                     </span>
                   )}
                 </div>
-                <p className="font-body mt-3" style={{ fontSize: 14, color: "#4A5568", lineHeight: 1.6 }}>
+                <p className="font-body mt-3" style={{ fontSize: 14, color: "var(--text-body)", lineHeight: 1.6 }}>
                   {phase.summary}
                 </p>
                 <div className="mt-3" style={{ backgroundColor: "#F7F4F0", borderRadius: 12, padding: 12 }}>
