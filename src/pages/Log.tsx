@@ -36,12 +36,14 @@ const movementOptions = ["Rest day", "Walk", "Workout", "Gentle movement", "Yoga
 
 const Log = () => {
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
+  const startAtLayer2 = searchParams.get("layer") === "2";
 
-  // Layer 1
-  const [mood, setMood] = useState<number | null>(null);
-  const [energy, setEnergy] = useState(0);
-  const [sleepH, setSleepH] = useState<number | null>(null);
-  const [sleepQuality, setSleepQuality] = useState<"restful" | "broken" | null>(null);
+  // Layer 1 — pre-fill if coming from quick log
+  const [mood, setMood] = useState<number | null>(startAtLayer2 ? 3 : null);
+  const [energy, setEnergy] = useState(startAtLayer2 ? 3 : 0);
+  const [sleepH, setSleepH] = useState<number | null>(startAtLayer2 ? 7 : null);
+  const [sleepQuality, setSleepQuality] = useState<"restful" | "broken" | null>(startAtLayer2 ? "restful" : null);
 
   // Layer 2
   const [foodMethod, setFoodMethod] = useState<string | null>(null);
