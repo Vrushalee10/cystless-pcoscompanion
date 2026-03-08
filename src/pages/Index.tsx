@@ -19,7 +19,7 @@ const Index = () => {
         <div className="absolute left-5 right-5" style={{ top: '40%', transform: 'translateY(-50%)' }}>
           <h1
             className="font-display leading-[1.1]"
-            style={{ fontSize: '44px', fontWeight: 800, color: 'var(--text-ink)' }}
+            style={{ fontSize: '52px', fontWeight: 800, color: 'var(--text-ink)' }}
           >
             Go Cystless.
           </h1>
