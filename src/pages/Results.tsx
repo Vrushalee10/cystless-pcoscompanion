@@ -15,7 +15,7 @@ const TYPE_DATA: Record<keyof Scores, {
   IR: {
     name: "Insulin Resistance",
     tag: "Most Common Pattern",
-    description: "Higher insulin levels are likely driving your hormone imbalances. Excess insulin signals the ovaries to produce more androgens, disrupting ovulation and causing many classic PCOS symptoms. This is the most common pattern — affecting around 70% of women with PCOS — and it responds well to targeted nutrition and movement.",
+    description: "Higher insulin levels are likely driving your hormone imbalances. Excess insulin signals the ovaries to produce more androgens, disrupting ovulation and causing many classic PCOS symptoms. This is the most common pattern, affecting around 70% of women with PCOS, and it responds well to targeted nutrition and movement.",
     focusareas: [
       "Blood sugar balance through low-glycaemic eating",
       "Insulin-sensitising movement (strength + walking)",
