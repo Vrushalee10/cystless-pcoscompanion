@@ -13,40 +13,20 @@ interface Message {
 const initialMessages: Message[] = [
   {
     role: "ai",
-    text: "Good morning Vrushali. You're on Day 18 — deep in your luteal phase. How are you feeling today?",
+    text: "Hey Vrushali 💚 No sugar-coating, no judgement — just us. You're on Day 18, deep in luteal phase. Your body is doing a lot right now. What's on your mind?",
     time: "9:02 AM",
-  },
-  {
-    role: "user",
-    text: "Pretty tired honestly. I had a lot of sugar cravings yesterday.",
-    time: "9:04 AM",
-  },
-  {
-    role: "ai",
-    text: "That makes total sense for this phase. In luteal, progesterone rises and then drops — this depletes magnesium, which directly drives sugar cravings. It's not a willpower issue. It's chemistry.\n\nTry adding a small magnesium-rich snack today — almonds, pumpkin seeds, or dark chocolate all work. Want me to suggest some meal ideas?",
-    time: "9:04 AM",
-  },
-  {
-    role: "user",
-    text: "Yes please!",
-    time: "9:05 AM",
-  },
-  {
-    role: "ai",
-    text: "Here are 3 easy options for today:\n\n🥣 Breakfast — Greek yogurt with a handful of pumpkin seeds and berries\n\n🥗 Lunch — Big salad with chickpeas, avocado and olive oil dressing\n\n🍫 Afternoon snack — 2 squares dark chocolate (70%+) with almonds\n\nAll low-glycaemic, all magnesium-supporting. How does that sound?",
-    time: "9:05 AM",
   },
 ];
 
 const getAiResponse = (userText: string): string => {
   const lower = userText.toLowerCase();
   if (lower.includes("tired") || lower.includes("fatigue")) {
-    return "That tracks for Day 18. In luteal phase, progesterone peaks then drops — this directly affects energy. Your logs show this has been a pattern for you the last few days. Try a protein-rich snack this afternoon and a short walk — both help stabilise energy without spiking cortisol.";
+    return "Honestly? That's your luteal phase doing its thing — not you being lazy. Progesterone drops, magnesium goes with it, energy tanks. It's textbook. A protein snack and a short walk actually help more than coffee right now. Trust.";
   }
   if (lower.includes("craving") || lower.includes("sugar")) {
-    return "Completely hormonal — not willpower. Low magnesium in luteal phase triggers carb cravings directly. A small handful of pumpkin seeds or dark chocolate (70%+) can interrupt this within 20 minutes.";
+    return "Not. Your. Fault. Low magnesium in luteal phase literally makes your brain demand sugar. It's chemistry, not weakness. Grab some dark chocolate (70%+) or pumpkin seeds — that's not giving in, that's giving your body what it actually needs.";
   }
-  return "I'm still learning your full pattern — but based on your cycle phase and PCOS type, I'd look at your logs from the last few days for clues. Want me to walk you through what I'm seeing?";
+  return "I'm here, I'm listening, and honestly — nothing you say is going to surprise me. Tell me more 💚";
 };
 
 const formatTime = (): string => {
@@ -150,12 +130,12 @@ const Chat = () => {
               <ArrowLeft className="h-5 w-5" style={{ color: "var(--text-muted)" }} />
             </button>
             <span className="font-display text-base font-bold" style={{ color: "var(--text-ink)" }}>
-              Your Companion
+              Cysta
             </span>
             <AiAvatar size={36} />
           </div>
           <span className="font-body mt-1" style={{ fontSize: 11, color: "var(--text-muted)" }}>
-            Insulin Resistance · Day 18
+            Let's have the Cysta talk 💚
           </span>
         </div>
 
