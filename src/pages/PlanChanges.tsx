@@ -6,17 +6,20 @@ const changeCards = [
   {
     category: "NUTRITION",
     title: "↑ Magnesium-rich foods added to your plan",
+    image: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800&q=80",
     why: "Progesterone rising in your luteal phase accelerates magnesium depletion. Research shows women with PCOS already have lower baseline magnesium than average — making this phase especially impactful. Low magnesium directly worsens insulin resistance and drives carbohydrate cravings. A 2022 clinical trial found magnesium supplementation improved abnormal uterine bleeding and quality of life in women with PCOS.",
     note: "Food-based magnesium alongside low-GI eating has the strongest evidence. Supplements alone are not sufficient.",
   },
   {
     category: "MOVEMENT",
     title: "↓ High-intensity training reduced this week",
+    image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&q=80",
     why: "HIIT and high-intensity training spike cortisol. In the luteal phase your body temperature is already elevated and cortisol is more reactive — making intense exercise counterproductive for your insulin resistance pattern. A 2025 systematic review confirmed resistance training and moderate aerobic exercise improve insulin sensitivity in PCOS without the cortisol cost of HIIT. Strength training 2–3x per week plus daily walking is the evidence-backed approach for this phase.",
   },
   {
     category: "MINDSET",
     title: "↑ Nervous system support prioritised",
+    image: "https://images.unsplash.com/photo-1474418397713-7ede21d49118?w=800&q=80",
     why: "Chronic stress elevates cortisol and DHEA-S — hormones that directly worsen insulin resistance and androgen levels in PCOS. The luteal phase is when the nervous system is most reactive. Research shows even 10 minutes of daily breathwork or mindfulness meaningfully reduces cortisol over time. This phase calls for protection, not performance.",
   },
 ];
@@ -62,9 +65,15 @@ const PlanChanges = () => {
           {changeCards.map((card) => (
             <div
               key={card.category}
-              className="bg-card"
-              style={{ borderRadius: 18, padding: 20, boxShadow: "var(--shadow-card)", marginBottom: 12 }}
+              className="bg-card overflow-hidden"
+              style={{ borderRadius: 18, boxShadow: "var(--shadow-card)", marginBottom: 12 }}
             >
+              <img
+                src={card.image}
+                alt={card.category}
+                style={{ width: "100%", height: 80, objectFit: "cover" }}
+              />
+              <div style={{ padding: 20 }}>
               <p style={{ fontSize: 11, textTransform: "uppercase", color: "#94A3B8", letterSpacing: 1 }}>
                 {card.category}
               </p>
@@ -84,6 +93,7 @@ const PlanChanges = () => {
                   </p>
                 </div>
               )}
+              </div>
             </div>
           ))}
 
