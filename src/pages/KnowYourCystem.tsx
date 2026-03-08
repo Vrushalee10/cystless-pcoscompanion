@@ -46,6 +46,11 @@ const KnowYourCystem = () => {
               className="mt-3"
               style={{ width: 48, height: 4, borderRadius: 2, backgroundColor: "hsl(var(--accent))" }}
             />
+            <img
+              src="https://images.unsplash.com/photo-1559757175-5700dde675bc?w=800&q=80"
+              alt="Soft body wellness"
+              style={{ width: "100%", height: 180, objectFit: "cover", borderRadius: 16, marginTop: 14 }}
+            />
             <p
               className="font-body mt-[14px] mb-6"
               style={{ fontSize: 15, color: "var(--text-body)", lineHeight: 1.6 }}
