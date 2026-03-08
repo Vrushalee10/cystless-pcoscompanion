@@ -9,7 +9,7 @@ const Index = () => {
     <div className="min-h-[100dvh] bg-background flex justify-center">
       <div className="w-full max-w-[390px] min-h-[100dvh] relative flex flex-col px-5">
         {/* Top bar */}
-        <div className="pt-6">
+        <div className="pt-6 pl-1">
           <span className="font-display text-[22px] font-bold text-primary">
             Cystless
           </span>
@@ -19,7 +19,7 @@ const Index = () => {
         <div className="absolute left-5 right-5" style={{ top: '40%', transform: 'translateY(-50%)' }}>
           <h1
             className="font-display leading-[1.1]"
-            style={{ fontSize: '44px', fontWeight: 800, color: 'var(--text-ink)' }}
+            style={{ fontSize: '52px', fontWeight: 800, color: 'var(--text-ink)' }}
           >
             Go Cystless.
           </h1>
