@@ -45,6 +45,13 @@ const Home = () => {
               >
                 Day 18 · Luteal Phase
               </button>
+              <button
+                onClick={() => navigate("/cycle")}
+                className="font-body mt-1 flex items-center gap-1"
+                style={{ fontSize: 13, fontWeight: 600, color: "hsl(var(--primary))" }}
+              >
+                Know Your Cyst-em →
+              </button>
             </div>
             <div
               className="flex items-center justify-center flex-shrink-0 font-display"
