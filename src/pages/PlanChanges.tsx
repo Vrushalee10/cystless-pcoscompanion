@@ -114,8 +114,8 @@ const PlanChanges = () => {
             className="font-body text-center"
             style={{ fontSize: 12, fontStyle: "italic", color: "var(--text-muted)", lineHeight: 1.6, marginBottom: 32 }}
           >
-            Plan updates are based on your logged data, PCOS pattern and current cycle phase. Not medical advice — work
-            with your healthcare provider for clinical decisions.
+            Plan updates are based on your logged data, PCOS pattern and current cycle phase. Not medical advice,
+            work with your healthcare provider for clinical decisions.
           </p>
         </motion.div>
       </div>

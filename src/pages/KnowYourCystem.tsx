@@ -165,7 +165,7 @@ const KnowYourCystem = () => {
             style={{ fontSize: 12, fontStyle: "italic", color: "var(--text-muted)", lineHeight: 1.6 }}
           >
             All Cystless insights are based on published research, personalised to your PCOS pattern. Not medical
-            advice — always work with your healthcare provider.
+            advice, always work with your healthcare provider.
           </p>
         </motion.div>
       </div>
