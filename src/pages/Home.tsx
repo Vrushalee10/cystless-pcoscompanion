@@ -90,7 +90,7 @@ const Home = () => {
               className="font-display mt-4"
               style={{ fontSize: 26, fontWeight: 700, color: "var(--text-ink)", lineHeight: 1.25 }}
             >
-              Your cravings right now are hormonal — not weakness.
+              Your cravings right now are hormonal, not weakness.
             </h2>
             <div
               className="mt-[14px] mb-[14px]"
