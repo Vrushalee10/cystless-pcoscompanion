@@ -185,7 +185,6 @@ const Home = () => {
               </div>
             </div>
           </div>
-          </div>
 
           {/* Today's Focus */}
           <p className="text-label mt-7" style={{ color: "var(--text-muted)" }}>
