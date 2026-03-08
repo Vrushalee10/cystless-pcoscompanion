@@ -7,7 +7,7 @@ import { useQuiz, Scores } from "@/context/QuizContext";
 
 const options: { id: string; text: string; scores: Partial<Scores> }[] = [
   { id: "A", text: "Regular and fairly predictable", scores: { AD: 1 } },
-  { id: "B", text: "Irregular — cycle length varies month to month", scores: { IR: 2, PP: 2 } },
+  { id: "B", text: "Irregular, cycle length varies month to month", scores: { IR: 2, PP: 2 } },
   { id: "C", text: "Very irregular or I frequently miss periods", scores: { IR: 2, PP: 3 } },
   { id: "D", text: "Painful and/or very heavy", scores: { IN: 2 } },
   { id: "E", text: "I rarely get periods or they've stopped", scores: { IR: 3, PP: 1 } },

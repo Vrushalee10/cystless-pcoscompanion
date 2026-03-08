@@ -6,10 +6,10 @@ import ContinueButton from "@/components/quiz/ContinueButton";
 import { useQuiz, Scores } from "@/context/QuizContext";
 
 const options: { id: string; text: string; scores: Partial<Scores> }[] = [
-  { id: "A", text: "Consistently good — I feel rested most mornings", scores: {} },
-  { id: "B", text: "Okay — could be better", scores: { AD: 1, IR: 1 } },
+  { id: "A", text: "Consistently good, I feel rested most mornings", scores: {} },
+  { id: "B", text: "Okay, could be better", scores: { AD: 1, IR: 1 } },
   { id: "C", text: "Often broken or interrupted", scores: { AD: 2, IR: 1, IN: 1 } },
-  { id: "D", text: "Very poor — I rarely feel rested", scores: { AD: 2, IR: 2, IN: 1 } },
+  { id: "D", text: "Very poor, I rarely feel rested", scores: { AD: 2, IR: 2, IN: 1 } },
 ];
 
 const QuizScreen8 = () => {

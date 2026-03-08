@@ -7,7 +7,7 @@ import { useQuiz } from "@/context/QuizContext";
 
 const options = [
   { id: "A", text: "Yes, I have a formal diagnosis" },
-  { id: "B", text: "I suspect I might — my symptoms point that way" },
+  { id: "B", text: "I suspect I might, my symptoms point that way" },
   { id: "C", text: "I'm not sure yet" },
   { id: "D", text: "No, I haven't been diagnosed" },
 ];
@@ -53,7 +53,7 @@ const QuizScreen1 = () => {
           className="font-body italic text-center mt-5"
           style={{ fontSize: "13px", color: "var(--text-muted)" }}
         >
-          There are no wrong answers — this helps us understand where you are right now.
+          There are no wrong answers. This helps us understand where you are right now.
         </p>
       </div>
 

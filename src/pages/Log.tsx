@@ -8,8 +8,8 @@ const moods = ["😞", "😕", "😐", "🙂", "😊"];
 const moodCopy = [
   "Noted. Tough days are data too.",
   "Got it. Let's see what else today tells us.",
-  "Okay day — that's useful too.",
-  "Good to hear — let's capture what's working.",
+  "Okay day, that's useful too.",
+  "Good to hear, let's capture what's working.",
   "Strong day. Worth noting.",
 ];
 
@@ -81,13 +81,13 @@ const Log = () => {
 
   const getAckMessage = () => {
     if (mood !== null && mood <= 1 && sleepQuality === "broken")
-      return "Rough night — that makes total sense for this phase. You showed up anyway. I've noted this.";
+      return "Rough night, that makes total sense for this phase. You showed up anyway. I've noted this.";
     if (mood !== null && mood >= 3 && sleepH !== null && sleepH >= 7)
-      return "Solid. Sleep and mood both strong — this is what working with your cycle looks like.";
+      return "Solid. Sleep and mood both strong, this is what working with your cycle looks like.";
     if (quickSelected.has("High sugar"))
       return "Got it. I'll track how your energy compares tomorrow. No action needed now.";
     if (quickSelected.has("Skipped meals"))
-      return "Noted — skipped meals can spike cortisol for your pattern. I'll flag if I see a trend.";
+      return "Noted, skipped meals can spike cortisol for your pattern. I'll flag if I see a trend.";
     return "Logged. Every day you show up is a day your body thanks you.";
   };
 
@@ -260,7 +260,7 @@ const Log = () => {
             HOW DID YOU EAT TODAY?
           </p>
           <p className="font-body mt-1" style={{ fontSize: 13, color: "var(--text-muted)" }}>
-            Any method works — whatever feels easiest right now.
+            Any method works, whatever feels easiest right now.
           </p>
 
           <div className="grid grid-cols-2 gap-[10px] mt-3">
@@ -451,7 +451,7 @@ const Log = () => {
                     <div className="relative mt-2">
                       <textarea
                         rows={3}
-                        placeholder="Tell me anything — how you're feeling, what happened, what you noticed..."
+                        placeholder="Tell me anything, how you're feeling, what happened, what you noticed..."
                         value={notes}
                         onChange={(e) => setNotes(e.target.value)}
                         className="w-full font-body resize-none focus:outline-none focus:ring-1 focus:ring-primary"

@@ -15,34 +15,34 @@ const TYPE_DATA: Record<keyof Scores, {
   IR: {
     name: "Insulin Resistance",
     tag: "Most Common Pattern",
-    description: "Higher insulin levels are likely driving your hormone imbalances. Excess insulin signals the ovaries to produce more androgens, disrupting ovulation and causing many classic PCOS symptoms. This is the most common pattern — affecting around 70% of women with PCOS — and it responds well to targeted nutrition and movement.",
+    description: "Higher insulin levels are likely driving your hormone imbalances. Excess insulin signals the ovaries to produce more androgens, disrupting ovulation and causing many classic PCOS symptoms. This is the most common pattern, affecting around 70% of women with PCOS, and it responds well to targeted nutrition and movement.",
     focusareas: [
       "Blood sugar balance through low-glycaemic eating",
       "Insulin-sensitising movement (strength + walking)",
       "Reducing processed sugar and refined carbohydrates",
     ],
-    clinicalnote: "In clinical settings, this pattern most commonly maps to Rotterdam Phenotypes A or B — the most studied and most treatable PCOS presentations.",
+    clinicalnote: "In clinical settings, this pattern most commonly maps to Rotterdam Phenotypes A or B, the most studied and most treatable PCOS presentations.",
     secondarySummary: "Blood sugar and insulin patterns are also contributing to your symptoms.",
   },
   AD: {
     name: "Adrenal",
     tag: "Stress-Driven Pattern",
-    description: "Elevated stress hormones — specifically cortisol and DHEA-S — appear to be the primary driver of your symptoms. In adrenal PCOS, the adrenal glands (not just the ovaries) produce excess androgens in response to chronic stress. This pattern affects around 20–30% of women with PCOS.",
+    description: "Elevated stress hormones, specifically cortisol and DHEA-S, appear to be the primary driver of your symptoms. In adrenal PCOS, the adrenal glands (not just the ovaries) produce excess androgens in response to chronic stress. This pattern affects around 20–30% of women with PCOS.",
     focusareas: [
       "Cortisol reduction through stress management and sleep",
       "Gentle, non-high-intensity exercise (avoid cortisol spikes)",
       "Nervous system regulation and recovery practices",
     ],
-    clinicalnote: "Adrenal PCOS is confirmed clinically by elevated DHEA-S with normal or near-normal testosterone — distinguishable only through blood testing.",
+    clinicalnote: "Adrenal PCOS is confirmed clinically by elevated DHEA-S with normal or near-normal testosterone, distinguishable only through blood testing.",
     secondarySummary: "Stress hormones are also playing a role alongside your primary pattern.",
   },
   IN: {
     name: "Inflammatory",
     tag: "Often Overlooked Pattern",
-    description: "Chronic low-grade inflammation appears to be stimulating excess androgen production in your ovaries. Research shows CRP — an inflammation marker — is significantly elevated in most women with PCOS, independent of weight. Symptoms like joint pain, headaches, skin sensitivity and gut issues are key signals of this pattern.",
+    description: "Chronic low-grade inflammation appears to be stimulating excess androgen production in your ovaries. Research shows CRP, an inflammation marker, is significantly elevated in most women with PCOS, independent of weight. Symptoms like joint pain, headaches, skin sensitivity and gut issues are key signals of this pattern.",
     focusareas: [
       "Anti-inflammatory nutrition (Mediterranean-style eating)",
-      "Gut health support — fibre, fermented foods, omega-3s",
+      "Gut health support: fibre, fermented foods, omega-3s",
       "Identifying and reducing personal inflammation triggers",
     ],
     clinicalnote: "Inflammatory PCOS is associated with elevated CRP and IL-6 markers on blood testing. A dietary inflammatory index can help assess the impact of food choices.",
@@ -51,7 +51,7 @@ const TYPE_DATA: Record<keyof Scores, {
   PP: {
     name: "Post-Pill",
     tag: "Transition Pattern",
-    description: "Stopping hormonal contraceptives can unmask PCOS symptoms the pill was suppressing — or trigger a temporary hormonal rebound. Symptoms like acne, hair changes and irregular cycles often appear 1–3 months after stopping. This pattern is often temporary, but needs specific nutritional support to resolve.",
+    description: "Stopping hormonal contraceptives can unmask PCOS symptoms the pill was suppressing, or trigger a temporary hormonal rebound. Symptoms like acne, hair changes and irregular cycles often appear 1–3 months after stopping. This pattern is often temporary, but needs specific nutritional support to resolve.",
     focusareas: [
       "Hormone rebalancing and cycle restoration",
       "Zinc and B6 repletion (commonly depleted by the pill)",
@@ -221,7 +221,7 @@ const Results = () => {
                 className="font-body"
                 style={{ fontSize: "14px", color: "hsl(var(--amber-text))", lineHeight: 1.6 }}
               >
-                You recently stopped the pill. Your body may take 3–6 months to recalibrate — we'll factor this into your plan throughout.
+                You recently stopped the pill. Your body may take 3–6 months to recalibrate, and we'll factor this into your plan throughout.
               </p>
             </div>
           )}
@@ -293,7 +293,7 @@ const Results = () => {
                 className="font-body"
                 style={{ fontSize: "14px", color: "hsl(var(--primary))", lineHeight: 1.6 }}
               >
-                You mentioned thyroid history. Thyroid dysfunction and PCOS often overlap — we'll flag this where it's relevant in your plan.
+                You mentioned thyroid history. Thyroid dysfunction and PCOS often overlap, so we'll flag this where it's relevant in your plan.
               </p>
             </div>
           )}
@@ -319,7 +319,7 @@ const Results = () => {
             className="font-body italic text-center mt-4 px-5"
             style={{ fontSize: "12px", color: "var(--text-muted)", lineHeight: 1.6 }}
           >
-            This is a symptom-based pattern — not a clinical diagnosis. Cystless is a wellness companion. Always work with your healthcare provider for clinical decisions.
+            This is a symptom-based pattern, not a clinical diagnosis. Cystless is a wellness companion. Always work with your healthcare provider for clinical decisions.
           </p>
         </motion.div>
 

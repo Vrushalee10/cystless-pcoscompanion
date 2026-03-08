@@ -45,7 +45,7 @@ const NutritionTab = () => (
     <FocusCard
       priority="PRIORITY"
       title="Stabilise blood sugar at every meal."
-      body="For your insulin resistance pattern, keeping blood sugar stable is the single most impactful thing you can do. Aim for protein + fat + fibre at every meal — especially breakfast."
+      body="For your insulin resistance pattern, keeping blood sugar stable is the single most impactful thing you can do. Aim for protein + fat + fibre at every meal, especially breakfast."
     />
 
     <SectionLabel>WHAT TO EAT MORE OF</SectionLabel>
@@ -112,7 +112,7 @@ const NutritionTab = () => (
         LUTEAL PHASE NOW
       </p>
       <p className="font-body" style={{ fontSize: 14, color: "#0A3D3D", lineHeight: 1.6, marginTop: 6 }}>
-        Increase magnesium-rich foods this week. Your body is depleting magnesium faster right now — this drives
+        Increase magnesium-rich foods this week. Your body is depleting magnesium faster right now, and this drives
         cravings and mood changes. Pumpkin seeds, spinach, dark chocolate and almonds all help.
       </p>
     </div>
@@ -130,7 +130,7 @@ const MovementTab = () => (
     <FocusCard
       priority="PRIORITY"
       title="Strength + gentle walking this week."
-      body="You're in luteal phase — your body temperature is higher and energy is lower. Heavy HIIT training raises cortisol which worsens insulin resistance. Prioritise strength training and 20-30 min walks instead."
+      body="You're in luteal phase. Your body temperature is higher and energy is lower. Heavy HIIT training raises cortisol which worsens insulin resistance. Prioritise strength training and 20-30 min walks instead."
     />
 
     <div style={{ marginTop: 16 }}>

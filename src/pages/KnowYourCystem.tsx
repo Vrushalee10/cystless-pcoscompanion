@@ -3,10 +3,10 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 
 const actionItems = [
-  "Dark chocolate (70%+) — highest food source of magnesium",
-  "Pumpkin seeds or almonds — magnesium-rich and blood-sugar stabilising",
-  "Spinach or leafy greens — magnesium plus fibre, the best combo",
-  "Protein-rich snack — slows glucose absorption, reduces craving intensity",
+  "Dark chocolate (70%+), the highest food source of magnesium",
+  "Pumpkin seeds or almonds, magnesium-rich and blood-sugar stabilising",
+  "Spinach or leafy greens, magnesium plus fibre, the best combo",
+  "Protein-rich snack, slows glucose absorption and reduces craving intensity",
 ];
 
 const KnowYourCystem = () => {
@@ -40,7 +40,7 @@ const KnowYourCystem = () => {
               className="font-display mt-2"
               style={{ fontSize: 28, fontWeight: 800, color: "var(--text-ink)", lineHeight: 1.2 }}
             >
-              Your cravings right now are hormonal — not weakness.
+              Your cravings right now are hormonal, not weakness.
             </h1>
             <div
               className="mt-3"
@@ -55,7 +55,7 @@ const KnowYourCystem = () => {
               className="font-body mt-[14px] mb-6"
               style={{ fontSize: 15, color: "var(--text-body)", lineHeight: 1.6 }}
             >
-              Here's exactly what's happening in your body right now — and why it makes complete sense.
+              Here's exactly what's happening in your body right now, and why it makes complete sense.
             </p>
           </div>
 
@@ -65,10 +65,10 @@ const KnowYourCystem = () => {
               WHAT'S HAPPENING
             </span>
             <p className="font-display" style={{ fontSize: 16, fontWeight: 700, color: "var(--text-ink)" }}>
-              You're in your luteal phase — and your body is doing exactly what it's designed to do.
+              You're in your luteal phase, and your body is doing exactly what it's designed to do.
             </p>
             <p className="font-body mt-[10px]" style={{ fontSize: 14, color: "var(--text-body)", lineHeight: 1.7 }}>
-              After ovulation, progesterone rises sharply. This increases your body's demand for magnesium — a mineral
+              After ovulation, progesterone rises sharply. This increases your body's demand for magnesium, a mineral
               that regulates blood sugar, insulin sensitivity and dopamine. As magnesium dips, your brain sends a
               craving signal for fast-release carbohydrates to restore energy quickly. It's not a lack of willpower.
               It's chemistry.
@@ -82,7 +82,7 @@ const KnowYourCystem = () => {
             </span>
             <p className="font-body" style={{ fontSize: 14, color: "var(--text-body)", lineHeight: 1.7 }}>
               Women with PCOS tend to have lower magnesium levels than women without it. Research also shows insulin
-              resistance temporarily worsens in the luteal phase — meaning your body is already working harder to
+              resistance temporarily worsens in the luteal phase, meaning your body is already working harder to
               manage blood sugar. The result: cravings that feel bigger and harder to ignore than they would for
               someone without PCOS. That's not in your head. That's your biology.
             </p>
@@ -165,7 +165,7 @@ const KnowYourCystem = () => {
             style={{ fontSize: 12, fontStyle: "italic", color: "var(--text-muted)", lineHeight: 1.6 }}
           >
             All Cystless insights are based on published research, personalised to your PCOS pattern. Not medical
-            advice — always work with your healthcare provider.
+            advice, always work with your healthcare provider.
           </p>
         </motion.div>
       </div>

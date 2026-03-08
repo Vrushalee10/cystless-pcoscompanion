@@ -7,20 +7,20 @@ const changeCards = [
     category: "NUTRITION",
     title: "↑ Magnesium-rich foods added to your plan",
     image: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800&q=80",
-    why: "Progesterone rising in your luteal phase accelerates magnesium depletion. Research shows women with PCOS already have lower baseline magnesium than average — making this phase especially impactful. Low magnesium directly worsens insulin resistance and drives carbohydrate cravings. A 2022 clinical trial found magnesium supplementation improved abnormal uterine bleeding and quality of life in women with PCOS.",
+    why: "Progesterone rising in your luteal phase accelerates magnesium depletion. Research shows women with PCOS already have lower baseline magnesium than average, making this phase especially impactful. Low magnesium directly worsens insulin resistance and drives carbohydrate cravings. A 2022 clinical trial found magnesium supplementation improved abnormal uterine bleeding and quality of life in women with PCOS.",
     note: "Food-based magnesium alongside low-GI eating has the strongest evidence. Supplements alone are not sufficient.",
   },
   {
     category: "MOVEMENT",
     title: "↓ High-intensity training reduced this week",
     image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&q=80",
-    why: "HIIT and high-intensity training spike cortisol. In the luteal phase your body temperature is already elevated and cortisol is more reactive — making intense exercise counterproductive for your insulin resistance pattern. A 2025 systematic review confirmed resistance training and moderate aerobic exercise improve insulin sensitivity in PCOS without the cortisol cost of HIIT. Strength training 2–3x per week plus daily walking is the evidence-backed approach for this phase.",
+    why: "HIIT and high-intensity training spike cortisol. In the luteal phase your body temperature is already elevated and cortisol is more reactive, making intense exercise counterproductive for your insulin resistance pattern. A 2025 systematic review confirmed resistance training and moderate aerobic exercise improve insulin sensitivity in PCOS without the cortisol cost of HIIT. Strength training 2–3x per week plus daily walking is the evidence-backed approach for this phase.",
   },
   {
     category: "MINDSET",
     title: "↑ Nervous system support prioritised",
     image: "https://images.unsplash.com/photo-1474418397713-7ede21d49118?w=800&q=80",
-    why: "Chronic stress elevates cortisol and DHEA-S — hormones that directly worsen insulin resistance and androgen levels in PCOS. The luteal phase is when the nervous system is most reactive. Research shows even 10 minutes of daily breathwork or mindfulness meaningfully reduces cortisol over time. This phase calls for protection, not performance.",
+    why: "Chronic stress elevates cortisol and DHEA-S, hormones that directly worsen insulin resistance and androgen levels in PCOS. The luteal phase is when the nervous system is most reactive. Research shows even 10 minutes of daily breathwork or mindfulness meaningfully reduces cortisol over time. This phase calls for protection, not performance.",
   },
 ];
 
@@ -103,7 +103,7 @@ const PlanChanges = () => {
               NEXT PLAN UPDATE
             </p>
             <p className="font-body" style={{ fontSize: 14, color: "#0A3D3D", lineHeight: 1.6 }}>
-              Your plan will automatically update when you move into your follicular phase — roughly 10 days from now.
+              Your plan will automatically update when you move into your follicular phase, roughly 10 days from now.
               In follicular phase, oestrogen rises and insulin sensitivity improves, so your nutrition and movement
               targets will shift to take advantage of that window.
             </p>
@@ -114,8 +114,8 @@ const PlanChanges = () => {
             className="font-body text-center"
             style={{ fontSize: 12, fontStyle: "italic", color: "var(--text-muted)", lineHeight: 1.6, marginBottom: 32 }}
           >
-            Plan updates are based on your logged data, PCOS pattern and current cycle phase. Not medical advice — work
-            with your healthcare provider for clinical decisions.
+            Plan updates are based on your logged data, PCOS pattern and current cycle phase. Not medical advice,
+            work with your healthcare provider for clinical decisions.
           </p>
         </motion.div>
       </div>
