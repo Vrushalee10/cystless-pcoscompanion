@@ -28,7 +28,6 @@ const KnowYourCystem = () => {
             <span className="font-display text-base font-bold" style={{ color: "var(--text-ink)" }}>
               Know Your Cyst-em · Today's Insight
             </span>
-            </span>
             <div className="w-5" />
           </div>
 
