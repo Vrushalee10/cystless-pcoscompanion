@@ -130,12 +130,12 @@ const Chat = () => {
               <ArrowLeft className="h-5 w-5" style={{ color: "var(--text-muted)" }} />
             </button>
             <span className="font-display text-base font-bold" style={{ color: "var(--text-ink)" }}>
-              Your Companion
+              Cysta
             </span>
             <AiAvatar size={36} />
           </div>
           <span className="font-body mt-1" style={{ fontSize: 11, color: "var(--text-muted)" }}>
-            Insulin Resistance · Day 18
+            Let's have the Cysta talk 💚
           </span>
         </div>
 
