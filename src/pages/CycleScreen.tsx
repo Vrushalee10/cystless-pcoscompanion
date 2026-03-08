@@ -86,8 +86,8 @@ const CycleScreen = () => {
                   style={{
                     fontSize: 11,
                     fontWeight: 600,
-                    color: phase.current ? "white" : "#4A5568",
-                    backgroundColor: phase.current ? "#0A3D3D" : "#E8E4DF",
+                    color: phase.current ? "white" : "var(--text-body)",
+                    backgroundColor: phase.current ? "hsl(var(--primary))" : "hsl(var(--border))",
                     position: "relative",
                   }}
                 >
