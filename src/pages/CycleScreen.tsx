@@ -133,7 +133,7 @@ const CycleScreen = () => {
                     <span
                       className="ml-auto font-display"
                       style={{
-                        fontSize: 10,
+                        fontSize: 11,
                         fontWeight: 700,
                         color: "#0A3D3D",
                         backgroundColor: "#EAF3F3",

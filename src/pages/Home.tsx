@@ -140,7 +140,7 @@ const Home = () => {
           >
             <span
               className="text-label"
-              style={{ fontSize: 10, color: "hsl(var(--primary))" }}
+              style={{ color: "hsl(var(--primary))" }}
             >
               NUTRITION
             </span>

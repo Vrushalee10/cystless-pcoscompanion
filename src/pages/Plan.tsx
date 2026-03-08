@@ -246,7 +246,7 @@ const Plan = () => {
               marginTop: 20,
             }}
           >
-            <p style={{ fontSize: 10, textTransform: "uppercase", color: "#D4614F", fontWeight: 700, letterSpacing: 1, marginBottom: 4 }}>
+            <p style={{ fontSize: 11, textTransform: "uppercase", color: "hsl(var(--accent))", fontWeight: 700, letterSpacing: 1, marginBottom: 4 }}>
               PLAN UPDATED
             </p>
             <p className="font-body" style={{ fontSize: 13, color: "#4A5568" }}>
