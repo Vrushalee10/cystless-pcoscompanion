@@ -27,7 +27,7 @@ const TYPE_DATA: Record<keyof Scores, {
   AD: {
     name: "Adrenal",
     tag: "Stress-Driven Pattern",
-    description: "Elevated stress hormones — specifically cortisol and DHEA-S — appear to be the primary driver of your symptoms. In adrenal PCOS, the adrenal glands (not just the ovaries) produce excess androgens in response to chronic stress. This pattern affects around 20–30% of women with PCOS.",
+    description: "Elevated stress hormones, specifically cortisol and DHEA-S, appear to be the primary driver of your symptoms. In adrenal PCOS, the adrenal glands (not just the ovaries) produce excess androgens in response to chronic stress. This pattern affects around 20–30% of women with PCOS.",
     focusareas: [
       "Cortisol reduction through stress management and sleep",
       "Gentle, non-high-intensity exercise (avoid cortisol spikes)",
