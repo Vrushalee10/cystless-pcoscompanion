@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { motion } from "framer-motion";
+import CystaPatternCard from "@/components/CystaPatternCard";
 import {
   LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip,
   BarChart, Bar, ReferenceLine, ResponsiveContainer,
