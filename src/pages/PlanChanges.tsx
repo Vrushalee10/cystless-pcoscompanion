@@ -35,7 +35,7 @@ const PlanChanges = () => {
           <button onClick={() => navigate("/plan")}>
             <ArrowLeft className="h-5 w-5" style={{ color: "var(--text-muted)" }} />
           </button>
-          <span className="font-display" style={{ fontSize: 16, fontWeight: 700, color: "#111111" }}>
+          <span className="font-display" style={{ fontSize: 16, fontWeight: 700, color: "var(--text-ink)" }}>
             What Changed & Why
           </span>
           <div style={{ width: 20 }} />
