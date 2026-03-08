@@ -20,7 +20,7 @@ const changeCards = [
     category: "MINDSET",
     title: "↑ Nervous system support prioritised",
     image: "https://images.unsplash.com/photo-1474418397713-7ede21d49118?w=800&q=80",
-    why: "Chronic stress elevates cortisol and DHEA-S — hormones that directly worsen insulin resistance and androgen levels in PCOS. The luteal phase is when the nervous system is most reactive. Research shows even 10 minutes of daily breathwork or mindfulness meaningfully reduces cortisol over time. This phase calls for protection, not performance.",
+    why: "Chronic stress elevates cortisol and DHEA-S, hormones that directly worsen insulin resistance and androgen levels in PCOS. The luteal phase is when the nervous system is most reactive. Research shows even 10 minutes of daily breathwork or mindfulness meaningfully reduces cortisol over time. This phase calls for protection, not performance.",
   },
 ];
 
