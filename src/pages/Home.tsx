@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import BottomNav from "@/components/BottomNav";
@@ -6,6 +7,7 @@ import BottomNav from "@/components/BottomNav";
 const moods = ["😞", "😕", "😐", "🙂", "😊"];
 
 const Home = () => {
+  const navigate = useNavigate();
   const [selectedMood, setSelectedMood] = useState<number | null>(null);
   const [energy, setEnergy] = useState<number>(0);
 
@@ -118,6 +120,7 @@ const Home = () => {
               TODAY'S CHECK-IN
             </span>
             <button
+              onClick={() => navigate("/log")}
               className="font-body flex items-center gap-0.5"
               style={{ fontSize: 13, fontWeight: 600, color: "hsl(var(--primary))" }}
             >
