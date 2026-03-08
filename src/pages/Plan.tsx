@@ -89,7 +89,7 @@ const NutritionTab = () => (
       >
         <span
           className="flex-shrink-0"
-          style={{ width: 8, height: 8, borderRadius: "50%", backgroundColor: "#D4614F", marginTop: 5 }}
+          style={{ width: 8, height: 8, borderRadius: "50%", backgroundColor: "hsl(var(--accent))", marginTop: 5 }}
         />
         <div>
           <p className="font-display" style={{ fontSize: 15, fontWeight: 600, color: "#111111" }}>{item.title}</p>
