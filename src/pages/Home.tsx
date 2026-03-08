@@ -121,6 +121,13 @@ const Home = () => {
               Why does this happen?
               <ArrowRight className="h-4 w-4" />
             </button>
+            <button
+              onClick={() => navigate("/decystified")}
+              className="font-body"
+              style={{ fontSize: 12, fontStyle: "italic", color: "#94A3B8", marginTop: 4 }}
+            >
+              Let's De-Cyst-ify this →
+            </button>
           </div>
 
           {/* Daily Check-in */}
