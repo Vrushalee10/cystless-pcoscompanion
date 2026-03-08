@@ -20,6 +20,7 @@ import Results from "./pages/Results";
 import Home from "./pages/Home";
 import KnowYourCystem from "./pages/KnowYourCystem";
 import Log from "./pages/Log";
+import Chat from "./pages/Chat";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
