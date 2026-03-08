@@ -51,7 +51,7 @@ const getAiResponse = (userText: string): string => {
     return "Irregular periods with PCOS are super common, it doesn't mean something is wrong with YOU. It means your hormones need some support. Blood sugar balance, stress management, and sleep are the big three. Want me to look at your recent logs and see if anything stands out? 💚";
   }
   if (lower.includes("pain") || lower.includes("cramp") || lower.includes("headache") || lower.includes("migraine")) {
-    return "Oof, I'm sorry. Prostaglandins (the chemicals that cause cramps) go up when progesterone drops. Anti-inflammatory foods help — think ginger tea, turmeric, fatty fish. Magnesium too (seeing a pattern? 😄). A heating pad on your lower belly genuinely works as well as ibuprofen for some people. Take it easy today 💚";
+    return "Oof, I'm sorry. Prostaglandins (the chemicals that cause cramps) go up when progesterone drops. Anti-inflammatory foods help, think ginger tea, turmeric, fatty fish. Magnesium too (seeing a pattern? 😄). A heating pad on your lower belly genuinely works as well as ibuprofen for some people. Take it easy today 💚";
   }
   if (lower.includes("help") || lower.includes("what should") || lower.includes("advice") || lower.includes("suggest")) {
     return "I got you. Based on where you are in your cycle right now, here's what I'd focus on today:\n\n🥑 Eat: protein + healthy fats at every meal, magnesium-rich snacks\n🚶‍♀️ Move: gentle — walk, yoga, stretching\n😴 Rest: prioritise sleep, no guilt about low energy\n💧 Hydrate: extra water, maybe some electrolytes\n\nSmall moves, big impact. You don't need to overhaul anything 💚";
