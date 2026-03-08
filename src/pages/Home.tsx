@@ -120,6 +120,7 @@ const Home = () => {
               TODAY'S CHECK-IN
             </span>
             <button
+              onClick={() => navigate("/log")}
               className="font-body flex items-center gap-0.5"
               style={{ fontSize: 13, fontWeight: 600, color: "hsl(var(--primary))" }}
             >
