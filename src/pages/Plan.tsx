@@ -22,7 +22,7 @@ const FocusCard = ({ priority, title, body }: { priority: string; title: string;
     className="bg-card"
     style={{ borderRadius: 18, padding: 20, boxShadow: "var(--shadow-card)", marginTop: 10 }}
   >
-    <p style={{ fontSize: 10, textTransform: "uppercase", color: "#D4614F", fontWeight: 700, letterSpacing: 1 }}>
+    <p style={{ fontSize: 11, textTransform: "uppercase", color: "hsl(var(--accent))", fontWeight: 700, letterSpacing: 1 }}>
       {priority}
     </p>
     <p className="font-display" style={{ fontSize: 18, fontWeight: 700, color: "#111111", marginTop: 6 }}>
