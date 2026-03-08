@@ -24,6 +24,7 @@ import Log from "./pages/Log";
 import Chat from "./pages/Chat";
 import Plan from "./pages/Plan";
 import PlanChanges from "./pages/PlanChanges";
+import Insights from "./pages/Insights";
 import Onboarding from "./pages/Onboarding";
 import NotFound from "./pages/NotFound";
 
