@@ -8,7 +8,7 @@ const moods = ["😞", "😕", "😐", "🙂", "😊"];
 const moodCopy = [
   "Noted. Tough days are data too.",
   "Got it. Let's see what else today tells us.",
-  "Okay day — that's useful too.",
+  "Okay day, that's useful too.",
   "Good to hear — let's capture what's working.",
   "Strong day. Worth noting.",
 ];
