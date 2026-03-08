@@ -1,10 +1,8 @@
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import BottomNav from "@/components/BottomNav";
-
-const moods = ["😞", "😕", "😐", "🙂", "😊"];
+import InlineCheckIn from "@/components/InlineCheckIn";
 
 const Home = () => {
   const navigate = useNavigate();
