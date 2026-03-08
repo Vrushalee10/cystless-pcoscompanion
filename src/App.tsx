@@ -18,6 +18,7 @@ import QuizEmpathy from "./pages/QuizEmpathy";
 import Loading from "./pages/Loading";
 import Results from "./pages/Results";
 import Home from "./pages/Home";
+import KnowYourCystem from "./pages/KnowYourCystem";
 import Log from "./pages/Log";
 import NotFound from "./pages/NotFound";
 
