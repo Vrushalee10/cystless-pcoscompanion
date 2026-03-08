@@ -24,7 +24,7 @@ const getAiResponse = (userText: string): string => {
     return "Honestly? That's your luteal phase doing its thing, not you being lazy. Progesterone drops, magnesium goes with it, energy tanks. It's textbook. A protein snack and a short walk actually help more than coffee right now. Trust.";
   }
   if (lower.includes("craving") || lower.includes("sugar") || lower.includes("chocolate") || lower.includes("junk food") || lower.includes("hungry")) {
-    return "Not. Your. Fault. Low magnesium in luteal phase literally makes your brain demand sugar. It's chemistry, not weakness. Grab some dark chocolate (70%+) or pumpkin seeds — that's not giving in, that's giving your body what it actually needs.";
+    return "Not. Your. Fault. Low magnesium in luteal phase literally makes your brain demand sugar. It's chemistry, not weakness. Grab some dark chocolate (70%+) or pumpkin seeds, that's not giving in, that's giving your body what it actually needs.";
   }
   if (lower.includes("bloat") || lower.includes("bloating") || lower.includes("puffy") || lower.includes("swollen")) {
     return "Ugh, luteal bloating is SO real. Progesterone makes your body hold onto water — it's not fat, it's fluid. What actually helps? Potassium-rich foods (banana, sweet potato), cutting back on salt today, and gentle movement. You'll feel lighter in a couple days, promise 💚";
