@@ -255,7 +255,7 @@ const Plan = () => {
             <p
               onClick={() => navigate("/plan-changes")}
               className="font-display"
-              style={{ fontSize: 13, fontWeight: 600, color: "#0A3D3D", marginTop: 6, cursor: "pointer" }}
+              style={{ fontSize: 13, fontWeight: 600, color: "hsl(var(--primary))", marginTop: 6, cursor: "pointer" }}
             >
               See what changed →
             </p>
