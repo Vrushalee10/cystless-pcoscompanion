@@ -22,6 +22,7 @@ import KnowYourCystem from "./pages/KnowYourCystem";
 import Log from "./pages/Log";
 import Chat from "./pages/Chat";
 import Plan from "./pages/Plan";
+import PlanChanges from "./pages/PlanChanges";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
