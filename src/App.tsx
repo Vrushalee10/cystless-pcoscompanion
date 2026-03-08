@@ -35,7 +35,13 @@ const App = () => (
             <Route path="/quiz/3" element={<QuizScreen3 />} />
             <Route path="/quiz/4" element={<QuizScreen4 />} />
             <Route path="/quiz/5" element={<QuizScreen5 />} />
+            <Route path="/quiz/6" element={<QuizScreen6 />} />
+            <Route path="/quiz/7" element={<QuizScreen7 />} />
+            <Route path="/quiz/8" element={<QuizScreen8 />} />
+            <Route path="/quiz/9" element={<QuizScreen9 />} />
             <Route path="/quiz/empathy" element={<QuizEmpathy />} />
+            <Route path="/loading" element={<Loading />} />
+            <Route path="/results" element={<Results />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
