@@ -56,7 +56,7 @@ const PlanChanges = () => {
               Your plan shifted for luteal phase.
             </h1>
             <div style={{ width: 48, height: 4, backgroundColor: "hsl(var(--accent))", borderRadius: 2, marginTop: 12 }} />
-            <p className="font-body" style={{ fontSize: 15, color: "#4A5568", marginTop: 14, marginBottom: 24, lineHeight: 1.6 }}>
+            <p className="font-body" style={{ fontSize: 15, color: "var(--text-body)", marginTop: 14, marginBottom: 24, lineHeight: 1.6 }}>
               Here's exactly what we adjusted and the science behind each change.
             </p>
           </div>
