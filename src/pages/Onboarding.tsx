@@ -81,7 +81,7 @@ const Onboarding = () => {
               </h1>
               <p
                 className="font-body"
-                style={{ fontSize: 16, color: "#4A5568", lineHeight: 1.6, marginTop: 14 }}
+                style={{ fontSize: 16, color: "var(--text-body)", lineHeight: 1.6, marginTop: 14 }}
               >
                 {screen.body}
               </p>
