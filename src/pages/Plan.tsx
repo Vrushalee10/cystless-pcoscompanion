@@ -175,7 +175,7 @@ const MindsetTab = () => (
     <img
       src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80"
       alt="Woman meditating peacefully"
-      style={{ width: "100%", height: 160, objectFit: "cover", borderRadius: 16, marginTop: 16 }}
+      style={{ width: "100%", height: 160, objectFit: "cover", objectPosition: "center top", borderRadius: 16, marginTop: 16 }}
     />
     <SectionLabel>THIS WEEK'S FOCUS</SectionLabel>
     <FocusCard
