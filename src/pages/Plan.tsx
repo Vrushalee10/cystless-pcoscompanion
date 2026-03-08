@@ -204,6 +204,7 @@ const tabContent: Record<Tab, React.ReactNode> = {
 };
 
 const Plan = () => {
+  const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState<Tab>("nutrition");
 
   return (
