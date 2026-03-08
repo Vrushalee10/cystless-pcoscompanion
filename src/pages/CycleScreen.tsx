@@ -15,7 +15,7 @@ const phases = [
     days: "Days 6–13",
     emoji: "🌱",
     summary: "Oestrogen rises steadily. Energy increases, mood lifts, and insulin sensitivity improves. This is your high-performance window.",
-    tips: "Try new workouts, tackle challenging tasks, eat complex carbs — your body handles them best now.",
+    tips: "Try new workouts, tackle challenging tasks, eat complex carbs. Your body handles them best now.",
   },
   {
     name: "Ovulatory",
