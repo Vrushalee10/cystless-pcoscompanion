@@ -135,8 +135,8 @@ const CycleScreen = () => {
                       style={{
                         fontSize: 11,
                         fontWeight: 700,
-                        color: "#0A3D3D",
-                        backgroundColor: "#EAF3F3",
+                        color: "hsl(var(--primary))",
+                        backgroundColor: "hsl(var(--primary-light))",
                         padding: "3px 8px",
                         borderRadius: 100,
                       }}
