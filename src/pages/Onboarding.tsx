@@ -100,7 +100,7 @@ const Onboarding = () => {
                   width: 8,
                   height: 8,
                   borderRadius: "50%",
-                  backgroundColor: i === index ? "#0A3D3D" : "#E2DDD7",
+                  backgroundColor: i === index ? "hsl(var(--primary))" : "hsl(var(--border))",
                   transition: "background-color 0.3s",
                 }}
               />
