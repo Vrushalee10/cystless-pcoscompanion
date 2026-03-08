@@ -99,7 +99,7 @@ const CycleScreen = () => {
               {phases.map((phase) => (
                 <div key={phase.name} className="flex-1 text-center">
                   {phase.current && (
-                    <span className="font-display" style={{ fontSize: 9, color: "#0A3D3D", fontWeight: 700 }}>
+                    <span className="font-display" style={{ fontSize: 10, color: "hsl(var(--primary))", fontWeight: 700 }}>
                       ▲ YOU ARE HERE
                     </span>
                   )}
