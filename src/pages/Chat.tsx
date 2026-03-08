@@ -20,11 +20,44 @@ const initialMessages: Message[] = [
 
 const getAiResponse = (userText: string): string => {
   const lower = userText.toLowerCase();
-  if (lower.includes("tired") || lower.includes("fatigue")) {
+  if (lower.includes("tired") || lower.includes("fatigue") || lower.includes("exhausted") || lower.includes("no energy") || lower.includes("drained")) {
     return "Honestly? That's your luteal phase doing its thing — not you being lazy. Progesterone drops, magnesium goes with it, energy tanks. It's textbook. A protein snack and a short walk actually help more than coffee right now. Trust.";
   }
-  if (lower.includes("craving") || lower.includes("sugar")) {
+  if (lower.includes("craving") || lower.includes("sugar") || lower.includes("chocolate") || lower.includes("junk food") || lower.includes("hungry")) {
     return "Not. Your. Fault. Low magnesium in luteal phase literally makes your brain demand sugar. It's chemistry, not weakness. Grab some dark chocolate (70%+) or pumpkin seeds — that's not giving in, that's giving your body what it actually needs.";
+  }
+  if (lower.includes("bloat") || lower.includes("bloating") || lower.includes("puffy") || lower.includes("swollen")) {
+    return "Ugh, luteal bloating is SO real. Progesterone makes your body hold onto water — it's not fat, it's fluid. What actually helps? Potassium-rich foods (banana, sweet potato), cutting back on salt today, and gentle movement. You'll feel lighter in a couple days, promise 💚";
+  }
+  if (lower.includes("anxious") || lower.includes("anxiety") || lower.includes("worried") || lower.includes("stress") || lower.includes("overwhelm")) {
+    return "Okay first — deep breath. You're not spiralling, your hormones are. Progesterone dropping in luteal phase directly affects GABA (your calm-down neurotransmitter). What I'd try: magnesium glycinate before bed, a 10-min walk outside, and honestly? Give yourself permission to do less today. You're not falling behind 💚";
+  }
+  if (lower.includes("sleep") || lower.includes("insomnia") || lower.includes("can't sleep") || lower.includes("waking up")) {
+    return "Luteal phase + poor sleep = classic combo. Progesterone is supposed to be calming but when it drops, your sleep quality tanks. What might help tonight: no screens 30 min before bed, magnesium glycinate, and keep your room cool. Also — tart cherry juice is genuinely a game-changer for melatonin. Try it 💚";
+  }
+  if (lower.includes("mood") || lower.includes("sad") || lower.includes("crying") || lower.includes("emotional") || lower.includes("irritable") || lower.includes("angry")) {
+    return "You're not being dramatic. Estrogen and progesterone both drop before your period and they take serotonin with them. Literally — your happy chemical dips. What I'd try: omega-3s (salmon, walnuts), sunlight in the morning, and B6-rich foods. Also, crying is regulation, not weakness. Let it out 💚";
+  }
+  if (lower.includes("exercise") || lower.includes("workout") || lower.includes("gym") || lower.includes("run")) {
+    return "Okay hot take — this isn't the phase for PRs or intense HIIT. Your body is already under hormonal stress. What actually works in luteal: yoga, pilates, walking, light strength training. Save the beast mode for follicular phase when estrogen is high and you'll genuinely feel unstoppable 💚";
+  }
+  if (lower.includes("weight") || lower.includes("gained") || lower.includes("scale") || lower.includes("fat")) {
+    return "Step away from the scale, bestie. Luteal phase water retention can add 2-5 lbs that literally disappear after your period. It's not real weight gain. If you're dealing with PCOS-related weight stuff long-term, that's a bigger convo — but today? Your body is just doing its thing. Be kind to it 💚";
+  }
+  if (lower.includes("skin") || lower.includes("acne") || lower.includes("breakout") || lower.includes("pimple")) {
+    return "Pre-period breakouts? Androgens spike right before your period, which means more oil, more clogged pores. What actually helps: don't over-wash (it makes it worse), use a gentle salicylic acid, and zinc-rich foods (pumpkin seeds again — they're basically a PCOS superfood). This will calm down in a few days 💚";
+  }
+  if (lower.includes("period") || lower.includes("late") || lower.includes("irregular") || lower.includes("missed")) {
+    return "Irregular periods with PCOS are super common — it doesn't mean something is wrong with YOU. It means your hormones need some support. Blood sugar balance, stress management, and sleep are the big three. Want me to look at your recent logs and see if anything stands out? 💚";
+  }
+  if (lower.includes("pain") || lower.includes("cramp") || lower.includes("headache") || lower.includes("migraine")) {
+    return "Oof, I'm sorry. Prostaglandins (the chemicals that cause cramps) go up when progesterone drops. Anti-inflammatory foods help — think ginger tea, turmeric, fatty fish. Magnesium too (seeing a pattern? 😄). A heating pad on your lower belly genuinely works as well as ibuprofen for some people. Take it easy today 💚";
+  }
+  if (lower.includes("help") || lower.includes("what should") || lower.includes("advice") || lower.includes("suggest")) {
+    return "I got you. Based on where you are in your cycle right now, here's what I'd focus on today:\n\n🥑 Eat: protein + healthy fats at every meal, magnesium-rich snacks\n🚶‍♀️ Move: gentle — walk, yoga, stretching\n😴 Rest: prioritise sleep, no guilt about low energy\n💧 Hydrate: extra water, maybe some electrolytes\n\nSmall moves, big impact. You don't need to overhaul anything 💚";
+  }
+  if (lower.includes("thank") || lower.includes("thanks") || lower.includes("love")) {
+    return "Always here for you 💚 Seriously — no question is too small, no feeling is too much. We're in this together.";
   }
   return "I'm here, I'm listening, and honestly — nothing you say is going to surprise me. Tell me more 💚";
 };
