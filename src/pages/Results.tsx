@@ -293,7 +293,7 @@ const Results = () => {
                 className="font-body"
                 style={{ fontSize: "14px", color: "hsl(var(--primary))", lineHeight: 1.6 }}
               >
-                You mentioned thyroid history. Thyroid dysfunction and PCOS often overlap — we'll flag this where it's relevant in your plan.
+                You mentioned thyroid history. Thyroid dysfunction and PCOS often overlap, so we'll flag this where it's relevant in your plan.
               </p>
             </div>
           )}
