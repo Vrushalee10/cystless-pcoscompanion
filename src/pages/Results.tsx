@@ -33,7 +33,7 @@ const TYPE_DATA: Record<keyof Scores, {
       "Gentle, non-high-intensity exercise (avoid cortisol spikes)",
       "Nervous system regulation and recovery practices",
     ],
-    clinicalnote: "Adrenal PCOS is confirmed clinically by elevated DHEA-S with normal or near-normal testosterone — distinguishable only through blood testing.",
+    clinicalnote: "Adrenal PCOS is confirmed clinically by elevated DHEA-S with normal or near-normal testosterone, distinguishable only through blood testing.",
     secondarySummary: "Stress hormones are also playing a role alongside your primary pattern.",
   },
   IN: {
