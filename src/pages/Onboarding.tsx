@@ -70,7 +70,7 @@ const Onboarding = () => {
 
             {/* Content */}
             <div className="px-5 flex-1 flex flex-col" style={{ marginTop: 32 }}>
-              <p style={{ fontSize: 11, textTransform: "uppercase", letterSpacing: 1.8, color: "#0A3D3D", fontWeight: 700 }}>
+              <p style={{ fontSize: 11, textTransform: "uppercase", letterSpacing: 1.8, color: "hsl(var(--primary))", fontWeight: 700 }}>
                 {screen.label}
               </p>
               <h1
