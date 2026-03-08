@@ -6,7 +6,7 @@ import { ArrowRight, Check } from "lucide-react";
 const moods = ["😞", "😕", "😐", "🙂", "😊"];
 const sleepHours = [4, 5, 6, 7, 8, 9, 10];
 
-type CheckInStep = "idle" | "mood" | "energy" | "sleep" | "nudge";
+type CheckInStep = "idle" | "energy" | "sleep" | "nudge";
 
 const InlineCheckIn = () => {
   const navigate = useNavigate();
