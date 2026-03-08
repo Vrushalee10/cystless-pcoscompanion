@@ -21,12 +21,12 @@ const initialMessages: Message[] = [
 const getAiResponse = (userText: string): string => {
   const lower = userText.toLowerCase();
   if (lower.includes("tired") || lower.includes("fatigue")) {
-    return "That tracks for Day 18. In luteal phase, progesterone peaks then drops — this directly affects energy. Your logs show this has been a pattern for you the last few days. Try a protein-rich snack this afternoon and a short walk — both help stabilise energy without spiking cortisol.";
+    return "Honestly? That's your luteal phase doing its thing — not you being lazy. Progesterone drops, magnesium goes with it, energy tanks. It's textbook. A protein snack and a short walk actually help more than coffee right now. Trust.";
   }
   if (lower.includes("craving") || lower.includes("sugar")) {
-    return "Completely hormonal — not willpower. Low magnesium in luteal phase triggers carb cravings directly. A small handful of pumpkin seeds or dark chocolate (70%+) can interrupt this within 20 minutes.";
+    return "Not. Your. Fault. Low magnesium in luteal phase literally makes your brain demand sugar. It's chemistry, not weakness. Grab some dark chocolate (70%+) or pumpkin seeds — that's not giving in, that's giving your body what it actually needs.";
   }
-  return "I'm still learning your full pattern — but based on your cycle phase and PCOS type, I'd look at your logs from the last few days for clues. Want me to walk you through what I'm seeing?";
+  return "I'm here, I'm listening, and honestly — nothing you say is going to surprise me. Tell me more 💚";
 };
 
 const formatTime = (): string => {
