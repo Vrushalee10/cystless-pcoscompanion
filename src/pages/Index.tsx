@@ -47,7 +47,7 @@ const Index = () => {
           <Button
             variant="hero"
             size="hero"
-            onClick={() => navigate("/quiz/1")}
+            onClick={() => navigate("/onboarding/1")}
             className="w-full relative"
           >
             Get Started
