@@ -65,7 +65,7 @@ const CycleScreen = () => {
               className="font-display mt-2"
               style={{ fontSize: 28, fontWeight: 800, color: "#111111", lineHeight: 1.2 }}
             >
-              Understanding your 4 phases changes everything.
+              Your cycle isn't the problem. Not knowing it is.
             </h1>
             <div className="mt-3" style={{ width: 48, height: 4, borderRadius: 2, backgroundColor: "#D4614F" }} />
             <p
