@@ -31,7 +31,8 @@ const Home = () => {
               >
                 Vrushali
               </h1>
-              <div
+              <button
+                onClick={() => navigate("/cycle")}
                 className="mt-[10px] inline-block font-body"
                 style={{
                   fontSize: 13,
@@ -43,7 +44,7 @@ const Home = () => {
                 }}
               >
                 Day 18 · Luteal Phase
-              </div>
+              </button>
             </div>
             <div
               className="flex items-center justify-center flex-shrink-0 font-display"
