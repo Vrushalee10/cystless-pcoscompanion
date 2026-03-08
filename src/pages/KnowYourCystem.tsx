@@ -55,7 +55,7 @@ const KnowYourCystem = () => {
               className="font-body mt-[14px] mb-6"
               style={{ fontSize: 15, color: "var(--text-body)", lineHeight: 1.6 }}
             >
-              Here's exactly what's happening in your body right now — and why it makes complete sense.
+              Here's exactly what's happening in your body right now, and why it makes complete sense.
             </p>
           </div>
 
