@@ -71,7 +71,7 @@ const CyclopediaArticle = () => {
                 WHAT THIS MEANS FOR YOU
               </p>
               <p className="font-body" style={{ fontSize: 14, color: "hsl(var(--primary))", lineHeight: 1.6 }}>
-                Your plan already prioritises blood sugar stability at every meal — this is why. Every nutrition recommendation Cysta gives you is designed around keeping your insulin low and steady, which over time reduces the androgen excess driving your symptoms.
+                Your plan already prioritises blood sugar stability at every meal, this is why. Every nutrition recommendation Cysta gives you is designed around keeping your insulin low and steady, which over time reduces the androgen excess driving your symptoms.
               </p>
             </div>
 
