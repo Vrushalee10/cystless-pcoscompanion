@@ -15,7 +15,7 @@ interface Article {
 }
 
 const articles: Article[] = [
-  { title: "Why Progesterone Drops in Luteal Phase — and What Happens to Your Body", meta: "5 min read · Luteal Phase · IR type", route: "/cyclopedia/progesterone-luteal", category: "Hormones", section: "HORMONES & YOUR CYCLE" },
+  { title: "Why Progesterone Drops in Luteal Phase and What Happens to Your Body", meta: "5 min read · Luteal Phase · IR type", route: "/cyclopedia/progesterone-luteal", category: "Hormones", section: "HORMONES & YOUR CYCLE" },
   { title: "Magnesium and PCOS: The Missing Link Nobody Talks About", meta: "6 min read · All types", category: "Hormones", section: "HORMONES & YOUR CYCLE" },
   { title: "Oestrogen Dominance: What It Is and Whether You Have It", meta: "7 min read · IR + IN types", category: "Hormones", section: "HORMONES & YOUR CYCLE" },
   { title: "Blood Sugar Basics: Why Every Meal Matters for PCOS", meta: "5 min read · IR type", category: "Nutrition", section: "NUTRITION" },
