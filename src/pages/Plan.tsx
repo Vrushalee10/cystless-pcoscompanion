@@ -248,7 +248,7 @@ const MindsetTab = () => (
 const Plan = () => {
   const navigate = useNavigate();
   const { userGoal, cycleData } = useQuiz();
-  const [activeTab, setActiveTab] = useState<Tab>(() => getInitialTab(userGoal));
+  const cs = cycleData.cycleStatus;
 
   // Show cycle note for cycle/fertility goals
   const showCycleNote = userGoal === "cycle" || userGoal === "fertility";
