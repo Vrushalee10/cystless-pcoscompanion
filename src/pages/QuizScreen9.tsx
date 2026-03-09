@@ -18,7 +18,7 @@ const QuizScreen9 = () => {
   const [selected, setSelected] = useState<Set<string>>(new Set());
   const [none, setNone] = useState(false);
   const navigate = useNavigate();
-  const { addScores, setFlag } = useQuiz();
+  const { addScores, setFlag, getNextRoute } = useQuiz();
 
   const toggleOption = (id: string) => {
     setNone(false);
