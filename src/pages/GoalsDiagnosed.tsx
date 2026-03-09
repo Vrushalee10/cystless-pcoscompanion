@@ -54,9 +54,9 @@ const GoalsDiagnosed = () => {
       setUserGoal(selected);
       // After setUserGoal, quizFlow is updated. Navigate to 2nd question in flow.
       // We need to compute it here since setState is async
-      const flow = selected === "fertility" ? [1,5,2,3,4,6,7,8,9]
+      const flow = selected === "fertility" ? [1,6,2,3,4,5,7,8,9]
         : selected === "symptoms" ? [1,4,2,3,5,6,7,8,9]
-        : selected === "weight" ? [1,4,7,2,3,5,6,8,9]
+        : selected === "weight" ? [1,4,8,2,3,5,6,7,9]
         : [1,2,3,4,5,6,7,8,9];
       navigate(`/quiz/${flow[1]}`);
     }
