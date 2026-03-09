@@ -47,9 +47,9 @@ const GoalsGeneral = () => {
     if (selectedIndex !== null) {
       const goal = goals[selectedIndex].goal;
       setUserGoal(goal);
-      const flow = goal === "fertility" ? [1,5,2,3,4,6,7,8,9]
+      const flow = goal === "fertility" ? [1,6,2,3,4,5,7,8,9]
         : goal === "symptoms" ? [1,4,2,3,5,6,7,8,9]
-        : goal === "weight" ? [1,4,7,2,3,5,6,8,9]
+        : goal === "weight" ? [1,4,8,2,3,5,6,7,9]
         : [1,2,3,4,5,6,7,8,9];
       navigate(`/quiz/${flow[1]}`);
     }
