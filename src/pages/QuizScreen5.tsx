@@ -52,7 +52,7 @@ const QuizScreen5 = () => {
       });
       addScores(totalScores);
     }
-    navigate("/quiz/6");
+    navigate(getNextRoute(5));
   };
 
   const hasSelection = selected.size > 0 || none;
