@@ -77,7 +77,7 @@ const CyclopediaArticle = () => {
 
             <p className="font-body" style={sectionLabel}>THE DISCLAIMER</p>
             <p className="font-body italic" style={{ fontSize: 14, color: "var(--text-muted)", lineHeight: 1.6 }}>
-              This article is based on current research evidence and is written for educational purposes. It is not a substitute for medical advice. If you suspect you have insulin resistance, ask your doctor for a fasting insulin test — not just HbA1c, which can miss early insulin resistance.
+              This article is based on current research evidence and is written for educational purposes. It is not a substitute for medical advice. If you suspect you have insulin resistance, ask your doctor for a fasting insulin test, not just HbA1c, which can miss early insulin resistance.
             </p>
 
             <div className="text-center" style={{ marginTop: 24, marginBottom: 32 }}>

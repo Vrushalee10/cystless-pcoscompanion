@@ -106,7 +106,7 @@ const Cyclopedia = () => {
               <div style={{ padding: 20 }}>
                 <p className="font-body" style={{ fontSize: 10, textTransform: "uppercase", letterSpacing: 1.5, color: "hsl(var(--accent))", fontWeight: 700, marginBottom: 8 }}>FEATURED</p>
                 <p className="font-display" style={{ fontSize: 20, fontWeight: 700, color: "var(--text-ink)", lineHeight: 1.3 }}>
-                  What is Insulin Resistance PCOS — and why does it affect everything?
+                  What is Insulin Resistance PCOS and why does it affect everything?
                 </p>
                 <p className="font-body" style={{ fontSize: 12, color: "var(--text-muted)", marginTop: 6 }}>8 min read</p>
               </div>
