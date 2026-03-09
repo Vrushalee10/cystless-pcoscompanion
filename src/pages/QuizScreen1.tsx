@@ -15,16 +15,27 @@ const options = [
 const QuizScreen1 = () => {
   const [selected, setSelected] = useState<string | null>(null);
   const navigate = useNavigate();
-  const { setFlag } = useQuiz();
+  const { setFlag, setDiagnosisStatus } = useQuiz();
 
   const handleContinue = () => {
-    if (selected === "A") setFlag("diagnosed", true);
-    else if (selected === "B") setFlag("diagnosed", false);
-
-    if (selected === "B") {
+    if (selected === "A") {
+      // Formal diagnosis
+      setFlag("diagnosed", true);
+      setDiagnosisStatus("diagnosed");
+      navigate("/goals/diagnosed");
+    } else if (selected === "B") {
+      // Suspects PCOS
+      setFlag("diagnosed", false);
+      setDiagnosisStatus("suspects");
       navigate("/quiz/empathy");
-    } else {
-      navigate("/quiz/2");
+    } else if (selected === "C") {
+      // Not sure
+      setDiagnosisStatus("unsure");
+      navigate("/goals/general");
+    } else if (selected === "D") {
+      // No diagnosis
+      setDiagnosisStatus("no");
+      navigate("/goals/general");
     }
   };
 
