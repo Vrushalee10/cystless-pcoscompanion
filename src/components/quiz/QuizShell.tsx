@@ -2,9 +2,10 @@ import { useNavigate } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { motion } from "framer-motion";
 import { ReactNode } from "react";
+import { useQuiz } from "@/context/QuizContext";
 
 interface QuizShellProps {
-  step: number;
+  questionId: number;
   totalSteps?: number;
   children: ReactNode;
   backTo?: string;
@@ -13,7 +14,7 @@ interface QuizShellProps {
 }
 
 const QuizShell = ({
-  step,
+  questionId,
   totalSteps = 9,
   children,
   backTo,
@@ -21,18 +22,19 @@ const QuizShell = ({
   hideBack = false,
 }: QuizShellProps) => {
   const navigate = useNavigate();
+  const { getFlowPosition, getPrevRoute } = useQuiz();
+  const step = getFlowPosition(questionId);
   const progress = (step / totalSteps) * 100;
 
   const handleBack = () => {
     if (backTo) navigate(backTo);
     else if (step === 1) navigate("/");
-    else navigate(`/quiz/${step - 1}`);
+    else navigate(getPrevRoute(questionId));
   };
 
   return (
     <div className="min-h-[100dvh] bg-background flex justify-center">
       <div className="w-full max-w-[390px] min-h-[100dvh] flex flex-col px-5">
-        {/* Top bar */}
         {!hideBack && (
           <button
             onClick={handleBack}
@@ -45,7 +47,6 @@ const QuizShell = ({
 
         {!hideProgress && (
           <div className="mt-1">
-            {/* Progress bar */}
             <div className="w-full h-[5px] rounded-full bg-border overflow-hidden">
               <motion.div
                 className="h-full rounded-full bg-primary"
@@ -63,7 +64,6 @@ const QuizShell = ({
           </div>
         )}
 
-        {/* Content */}
         <motion.div
           className="flex-1 flex flex-col"
           initial={{ opacity: 0, x: 40 }}
