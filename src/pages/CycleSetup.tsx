@@ -138,8 +138,6 @@ const CycleSetup = () => {
   const handleFinish = () => navigate("/home");
 
   const getCycleStatusLabel = () => {
-    const { cycleData } = useQuiz();
-    // We read from local state instead since context may not be updated yet in same render
     if (step === "recent_period" || periodAnswer === "yes") {
       return `Day ${cycleInfo.currentCycleDay} · ${cycleInfo.currentPhase} Phase`;
     }
