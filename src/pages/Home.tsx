@@ -83,22 +83,52 @@ const Home = () => {
                 Know Your Cyst-em →
               </button>
             </div>
-            <button
-              onClick={() => navigate("/settings")}
-              className="flex items-center justify-center flex-shrink-0 font-display"
-              style={{
-                width: 44,
-                height: 44,
-                borderRadius: "50%",
-                backgroundColor: "hsl(var(--primary))",
-                color: "white",
-                fontSize: 18,
-                fontWeight: 700,
-                marginTop: 4,
-              }}
-            >
-              V
-            </button>
+            <div className="flex items-center gap-2 flex-shrink-0" style={{ marginTop: 4 }}>
+              <div className="relative">
+                <button
+                  onClick={() => setMenuOpen(!menuOpen)}
+                  className="flex items-center justify-center"
+                  style={{ width: 40, height: 40, borderRadius: 12, border: "1.5px solid hsl(var(--border))", backgroundColor: "white" }}
+                >
+                  {menuOpen ? <X size={20} style={{ color: "var(--text-muted)" }} /> : <Menu size={20} style={{ color: "var(--text-muted)" }} />}
+                </button>
+                <AnimatePresence>
+                  {menuOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, y: -8 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -8 }}
+                      transition={{ duration: 0.15 }}
+                      className="absolute right-0 bg-card"
+                      style={{ top: 48, borderRadius: 14, boxShadow: "var(--shadow-hero)", zIndex: 60, minWidth: 200, overflow: "hidden" }}
+                    >
+                      <button
+                        onClick={() => { setMenuOpen(false); navigate("/cyclopedia"); }}
+                        className="w-full text-left font-body flex items-center gap-2 px-4 py-3"
+                        style={{ fontSize: 14, fontWeight: 600, color: "var(--text-ink)" }}
+                      >
+                        📚 Cyclopedia
+                      </button>
+                      <div style={{ height: 1, backgroundColor: "hsl(var(--border))" }} />
+                      <button
+                        onClick={() => { setMenuOpen(false); navigate("/settings"); }}
+                        className="w-full text-left font-body flex items-center gap-2 px-4 py-3"
+                        style={{ fontSize: 14, fontWeight: 600, color: "var(--text-ink)" }}
+                      >
+                        ⚙️ Settings
+                      </button>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+              <button
+                onClick={() => navigate("/settings")}
+                className="flex items-center justify-center font-display"
+                style={{ width: 44, height: 44, borderRadius: "50%", backgroundColor: "hsl(var(--primary))", color: "white", fontSize: 18, fontWeight: 700 }}
+              >
+                V
+              </button>
+            </div>
           </div>
 
           <div className="mt-5 border-t border-border" />
