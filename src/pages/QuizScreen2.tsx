@@ -15,8 +15,6 @@ const options = [
 const QuizScreen2 = () => {
   const [selected, setSelected] = useState<string | null>(null);
   const navigate = useNavigate();
-  const { addScores, setFlag } = useQuiz();
-
   const { addScores, setFlag, getNextRoute } = useQuiz();
 
   const handleContinue = () => {
