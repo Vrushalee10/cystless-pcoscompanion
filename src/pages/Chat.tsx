@@ -131,11 +131,11 @@ const TypingIndicator = () => (
 
 const Chat = () => {
   const navigate = useNavigate();
-  const { userGoal } = useQuiz();
+  const { userGoal, cycleData } = useQuiz();
   
   const [messages, setMessages] = useState<Message[]>(() => [{
     role: "ai",
-    text: getOpeningMessage(userGoal),
+    text: getOpeningMessage(userGoal, cycleData.cycleStatus),
     time: "9:02 AM",
   }]);
   const [input, setInput] = useState("");
