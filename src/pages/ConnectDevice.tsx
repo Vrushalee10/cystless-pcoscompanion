@@ -4,10 +4,10 @@ import { ArrowLeft } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const trackingRows = [
-  { emoji: "❤️", title: "Heart Rate Variability", desc: "HRV drops before your period — we use this to predict phase shifts and adjust your plan early." },
+  { emoji: "❤️", title: "Heart Rate Variability", desc: "HRV drops before your period. We use this to predict phase shifts and adjust your plan early." },
   { emoji: "😴", title: "Sleep Quality", desc: "Deep sleep and REM data replace manual sleep logging. No more guessing." },
-  { emoji: "🏃", title: "Activity & Steps", desc: "Movement data feeds directly into your plan — rest days are detected automatically." },
-  { emoji: "🌡️", title: "Skin Temperature", desc: "Temperature rises at ovulation — the most accurate way to confirm your cycle phase." },
+  { emoji: "🏃", title: "Activity & Steps", desc: "Movement data feeds directly into your plan. Rest days are detected automatically." },
+  { emoji: "🌡️", title: "Skin Temperature", desc: "Temperature rises at ovulation. The most accurate way to confirm your cycle phase." },
 ];
 
 const devices = [
