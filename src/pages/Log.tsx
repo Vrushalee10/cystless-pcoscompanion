@@ -4,6 +4,7 @@ import { Plus, Minus, Mic, ArrowLeft } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import BottomNav from "@/components/BottomNav";
 import LogHistory from "@/components/log/LogHistory";
+import { useQuiz } from "@/context/QuizContext";
 
 const moods = ["😞", "😕", "😐", "🙂", "😊"];
 const moodCopy = [
@@ -37,6 +38,7 @@ const movementOptions = ["Rest day", "Walk", "Workout", "Gentle movement", "Yoga
 
 const Log = () => {
   const navigate = useNavigate();
+  const { cycleData } = useQuiz();
   const [searchParams] = useSearchParams();
   const startAtLayer2 = searchParams.get("layer") === "2";
 
@@ -143,7 +145,9 @@ const Log = () => {
               padding: "5px 10px", borderRadius: 100,
             }}
           >
-            Day 18 · Luteal Phase
+            {cycleData.currentCycleDay
+              ? `Day ${cycleData.currentCycleDay} · ${cycleData.currentPhase} Phase`
+              : "Cycle not set up"}
           </div>
 
           {/* Pill Tabs */}

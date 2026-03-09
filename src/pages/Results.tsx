@@ -348,7 +348,7 @@ const Results = () => {
         <div className="fixed bottom-0 left-0 right-0 flex justify-center">
           <div className="w-full max-w-[390px] px-5 pb-5 pt-3 bg-background">
             <button
-              onClick={() => navigate("/home")}
+              onClick={() => navigate("/cycle-setup")}
               className="w-full h-[58px] rounded-[18px] font-body relative flex items-center justify-center"
               style={{
                 fontSize: "16px",

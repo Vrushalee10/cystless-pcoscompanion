@@ -37,6 +37,7 @@ import CycleSettings from "./pages/CycleSettings";
 import GoalsUpdate from "./pages/GoalsUpdate";
 import Cyclopedia from "./pages/Cyclopedia";
 import CyclopediaArticle from "./pages/CyclopediaArticle";
+import CycleSetup from "./pages/CycleSetup";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -68,6 +69,7 @@ const App = () => (
             <Route path="/goals/general" element={<GoalsGeneral />} />
             <Route path="/loading" element={<Loading />} />
             <Route path="/results" element={<Results />} />
+            <Route path="/cycle-setup" element={<CycleSetup />} />
             <Route path="/home" element={<Home />} />
             <Route path="/know-your-cystem" element={<KnowYourCystem />} />
             <Route path="/decystified" element={<KnowYourCystem />} />

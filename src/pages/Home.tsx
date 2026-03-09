@@ -3,9 +3,12 @@ import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import BottomNav from "@/components/BottomNav";
 import InlineCheckIn from "@/components/InlineCheckIn";
+import { useQuiz } from "@/context/QuizContext";
 
 const Home = () => {
   const navigate = useNavigate();
+  const { cycleData } = useQuiz();
+  const hasCycle = cycleData.currentCycleDay !== null;
   return (
     <div className="min-h-[100dvh] bg-background flex justify-center">
       <div className="w-full max-w-[390px] min-h-[100dvh] flex flex-col px-5 pb-[80px]">
@@ -27,7 +30,7 @@ const Home = () => {
                 Vrushali
               </h1>
               <button
-                onClick={() => navigate("/cycle")}
+                onClick={() => hasCycle ? navigate("/cycle") : navigate("/cycle-setup")}
                 className="mt-[10px] inline-block font-body"
                 style={{
                   fontSize: 13,
@@ -38,7 +41,9 @@ const Home = () => {
                   borderRadius: 100,
                 }}
               >
-                Day 18 · Luteal Phase
+                {hasCycle
+                  ? `Day ${cycleData.currentCycleDay} · ${cycleData.currentPhase} Phase`
+                  : "Set up cycle tracking →"}
               </button>
               <button
                 onClick={() => navigate("/cycle")}

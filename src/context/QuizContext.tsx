@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useCallback, ReactNode } from "react";
+import React, { createContext, useContext, useState, useCallback, useMemo, ReactNode } from "react";
 
 export interface Scores {
   IR: number;
@@ -27,6 +27,16 @@ export type UserGoal =
   | "new_diagnosis" 
   | null;
 
+export type CyclePhase = "Menstrual" | "Follicular" | "Ovulatory" | "Luteal" | null;
+
+export interface CycleData {
+  periodStartDate: Date | null;
+  cycleLength: number;
+  currentCycleDay: number | null;
+  currentPhase: CyclePhase;
+  daysRemainingInPhase: number | null;
+}
+
 const DEFAULT_FLOW = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 function getFlowForGoal(goal: UserGoal): number[] {
@@ -42,16 +52,49 @@ function getFlowForGoal(goal: UserGoal): number[] {
   }
 }
 
+export function calculateCycleInfo(periodStartDate: Date, cycleLength: number): { currentCycleDay: number; currentPhase: CyclePhase; daysRemainingInPhase: number } {
+  const now = new Date();
+  const start = new Date(periodStartDate);
+  start.setHours(0, 0, 0, 0);
+  now.setHours(0, 0, 0, 0);
+
+  const diffMs = now.getTime() - start.getTime();
+  const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+  const currentCycleDay = ((diffDays % cycleLength) + cycleLength) % cycleLength + 1;
+
+  let currentPhase: CyclePhase;
+  let daysRemainingInPhase: number;
+
+  if (currentCycleDay <= 5) {
+    currentPhase = "Menstrual";
+    daysRemainingInPhase = 5 - currentCycleDay;
+  } else if (currentCycleDay <= 13) {
+    currentPhase = "Follicular";
+    daysRemainingInPhase = 13 - currentCycleDay;
+  } else if (currentCycleDay <= 16) {
+    currentPhase = "Ovulatory";
+    daysRemainingInPhase = 16 - currentCycleDay;
+  } else {
+    currentPhase = "Luteal";
+    daysRemainingInPhase = cycleLength - currentCycleDay;
+  }
+
+  return { currentCycleDay, currentPhase, daysRemainingInPhase };
+}
+
 interface QuizState {
   scores: Scores;
   flags: Flags;
   diagnosisStatus: DiagnosisStatus;
   userGoal: UserGoal;
   quizFlow: number[];
+  cycleData: CycleData;
   addScores: (deltas: Partial<Scores>) => void;
   setFlag: <K extends keyof Flags>(key: K, value: Flags[K]) => void;
   setDiagnosisStatus: (status: DiagnosisStatus) => void;
   setUserGoal: (goal: UserGoal) => void;
+  setCycleInfo: (periodStartDate: Date, cycleLength: number) => void;
+  clearCycleInfo: () => void;
   resetQuiz: () => void;
   getNextRoute: (questionId: number) => string;
   getPrevRoute: (questionId: number) => string;
@@ -67,6 +110,13 @@ const defaultFlags: Flags = {
   notested: false,
   thyroid: false,
 };
+const defaultCycleData: CycleData = {
+  periodStartDate: null,
+  cycleLength: 28,
+  currentCycleDay: null,
+  currentPhase: null,
+  daysRemainingInPhase: null,
+};
 
 const QuizContext = createContext<QuizState | undefined>(undefined);
 
@@ -76,6 +126,7 @@ export const QuizProvider = ({ children }: { children: ReactNode }) => {
   const [diagnosisStatus, setDiagnosisStatusState] = useState<DiagnosisStatus>(null);
   const [userGoal, setUserGoalState] = useState<UserGoal>(null);
   const [quizFlow, setQuizFlow] = useState<number[]>([...DEFAULT_FLOW]);
+  const [cycleData, setCycleData] = useState<CycleData>({ ...defaultCycleData });
 
   const addScores = (deltas: Partial<Scores>) => {
     setScores((prev) => ({
@@ -99,6 +150,19 @@ export const QuizProvider = ({ children }: { children: ReactNode }) => {
     setQuizFlow(getFlowForGoal(goal));
   };
 
+  const setCycleInfo = (periodStartDate: Date, cycleLength: number) => {
+    const info = calculateCycleInfo(periodStartDate, cycleLength);
+    setCycleData({
+      periodStartDate,
+      cycleLength,
+      ...info,
+    });
+  };
+
+  const clearCycleInfo = () => {
+    setCycleData({ ...defaultCycleData });
+  };
+
   const resetQuiz = () => {
     setScores({ ...defaultScores });
     setFlags({ ...defaultFlags });
@@ -115,7 +179,7 @@ export const QuizProvider = ({ children }: { children: ReactNode }) => {
 
   const getPrevRoute = useCallback((questionId: number): string => {
     const idx = quizFlow.indexOf(questionId);
-    if (idx <= 1) return "/quiz/1"; // Q1 or not found → back to Q1
+    if (idx <= 1) return "/quiz/1";
     return `/quiz/${quizFlow[idx - 1]}`;
   }, [quizFlow]);
 
@@ -131,10 +195,13 @@ export const QuizProvider = ({ children }: { children: ReactNode }) => {
       diagnosisStatus, 
       userGoal, 
       quizFlow,
+      cycleData,
       addScores, 
       setFlag, 
       setDiagnosisStatus, 
       setUserGoal, 
+      setCycleInfo,
+      clearCycleInfo,
       resetQuiz,
       getNextRoute,
       getPrevRoute,
