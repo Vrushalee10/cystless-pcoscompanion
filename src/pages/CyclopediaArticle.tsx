@@ -41,7 +41,7 @@ const CyclopediaArticle = () => {
             </p>
 
             <h1 className="font-display" style={{ fontSize: 28, fontWeight: 800, color: "var(--text-ink)", lineHeight: 1.2, marginTop: 10 }}>
-              What is Insulin Resistance PCOS — and why does it affect everything?
+              What is Insulin Resistance PCOS and why does it affect everything?
             </h1>
 
             <div style={{ width: 48, height: 4, backgroundColor: "hsl(var(--accent))", borderRadius: 2, marginTop: 12, marginBottom: 20 }} />
