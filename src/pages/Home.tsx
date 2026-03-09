@@ -32,6 +32,7 @@ const Home = () => {
   const navigate = useNavigate();
   const { cycleData } = useQuiz();
   const cs = cycleData.cycleStatus;
+  const insight = cycleData.currentPhase ? phaseInsights[cycleData.currentPhase] : defaultInsight;
 
   const getBadgeProps = () => {
     if (cs === "regular" && cycleData.currentCycleDay) return {
