@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, ReactNode } from "react";
+import React, { createContext, useContext, useState, useCallback, ReactNode } from "react";
 
 export interface Scores {
   IR: number;
@@ -27,16 +27,35 @@ export type UserGoal =
   | "new_diagnosis" 
   | null;
 
+const DEFAULT_FLOW = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+function getFlowForGoal(goal: UserGoal): number[] {
+  switch (goal) {
+    case "fertility":
+      return [1, 5, 2, 3, 4, 6, 7, 8, 9];
+    case "symptoms":
+      return [1, 4, 2, 3, 5, 6, 7, 8, 9];
+    case "weight":
+      return [1, 4, 7, 2, 3, 5, 6, 8, 9];
+    default:
+      return [...DEFAULT_FLOW];
+  }
+}
+
 interface QuizState {
   scores: Scores;
   flags: Flags;
   diagnosisStatus: DiagnosisStatus;
   userGoal: UserGoal;
+  quizFlow: number[];
   addScores: (deltas: Partial<Scores>) => void;
   setFlag: <K extends keyof Flags>(key: K, value: Flags[K]) => void;
   setDiagnosisStatus: (status: DiagnosisStatus) => void;
   setUserGoal: (goal: UserGoal) => void;
   resetQuiz: () => void;
+  getNextRoute: (questionId: number) => string;
+  getPrevRoute: (questionId: number) => string;
+  getFlowPosition: (questionId: number) => number;
 }
 
 const defaultScores: Scores = { IR: 0, AD: 0, IN: 0, PP: 0 };
@@ -56,6 +75,7 @@ export const QuizProvider = ({ children }: { children: ReactNode }) => {
   const [flags, setFlags] = useState<Flags>({ ...defaultFlags });
   const [diagnosisStatus, setDiagnosisStatusState] = useState<DiagnosisStatus>(null);
   const [userGoal, setUserGoalState] = useState<UserGoal>(null);
+  const [quizFlow, setQuizFlow] = useState<number[]>([...DEFAULT_FLOW]);
 
   const addScores = (deltas: Partial<Scores>) => {
     setScores((prev) => ({
@@ -76,6 +96,7 @@ export const QuizProvider = ({ children }: { children: ReactNode }) => {
 
   const setUserGoal = (goal: UserGoal) => {
     setUserGoalState(goal);
+    setQuizFlow(getFlowForGoal(goal));
   };
 
   const resetQuiz = () => {
@@ -83,7 +104,25 @@ export const QuizProvider = ({ children }: { children: ReactNode }) => {
     setFlags({ ...defaultFlags });
     setDiagnosisStatusState(null);
     setUserGoalState(null);
+    setQuizFlow([...DEFAULT_FLOW]);
   };
+
+  const getNextRoute = useCallback((questionId: number): string => {
+    const idx = quizFlow.indexOf(questionId);
+    if (idx === -1 || idx === quizFlow.length - 1) return "/loading";
+    return `/quiz/${quizFlow[idx + 1]}`;
+  }, [quizFlow]);
+
+  const getPrevRoute = useCallback((questionId: number): string => {
+    const idx = quizFlow.indexOf(questionId);
+    if (idx <= 1) return "/quiz/1"; // Q1 or not found → back to Q1
+    return `/quiz/${quizFlow[idx - 1]}`;
+  }, [quizFlow]);
+
+  const getFlowPosition = useCallback((questionId: number): number => {
+    const idx = quizFlow.indexOf(questionId);
+    return idx === -1 ? 1 : idx + 1;
+  }, [quizFlow]);
 
   return (
     <QuizContext.Provider value={{ 
@@ -91,11 +130,15 @@ export const QuizProvider = ({ children }: { children: ReactNode }) => {
       flags, 
       diagnosisStatus, 
       userGoal, 
+      quizFlow,
       addScores, 
       setFlag, 
       setDiagnosisStatus, 
       setUserGoal, 
-      resetQuiz 
+      resetQuiz,
+      getNextRoute,
+      getPrevRoute,
+      getFlowPosition,
     }}>
       {children}
     </QuizContext.Provider>

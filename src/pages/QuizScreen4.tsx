@@ -21,7 +21,7 @@ const QuizScreen4 = () => {
   const [selected, setSelected] = useState<Set<string>>(new Set());
   const [none, setNone] = useState(false);
   const navigate = useNavigate();
-  const { addScores } = useQuiz();
+  const { addScores, getNextRoute } = useQuiz();
 
   const toggleOption = (id: string) => {
     setNone(false);
@@ -54,13 +54,13 @@ const QuizScreen4 = () => {
       });
       addScores(totalScores);
     }
-    navigate("/quiz/5");
+    navigate(getNextRoute(4));
   };
 
   const hasSelection = selected.size > 0 || none;
 
   return (
-    <QuizShell step={4}>
+    <QuizShell questionId={4}>
       <div className="mt-7">
         <h1
           className="font-display"

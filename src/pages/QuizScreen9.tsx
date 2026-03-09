@@ -18,7 +18,7 @@ const QuizScreen9 = () => {
   const [selected, setSelected] = useState<Set<string>>(new Set());
   const [none, setNone] = useState(false);
   const navigate = useNavigate();
-  const { addScores, setFlag } = useQuiz();
+  const { addScores, setFlag, getNextRoute } = useQuiz();
 
   const toggleOption = (id: string) => {
     setNone(false);
@@ -54,13 +54,13 @@ const QuizScreen9 = () => {
       });
       addScores(totalScores);
     }
-    navigate("/loading");
+    navigate(getNextRoute(9));
   };
 
   const hasSelection = selected.size > 0 || none;
 
   return (
-    <QuizShell step={9}>
+    <QuizShell questionId={9}>
       <div className="mt-7">
         <h1
           className="font-display"

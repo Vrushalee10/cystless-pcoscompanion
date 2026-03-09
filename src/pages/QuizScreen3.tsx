@@ -17,16 +17,16 @@ const options: { id: string; text: string; flag?: FlagKey }[] = [
 const QuizScreen3 = () => {
   const [selected, setSelected] = useState<string | null>(null);
   const navigate = useNavigate();
-  const { setFlag } = useQuiz();
+  const { setFlag, getNextRoute } = useQuiz();
 
   const handleContinue = () => {
     const opt = options.find((o) => o.id === selected);
     if (opt?.flag) setFlag(opt.flag, true);
-    navigate("/quiz/4");
+    navigate(getNextRoute(3));
   };
 
   return (
-    <QuizShell step={3}>
+    <QuizShell questionId={3}>
       <div className="mt-7">
         <h1
           className="font-display"
