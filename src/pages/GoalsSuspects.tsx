@@ -113,7 +113,7 @@ const GoalsSuspects = () => {
               marginBottom: 24,
             }}
           >
-            There are no wrong answers — this shapes everything we build for you.
+            There are no wrong answers. This shapes everything we build for you.
           </p>
 
           {/* Goal cards */}

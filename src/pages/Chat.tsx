@@ -24,7 +24,7 @@ const getOpeningMessage = (userGoal: string | null): string => {
     case "new_diagnosis":
     case "feel_better":
     default:
-      return "Hey 💚 You want to understand your body — that's the best place to start. What's on your mind?";
+      return "Hey 💚 You want to understand your body, that's the best place to start. What's on your mind?";
   }
 };
 
