@@ -35,7 +35,8 @@ const screens = [
 const Onboarding = () => {
   const navigate = useNavigate();
   const { step } = useParams();
-  const index = Math.min(Math.max(Number(step) - 1, 0), 2);
+  const stepNum = Number(step);
+  const index = isNaN(stepNum) ? 0 : Math.min(Math.max(stepNum - 1, 0), 2);
   const screen = screens[index];
 
   return (
