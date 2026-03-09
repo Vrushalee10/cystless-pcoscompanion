@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import BottomNav from "@/components/BottomNav";
+import { useQuiz } from "@/context/QuizContext";
 
 type Tab = "nutrition" | "movement" | "mindset";
 
@@ -10,6 +11,22 @@ const tabs: { key: Tab; label: string }[] = [
   { key: "movement", label: "Movement" },
   { key: "mindset", label: "Mindset" },
 ];
+
+const getInitialTab = (userGoal: string | null): Tab => {
+  switch (userGoal) {
+    case "weight":
+      return "movement";
+    case "understand":
+      return "mindset";
+    case "symptoms":
+    case "feel_better":
+    case "new_diagnosis":
+    case "cycle":
+    case "fertility":
+    default:
+      return "nutrition";
+  }
+};
 
 const SectionLabel = ({ children }: { children: string }) => (
   <p style={{ fontSize: 11, color: "var(--text-muted)", textTransform: "uppercase", letterSpacing: 1, marginTop: 20 }}>
@@ -34,13 +51,29 @@ const FocusCard = ({ priority, title, body }: { priority: string; title: string;
   </div>
 );
 
-const NutritionTab = () => (
+const NutritionTab = ({ showCycleNote }: { showCycleNote: boolean }) => (
   <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.25 }}>
     <img
       src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&q=80"
       alt="Colourful vegetables and healthy food"
       style={{ width: "100%", height: 160, objectFit: "cover", borderRadius: 16, marginTop: 16 }}
     />
+    
+    {showCycleNote && (
+      <div
+        className="mt-4 p-4"
+        style={{
+          backgroundColor: "#EAF3F3",
+          borderRadius: 14,
+          borderLeft: "4px solid hsl(var(--primary))",
+        }}
+      >
+        <p className="font-body" style={{ fontSize: 14, color: "hsl(var(--primary))", lineHeight: 1.5 }}>
+          Since you're focused on your cycle, we've prioritised nutrition strategies that support hormonal balance and ovulation.
+        </p>
+      </div>
+    )}
+    
     <SectionLabel>THIS WEEK'S FOCUS</SectionLabel>
     <FocusCard
       priority="PRIORITY"
@@ -212,15 +245,19 @@ const MindsetTab = () => (
   </motion.div>
 );
 
-const tabContent: Record<Tab, React.ReactNode> = {
-  nutrition: <NutritionTab />,
-  movement: <MovementTab />,
-  mindset: <MindsetTab />,
-};
-
 const Plan = () => {
   const navigate = useNavigate();
-  const [activeTab, setActiveTab] = useState<Tab>("nutrition");
+  const { userGoal } = useQuiz();
+  const [activeTab, setActiveTab] = useState<Tab>(() => getInitialTab(userGoal));
+
+  // Show cycle note for cycle/fertility goals
+  const showCycleNote = userGoal === "cycle" || userGoal === "fertility";
+
+  const tabContent: Record<Tab, React.ReactNode> = {
+    nutrition: <NutritionTab showCycleNote={showCycleNote} />,
+    movement: <MovementTab />,
+    mindset: <MindsetTab />,
+  };
 
   return (
     <div className="min-h-[100dvh] bg-background flex justify-center">

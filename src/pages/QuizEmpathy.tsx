@@ -45,7 +45,7 @@ const QuizEmpathy = () => {
         {/* Bottom button */}
         <div className="pb-9">
           <button
-            onClick={() => navigate("/quiz/2")}
+            onClick={() => navigate("/goals/suspects")}
             className="w-full h-[58px] rounded-[18px] font-body relative flex items-center justify-center"
             style={{
               fontSize: "16px",

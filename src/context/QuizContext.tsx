@@ -16,11 +16,26 @@ export interface Flags {
   thyroid: boolean;
 }
 
+export type DiagnosisStatus = "diagnosed" | "suspects" | "unsure" | "no" | null;
+export type UserGoal = 
+  | "symptoms" 
+  | "cycle" 
+  | "fertility" 
+  | "weight" 
+  | "understand" 
+  | "feel_better" 
+  | "new_diagnosis" 
+  | null;
+
 interface QuizState {
   scores: Scores;
   flags: Flags;
+  diagnosisStatus: DiagnosisStatus;
+  userGoal: UserGoal;
   addScores: (deltas: Partial<Scores>) => void;
   setFlag: <K extends keyof Flags>(key: K, value: Flags[K]) => void;
+  setDiagnosisStatus: (status: DiagnosisStatus) => void;
+  setUserGoal: (goal: UserGoal) => void;
   resetQuiz: () => void;
 }
 
@@ -39,6 +54,8 @@ const QuizContext = createContext<QuizState | undefined>(undefined);
 export const QuizProvider = ({ children }: { children: ReactNode }) => {
   const [scores, setScores] = useState<Scores>({ ...defaultScores });
   const [flags, setFlags] = useState<Flags>({ ...defaultFlags });
+  const [diagnosisStatus, setDiagnosisStatusState] = useState<DiagnosisStatus>(null);
+  const [userGoal, setUserGoalState] = useState<UserGoal>(null);
 
   const addScores = (deltas: Partial<Scores>) => {
     setScores((prev) => ({
@@ -53,13 +70,33 @@ export const QuizProvider = ({ children }: { children: ReactNode }) => {
     setFlags((prev) => ({ ...prev, [key]: value }));
   };
 
+  const setDiagnosisStatus = (status: DiagnosisStatus) => {
+    setDiagnosisStatusState(status);
+  };
+
+  const setUserGoal = (goal: UserGoal) => {
+    setUserGoalState(goal);
+  };
+
   const resetQuiz = () => {
     setScores({ ...defaultScores });
     setFlags({ ...defaultFlags });
+    setDiagnosisStatusState(null);
+    setUserGoalState(null);
   };
 
   return (
-    <QuizContext.Provider value={{ scores, flags, addScores, setFlag, resetQuiz }}>
+    <QuizContext.Provider value={{ 
+      scores, 
+      flags, 
+      diagnosisStatus, 
+      userGoal, 
+      addScores, 
+      setFlag, 
+      setDiagnosisStatus, 
+      setUserGoal, 
+      resetQuiz 
+    }}>
       {children}
     </QuizContext.Provider>
   );
