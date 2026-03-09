@@ -32,11 +32,11 @@ const DEFAULT_FLOW = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 function getFlowForGoal(goal: UserGoal): number[] {
   switch (goal) {
     case "fertility":
-      return [1, 5, 2, 3, 4, 6, 7, 8, 9];
+      return [1, 6, 2, 3, 4, 5, 7, 8, 9];
     case "symptoms":
       return [1, 4, 2, 3, 5, 6, 7, 8, 9];
     case "weight":
-      return [1, 4, 7, 2, 3, 5, 6, 8, 9];
+      return [1, 4, 8, 2, 3, 5, 6, 7, 9];
     default:
       return [...DEFAULT_FLOW];
   }
