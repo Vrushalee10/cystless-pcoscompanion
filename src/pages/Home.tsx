@@ -156,13 +156,6 @@ const Home = () => {
             >
               Let's De-Cyst-ify this →
             </button>
-            <button
-              onClick={() => navigate("/cyclopedia")}
-              className="font-body"
-              style={{ fontSize: 12, fontWeight: 600, color: "hsl(var(--primary))", marginTop: 8 }}
-            >
-              📚 Cyclopedia →
-            </button>
           </div>
 
           <InlineCheckIn />
