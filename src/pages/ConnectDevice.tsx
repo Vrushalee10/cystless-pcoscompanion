@@ -147,7 +147,7 @@ const ConnectDevice = () => {
             className="font-body italic text-center"
             style={{ fontSize: 12, color: "#6B7280", marginTop: 20, lineHeight: 1.6 }}
           >
-            Cystless only reads health data — we never write to your device. Your data stays private and is never shared with third parties.
+            Cystless only reads health data. We never write to your device. Your data stays private and is never shared with third parties.
           </p>
         </motion.div>
       </div>

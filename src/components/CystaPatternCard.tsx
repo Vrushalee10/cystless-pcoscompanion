@@ -8,7 +8,7 @@ interface CystaPatternCardProps {
 }
 
 const actions = [
-  "Aim for 7–8hrs tonight — your plan has a wind-down reminder set for 9:30pm",
+  "Aim for 7-8hrs tonight. Your plan has a wind-down reminder set for 9:30pm",
   "A magnesium-rich snack before bed reduces overnight cortisol and improves sleep quality",
   "Tomorrow morning: protein breakfast within 30 mins of waking to reset blood sugar",
 ];
