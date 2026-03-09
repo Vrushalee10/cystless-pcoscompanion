@@ -138,7 +138,7 @@ const ConnectDevice = () => {
               Garmin · Oura Ring · Whoop
             </p>
             <p className="font-body" style={{ fontSize: 13, color: "hsl(var(--primary))", marginTop: 6, lineHeight: 1.6 }}>
-              We're adding more devices. Oura Ring integration is our top priority — its temperature and HRV data is the most accurate for cycle tracking.
+              We're adding more devices. Oura Ring integration is our top priority. Its temperature and HRV data is the most accurate for cycle tracking.
             </p>
           </div>
 
