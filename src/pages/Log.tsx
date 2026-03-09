@@ -38,6 +38,7 @@ const movementOptions = ["Rest day", "Walk", "Workout", "Gentle movement", "Yoga
 
 const Log = () => {
   const navigate = useNavigate();
+  const { cycleData } = useQuiz();
   const [searchParams] = useSearchParams();
   const startAtLayer2 = searchParams.get("layer") === "2";
 
