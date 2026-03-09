@@ -94,7 +94,7 @@ const GoalsDiagnosed = () => {
               marginTop: 10,
             }}
           >
-            Since you have PCOS — what are you here to work on?
+            Since you have PCOS, what are you here to work on?
           </h1>
           <div
             style={{

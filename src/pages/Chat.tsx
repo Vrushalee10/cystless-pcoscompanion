@@ -17,14 +17,14 @@ const getOpeningMessage = (userGoal: string | null): string => {
       return "Hey 💚 You're here to feel better day to day. I've got your pattern and your cycle in front of me. What's going on today?";
     case "cycle":
     case "fertility":
-      return "Hey 💚 You're working on your cycle. Day 18 right now — luteal phase. That's actually really useful timing. What would you like to know?";
+      return "Hey 💚 You're working on your cycle. Day 18 right now, luteal phase. That's actually really useful timing. What would you like to know?";
     case "weight":
       return "Hey 💚 Sustainable weight loss with PCOS is about insulin, not calories. I know your pattern. Let's talk about what's actually going on.";
     case "understand":
     case "new_diagnosis":
     case "feel_better":
     default:
-      return "Hey 💚 You want to understand your body — that's the best place to start. What's on your mind?";
+      return "Hey 💚 You want to understand your body, that's the best place to start. What's on your mind?";
   }
 };
 
