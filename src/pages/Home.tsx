@@ -4,6 +4,30 @@ import BottomNav from "@/components/BottomNav";
 import InlineCheckIn from "@/components/InlineCheckIn";
 import { useQuiz } from "@/context/QuizContext";
 
+const phaseInsights: Record<string, { headline: string; body: string }> = {
+  Menstrual: {
+    headline: "Your energy is low right now — and that's by design.",
+    body: "You're in your menstrual phase. Progesterone and oestrogen are at their lowest. Your body is shedding and recovering — iron drops, inflammation rises. Gentle movement and iron-rich foods are your best friends right now.",
+  },
+  Follicular: {
+    headline: "Your body is building momentum — ride this wave.",
+    body: "You're in your follicular phase. Oestrogen is rising, insulin sensitivity improves, and energy is coming back. This is your best window for strength training, meal prepping, and tackling bigger goals.",
+  },
+  Ovulatory: {
+    headline: "You're at peak energy — but watch for inflammation.",
+    body: "You're in your ovulatory phase. Oestrogen and LH peak, giving you maximum energy and confidence. But this hormonal surge can trigger bloating and breakouts. Anti-inflammatory foods like berries and leafy greens help.",
+  },
+  Luteal: {
+    headline: "Your cravings right now are hormonal, not weakness.",
+    body: "You're in your luteal phase. As progesterone rises, magnesium gets depleted, and low magnesium directly triggers sugar cravings. A small magnesium-rich snack this afternoon can interrupt this cycle. Try almonds or two squares of dark chocolate.",
+  },
+};
+
+const defaultInsight = {
+  headline: "Your body has patterns — let's start tracking them.",
+  body: "Once your cycle is set up, Cysta will show you personalised insights based on your exact phase, your PCOS type, and what your body needs today.",
+};
+
 const Home = () => {
   const navigate = useNavigate();
   const { cycleData } = useQuiz();
