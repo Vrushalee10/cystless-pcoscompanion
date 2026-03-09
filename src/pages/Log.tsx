@@ -4,6 +4,7 @@ import { Plus, Minus, Mic, ArrowLeft } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import BottomNav from "@/components/BottomNav";
 import LogHistory from "@/components/log/LogHistory";
+import { useQuiz } from "@/context/QuizContext";
 
 const moods = ["😞", "😕", "😐", "🙂", "😊"];
 const moodCopy = [
