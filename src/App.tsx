@@ -76,6 +76,9 @@ const App = () => (
             <Route path="/plan-changes" element={<PlanChanges />} />
             <Route path="/insights" element={<Insights />} />
             <Route path="/connect-device" element={<ConnectDevice />} />
+            <Route path="/settings" element={<Settings />} />
+            <Route path="/settings/cycle" element={<CycleSettings />} />
+            <Route path="/goals/update" element={<GoalsUpdate />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
