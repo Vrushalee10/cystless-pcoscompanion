@@ -1,7 +1,5 @@
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Menu, X } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import BottomNav from "@/components/BottomNav";
 import InlineCheckIn from "@/components/InlineCheckIn";
 import { useQuiz } from "@/context/QuizContext";
@@ -9,7 +7,6 @@ import { useQuiz } from "@/context/QuizContext";
 const Home = () => {
   const navigate = useNavigate();
   const { cycleData } = useQuiz();
-  const [menuOpen, setMenuOpen] = useState(false);
   const cs = cycleData.cycleStatus;
 
   const getBadgeProps = () => {
