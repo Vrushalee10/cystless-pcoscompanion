@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import { Eye, EyeOff } from "lucide-react";
+import { Eye, EyeOff, ArrowLeft } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 
@@ -67,10 +67,12 @@ const SignUp = () => {
   return (
     <div className="min-h-[100dvh] bg-background flex justify-center">
       <div className="w-full max-w-[390px] min-h-[100dvh] flex flex-col px-5">
-        {/* Wordmark */}
-        <span className="font-display text-[22px] font-bold text-primary" style={{ marginTop: 24 }}>
-          Cystless
-        </span>
+        {/* Top bar */}
+        <div className="flex items-center justify-between" style={{ marginTop: 24 }}>
+          <button onClick={() => navigate(-1)}><ArrowLeft className="h-5 w-5" style={{ color: "#6B7280" }} /></button>
+          <span className="font-display text-[22px] font-bold text-primary">Cystless</span>
+          <div style={{ width: 20 }} />
+        </div>
 
         {/* Header */}
         <div style={{ marginTop: 48 }}>
