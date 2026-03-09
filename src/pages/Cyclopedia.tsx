@@ -56,7 +56,7 @@ const Cyclopedia = () => {
           </p>
           <div className="mx-auto" style={{ width: 48, height: 4, backgroundColor: "hsl(var(--accent))", borderRadius: 2, marginTop: 12 }} />
           <p className="text-center font-body" style={{ fontSize: 15, color: "var(--text-muted)", lineHeight: 1.6, marginTop: 14, marginBottom: 24 }}>
-            Everything you were never told about your body — explained clearly, backed by research, personalised to your pattern.
+            Everything you were never told about your body, explained clearly, backed by research, personalised to your pattern.
           </p>
 
           {/* Search */}
