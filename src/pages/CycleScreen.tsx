@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { motion } from "framer-motion";
+import { useQuiz } from "@/context/QuizContext";
 
 const phases = [
   {
@@ -30,12 +31,13 @@ const phases = [
     emoji: "🌙",
     summary: "Progesterone rises then falls. Energy drops, cravings increase, mood can shift. Your body is preparing for either pregnancy or your next period.",
     tips: "Magnesium-rich foods, protein at every meal, gentle movement, prioritise sleep. This is not the time to push hard.",
-    current: true,
   },
 ];
 
 const CycleScreen = () => {
   const navigate = useNavigate();
+  const { cycleData } = useQuiz();
+  const currentPhase = cycleData.currentPhase;
 
   return (
     <div className="min-h-[100dvh] bg-background flex justify-center">
@@ -79,26 +81,28 @@ const CycleScreen = () => {
           {/* Cycle bar */}
           <div className="mt-6">
             <div className="flex rounded-full overflow-hidden" style={{ height: 32 }}>
-              {phases.map((phase) => (
-                <div
-                  key={phase.name}
-                  className="flex-1 flex items-center justify-center font-display"
-                  style={{
-                    fontSize: 11,
-                    fontWeight: 600,
-                    color: phase.current ? "white" : "var(--text-body)",
-                    backgroundColor: phase.current ? "hsl(var(--primary))" : "hsl(var(--border))",
-                    position: "relative",
-                  }}
-                >
-                  {phase.name}
-                </div>
-              ))}
+              {phases.map((phase) => {
+                const isCurrent = phase.name === currentPhase;
+                return (
+                  <div
+                    key={phase.name}
+                    className="flex-1 flex items-center justify-center font-display"
+                    style={{
+                      fontSize: 11,
+                      fontWeight: 600,
+                      color: isCurrent ? "white" : "var(--text-body)",
+                      backgroundColor: isCurrent ? "hsl(var(--primary))" : "hsl(var(--border))",
+                    }}
+                  >
+                    {phase.name}
+                  </div>
+                );
+              })}
             </div>
             <div className="flex mt-1">
               {phases.map((phase) => (
                 <div key={phase.name} className="flex-1 text-center">
-                  {phase.current && (
+                  {phase.name === currentPhase && (
                     <span className="font-display" style={{ fontSize: 10, color: "hsl(var(--primary))", fontWeight: 700 }}>
                       ▲ YOU ARE HERE
                     </span>
@@ -110,51 +114,54 @@ const CycleScreen = () => {
 
           {/* Phase cards */}
           <div className="mt-6 flex flex-col gap-3">
-            {phases.map((phase) => (
-              <div
-                key={phase.name}
-                className="bg-card"
-                style={{
-                  borderRadius: 18,
-                  padding: 20,
-                  boxShadow: "var(--shadow-card)",
-                  borderLeft: phase.current ? "4px solid #0A3D3D" : "4px solid transparent",
-                }}
-              >
-                <div className="flex items-center gap-2">
-                  <span style={{ fontSize: 20 }}>{phase.emoji}</span>
-                  <div>
-                    <p className="font-display" style={{ fontSize: 16, fontWeight: 700, color: "var(--text-ink)" }}>
-                      {phase.name} Phase
-                    </p>
-                    <p className="font-body" style={{ fontSize: 12, color: "var(--text-muted)" }}>{phase.days}</p>
+            {phases.map((phase) => {
+              const isCurrent = phase.name === currentPhase;
+              return (
+                <div
+                  key={phase.name}
+                  className="bg-card"
+                  style={{
+                    borderRadius: 18,
+                    padding: 20,
+                    boxShadow: "var(--shadow-card)",
+                    borderLeft: isCurrent ? "4px solid hsl(var(--primary))" : "4px solid transparent",
+                  }}
+                >
+                  <div className="flex items-center gap-2">
+                    <span style={{ fontSize: 20 }}>{phase.emoji}</span>
+                    <div>
+                      <p className="font-display" style={{ fontSize: 16, fontWeight: 700, color: "var(--text-ink)" }}>
+                        {phase.name} Phase
+                      </p>
+                      <p className="font-body" style={{ fontSize: 12, color: "var(--text-muted)" }}>{phase.days}</p>
+                    </div>
+                    {isCurrent && (
+                      <span
+                        className="ml-auto font-display"
+                        style={{
+                          fontSize: 11,
+                          fontWeight: 700,
+                          color: "hsl(var(--primary))",
+                          backgroundColor: "hsl(var(--primary-light))",
+                          padding: "3px 8px",
+                          borderRadius: 100,
+                        }}
+                      >
+                        CURRENT
+                      </span>
+                    )}
                   </div>
-                  {phase.current && (
-                    <span
-                      className="ml-auto font-display"
-                      style={{
-                        fontSize: 11,
-                        fontWeight: 700,
-                        color: "hsl(var(--primary))",
-                        backgroundColor: "hsl(var(--primary-light))",
-                        padding: "3px 8px",
-                        borderRadius: 100,
-                      }}
-                    >
-                      CURRENT
-                    </span>
-                  )}
-                </div>
-                <p className="font-body mt-3" style={{ fontSize: 14, color: "var(--text-body)", lineHeight: 1.6 }}>
-                  {phase.summary}
-                </p>
-                <div className="mt-3" style={{ backgroundColor: "#F7F4F0", borderRadius: 12, padding: 12 }}>
-                  <p className="font-body" style={{ fontSize: 13, color: "var(--text-body)", lineHeight: 1.5 }}>
-                    💡 {phase.tips}
+                  <p className="font-body mt-3" style={{ fontSize: 14, color: "var(--text-body)", lineHeight: 1.6 }}>
+                    {phase.summary}
                   </p>
+                  <div className="mt-3" style={{ backgroundColor: "hsl(var(--background))", borderRadius: 12, padding: 12 }}>
+                    <p className="font-body" style={{ fontSize: 13, color: "var(--text-body)", lineHeight: 1.5 }}>
+                      💡 {phase.tips}
+                    </p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </motion.div>
       </div>
