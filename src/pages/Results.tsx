@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 import { useNavigate } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { useQuiz, Scores } from "@/context/QuizContext";
 
@@ -147,6 +147,9 @@ const Results = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
+          <button onClick={() => navigate(-1)} className="pt-6 pb-3 self-start">
+            <ArrowLeft className="h-5 w-5" style={{ color: "var(--text-muted)" }} />
+          </button>
           {/* Header */}
           <p className="text-label mt-8" style={{ color: "hsl(var(--primary))" }}>
             YOUR RESULTS

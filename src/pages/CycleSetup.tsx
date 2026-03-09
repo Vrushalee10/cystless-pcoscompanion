@@ -1,5 +1,6 @@
 import { useState, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
+import { ArrowLeft } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useQuiz, calculateCycleInfo, CycleStatus, PostPillStage } from "@/context/QuizContext";
 import { Calendar } from "@/components/ui/calendar";
@@ -158,6 +159,19 @@ const CycleSetup = () => {
   return (
     <div className="min-h-[100dvh] bg-background flex justify-center">
       <div className="w-full max-w-[390px] min-h-[100dvh] flex flex-col px-5 pb-10 overflow-y-auto">
+        <button onClick={() => {
+          if (step === "period_check") navigate(-1);
+          else if (step === "recent_period" || step === "irregular" || step === "post_pill") setStep("period_check");
+          else if (step === "health") {
+            if (periodAnswer === "yes") setStep("recent_period");
+            else if (periodAnswer === "no" || periodAnswer === "unsure") setStep("irregular");
+            else if (periodAnswer === "post_pill") setStep("post_pill");
+            else setStep("period_check");
+          }
+          else if (step === "summary") setStep("health");
+        }} className="pt-6 pb-3 self-start">
+          <ArrowLeft className="h-5 w-5" style={{ color: "var(--text-muted)" }} />
+        </button>
         <ProgressDots stepNum={stepNum} />
 
         <AnimatePresence mode="wait">
