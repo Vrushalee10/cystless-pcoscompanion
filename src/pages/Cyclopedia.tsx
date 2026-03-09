@@ -47,7 +47,7 @@ const Cyclopedia = () => {
         <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }}>
           {/* Header */}
           <div className="flex items-center justify-between" style={{ marginTop: 24 }}>
-            <button onClick={() => navigate(-1)}><ArrowLeft className="h-5 w-5" style={{ color: "#6B7280" }} /></button>
+            <button onClick={() => navigate("/home")}><ArrowLeft className="h-5 w-5" style={{ color: "#6B7280" }} /></button>
             <h1 className="font-display" style={{ fontSize: 32, fontWeight: 800, color: "var(--text-ink)" }}>Cyclopedia</h1>
             <div style={{ width: 20 }} />
           </div>
