@@ -60,6 +60,13 @@ const Index = () => {
               Sign in
             </button>
           </p>
+          <button
+            onClick={() => navigate("/onboarding/1")}
+            className="w-full text-center font-body mt-3"
+            style={{ fontSize: 13, color: "var(--text-muted)" }}
+          >
+            Skip for now →
+          </button>
         </div>
       </div>
     </div>
