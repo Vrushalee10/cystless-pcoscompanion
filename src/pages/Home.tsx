@@ -3,6 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import BottomNav from "@/components/BottomNav";
 import InlineCheckIn from "@/components/InlineCheckIn";
+import { useQuiz } from "@/context/QuizContext";
 
 const Home = () => {
   const navigate = useNavigate();
