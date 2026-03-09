@@ -139,7 +139,7 @@ const Home = () => {
               className="font-display mt-4"
               style={{ fontSize: 26, fontWeight: 700, color: "var(--text-ink)", lineHeight: 1.25 }}
             >
-              Your cravings right now are hormonal, not weakness.
+              {insight.headline}
             </h2>
             <div
               className="mt-[14px] mb-[14px]"
@@ -153,9 +153,7 @@ const Home = () => {
               className="font-body"
               style={{ fontSize: 15, color: "var(--text-body)", lineHeight: 1.65 }}
             >
-              You're in your luteal phase. As progesterone rises, magnesium gets depleted, and low
-              magnesium directly triggers sugar cravings. A small magnesium-rich snack this afternoon
-              can interrupt this cycle. Try almonds or two squares of dark chocolate.
+              {insight.body}
             </p>
             <button
               onClick={() => navigate("/decystified")}
