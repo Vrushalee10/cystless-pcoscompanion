@@ -62,7 +62,7 @@ const CyclopediaArticle = () => {
 
             <p className="font-body" style={sectionLabel}>WHAT THE RESEARCH SAYS</p>
             <p className="font-body" style={bodyText}>
-              A 2022 clinical review found that lifestyle interventions targeting insulin sensitivity — specifically protein-prioritised eating, resistance training, and sleep quality — were more effective at reducing androgen levels in PCOS than calorie restriction alone. The mechanism is direct: lower insulin → lower LH pulsatility → lower androgen production → more regular ovulation.
+              A 2022 clinical review found that lifestyle interventions targeting insulin sensitivity, specifically protein-prioritised eating, resistance training, and sleep quality, were more effective at reducing androgen levels in PCOS than calorie restriction alone. The mechanism is direct: lower insulin → lower LH pulsatility → lower androgen production → more regular ovulation.
             </p>
 
             {/* Callout card */}
