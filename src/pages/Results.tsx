@@ -62,9 +62,26 @@ const TYPE_DATA: Record<keyof Scores, {
   },
 };
 
+const getGoalIntroLine = (userGoal: string | null): string => {
+  switch (userGoal) {
+    case "symptoms":
+      return "Based on your goal to manage your symptoms, here's what your pattern tells us.";
+    case "cycle":
+    case "fertility":
+      return "Based on your goal to regulate your cycle, here's what to focus on first.";
+    case "weight":
+      return "Based on your goal to lose weight sustainably, your insulin resistance pattern is the key.";
+    case "understand":
+    case "feel_better":
+    case "new_diagnosis":
+    default:
+      return "Here's what your body has been trying to tell you.";
+  }
+};
+
 const Results = () => {
   const navigate = useNavigate();
-  const { scores, flags } = useQuiz();
+  const { scores, flags, userGoal } = useQuiz();
 
   const { primary, secondary, showSecondary, showPostPillNote } = useMemo(() => {
     const entries = Object.entries(scores) as [keyof Scores, number][];
@@ -120,6 +137,8 @@ const Results = () => {
     ...(showSecondary && secondaryData ? [secondaryData.focusareas[0]] : []),
   ];
 
+  const goalIntroLine = getGoalIntroLine(userGoal);
+
   return (
     <div className="min-h-[100dvh] bg-background flex justify-center">
       <div className="w-full max-w-[390px] min-h-[100dvh] flex flex-col px-5 pb-[100px]">
@@ -142,11 +161,13 @@ const Results = () => {
             className="mt-3"
             style={{ width: 56, height: 4, backgroundColor: "hsl(var(--accent))", borderRadius: 2 }}
           />
+
+          {/* Goal-based intro line */}
           <p
             className="font-body mt-[14px]"
             style={{ fontSize: "15px", color: "var(--text-body)", lineHeight: 1.65 }}
           >
-            Based on your answers, here's what your body may be signalling.
+            {goalIntroLine}
           </p>
 
           {/* Primary card */}

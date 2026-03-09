@@ -15,6 +15,9 @@ import QuizScreen7 from "./pages/QuizScreen7";
 import QuizScreen8 from "./pages/QuizScreen8";
 import QuizScreen9 from "./pages/QuizScreen9";
 import QuizEmpathy from "./pages/QuizEmpathy";
+import GoalsDiagnosed from "./pages/GoalsDiagnosed";
+import GoalsSuspects from "./pages/GoalsSuspects";
+import GoalsGeneral from "./pages/GoalsGeneral";
 import Loading from "./pages/Loading";
 import Results from "./pages/Results";
 import Home from "./pages/Home";
@@ -51,6 +54,9 @@ const App = () => (
             <Route path="/quiz/8" element={<QuizScreen8 />} />
             <Route path="/quiz/9" element={<QuizScreen9 />} />
             <Route path="/quiz/empathy" element={<QuizEmpathy />} />
+            <Route path="/goals/diagnosed" element={<GoalsDiagnosed />} />
+            <Route path="/goals/suspects" element={<GoalsSuspects />} />
+            <Route path="/goals/general" element={<GoalsGeneral />} />
             <Route path="/loading" element={<Loading />} />
             <Route path="/results" element={<Results />} />
             <Route path="/home" element={<Home />} />

@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { ArrowLeft, Send } from "lucide-react";
 import { motion } from "framer-motion";
 import BottomNav from "@/components/BottomNav";
+import { useQuiz } from "@/context/QuizContext";
 
 interface Message {
   role: "ai" | "user";
@@ -10,13 +11,22 @@ interface Message {
   time: string;
 }
 
-const initialMessages: Message[] = [
-  {
-    role: "ai",
-    text: "Hey Vrushali 💚 No sugar-coating, no judgement, just us. You're on Day 18, deep in luteal phase. Your body is doing a lot right now. What's on your mind?",
-    time: "9:02 AM",
-  },
-];
+const getOpeningMessage = (userGoal: string | null): string => {
+  switch (userGoal) {
+    case "symptoms":
+      return "Hey 💚 You're here to feel better day to day. I've got your pattern and your cycle in front of me. What's going on today?";
+    case "cycle":
+    case "fertility":
+      return "Hey 💚 You're working on your cycle. Day 18 right now — luteal phase. That's actually really useful timing. What would you like to know?";
+    case "weight":
+      return "Hey 💚 Sustainable weight loss with PCOS is about insulin, not calories. I know your pattern. Let's talk about what's actually going on.";
+    case "understand":
+    case "new_diagnosis":
+    case "feel_better":
+    default:
+      return "Hey 💚 You want to understand your body — that's the best place to start. What's on your mind?";
+  }
+};
 
 const getAiResponse = (userText: string): string => {
   const lower = userText.toLowerCase();
@@ -113,7 +123,13 @@ const TypingIndicator = () => (
 
 const Chat = () => {
   const navigate = useNavigate();
-  const [messages, setMessages] = useState<Message[]>(initialMessages);
+  const { userGoal } = useQuiz();
+  
+  const [messages, setMessages] = useState<Message[]>(() => [{
+    role: "ai",
+    text: getOpeningMessage(userGoal),
+    time: "9:02 AM",
+  }]);
   const [input, setInput] = useState("");
   const [isTyping, setIsTyping] = useState(false);
   const chatEndRef = useRef<HTMLDivElement>(null);
