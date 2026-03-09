@@ -56,7 +56,7 @@ const ConnectDevice = () => {
             </h2>
             <div style={{ width: 48, height: 4, backgroundColor: "#D4614F", borderRadius: 2, marginTop: 12 }} />
             <p className="font-body" style={{ fontSize: 15, color: "#6B7280", lineHeight: 1.6, marginTop: 14 }}>
-              When your watch is connected, Cystless automatically tracks sleep, heart rate variability and activity — so your plan updates in real time without manual logging.
+              When your watch is connected, Cystless automatically tracks sleep, heart rate variability and activity, so your plan updates in real time without manual logging.
             </p>
           </div>
 
