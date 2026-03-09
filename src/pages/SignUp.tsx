@@ -198,6 +198,14 @@ const SignUp = () => {
           </Link>
         </p>
 
+        <button
+          onClick={() => navigate("/onboarding/1")}
+          className="w-full text-center font-body"
+          style={{ fontSize: 13, color: "#6B7280", marginTop: 8 }}
+        >
+          Skip for now →
+        </button>
+
         {/* Privacy note */}
         <p className="text-center font-body italic mt-auto pb-8" style={{ fontSize: 12, color: "#6B7280" }}>
           🔒 Your health data is encrypted and never sold.
