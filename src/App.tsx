@@ -45,6 +45,8 @@ const App = () => (
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Index />} />
+            <Route path="/signup" element={<SignUp />} />
+            <Route path="/signin" element={<SignIn />} />
             <Route path="/onboarding/:step" element={<Onboarding />} />
             <Route path="/quiz/1" element={<QuizScreen1 />} />
             <Route path="/quiz/2" element={<QuizScreen2 />} />
