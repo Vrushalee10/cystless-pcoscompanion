@@ -32,6 +32,9 @@ import PlanChanges from "./pages/PlanChanges";
 import Insights from "./pages/Insights";
 import ConnectDevice from "./pages/ConnectDevice";
 import Onboarding from "./pages/Onboarding";
+import Settings from "./pages/Settings";
+import CycleSettings from "./pages/CycleSettings";
+import GoalsUpdate from "./pages/GoalsUpdate";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -73,6 +76,9 @@ const App = () => (
             <Route path="/plan-changes" element={<PlanChanges />} />
             <Route path="/insights" element={<Insights />} />
             <Route path="/connect-device" element={<ConnectDevice />} />
+            <Route path="/settings" element={<Settings />} />
+            <Route path="/settings/cycle" element={<CycleSettings />} />
+            <Route path="/goals/update" element={<GoalsUpdate />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>

@@ -48,7 +48,8 @@ const Home = () => {
                 Know Your Cyst-em →
               </button>
             </div>
-            <div
+            <button
+              onClick={() => navigate("/settings")}
               className="flex items-center justify-center flex-shrink-0 font-display"
               style={{
                 width: 44,
@@ -62,7 +63,7 @@ const Home = () => {
               }}
             >
               V
-            </div>
+            </button>
           </div>
 
           <div className="mt-5 border-t border-border" />
