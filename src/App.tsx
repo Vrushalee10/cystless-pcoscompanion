@@ -35,6 +35,8 @@ import Onboarding from "./pages/Onboarding";
 import Settings from "./pages/Settings";
 import CycleSettings from "./pages/CycleSettings";
 import GoalsUpdate from "./pages/GoalsUpdate";
+import Cyclopedia from "./pages/Cyclopedia";
+import CyclopediaArticle from "./pages/CyclopediaArticle";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
