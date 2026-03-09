@@ -57,7 +57,7 @@ const CyclopediaArticle = () => {
 
             <p className="font-body" style={sectionLabel}>WHY IT AFFECTS EVERYTHING</p>
             <p className="font-body" style={bodyText}>
-              High insulin doesn't just affect blood sugar. It affects your weight (makes fat storage easier and fat burning harder), your cycle (disrupts ovulation), your skin (drives sebum production = acne), your mood (blood sugar crashes = anxiety and irritability), and your cravings (low blood sugar = desperate need for carbohydrates and sugar). This is why fixing insulin sensitivity — not cutting calories — is the foundation of managing IR PCOS.
+              High insulin doesn't just affect blood sugar. It affects your weight (makes fat storage easier and fat burning harder), your cycle (disrupts ovulation), your skin (drives sebum production = acne), your mood (blood sugar crashes = anxiety and irritability), and your cravings (low blood sugar = desperate need for carbohydrates and sugar). This is why fixing insulin sensitivity, not cutting calories, is the foundation of managing IR PCOS.
             </p>
 
             <p className="font-body" style={sectionLabel}>WHAT THE RESEARCH SAYS</p>
