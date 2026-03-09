@@ -7,6 +7,8 @@ import { useQuiz } from "@/context/QuizContext";
 
 const Home = () => {
   const navigate = useNavigate();
+  const { cycleData } = useQuiz();
+  const hasCycle = cycleData.currentCycleDay !== null;
   return (
     <div className="min-h-[100dvh] bg-background flex justify-center">
       <div className="w-full max-w-[390px] min-h-[100dvh] flex flex-col px-5 pb-[80px]">
