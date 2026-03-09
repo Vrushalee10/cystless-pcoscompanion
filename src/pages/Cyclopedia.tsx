@@ -15,16 +15,16 @@ interface Article {
 }
 
 const articles: Article[] = [
-  { title: "Why Progesterone Drops in Luteal Phase — and What Happens to Your Body", meta: "5 min read · Luteal Phase · IR type", route: "/cyclopedia/progesterone-luteal", category: "Hormones", section: "HORMONES & YOUR CYCLE" },
+  { title: "Why Progesterone Drops in Luteal Phase and What Happens to Your Body", meta: "5 min read · Luteal Phase · IR type", route: "/cyclopedia/progesterone-luteal", category: "Hormones", section: "HORMONES & YOUR CYCLE" },
   { title: "Magnesium and PCOS: The Missing Link Nobody Talks About", meta: "6 min read · All types", category: "Hormones", section: "HORMONES & YOUR CYCLE" },
   { title: "Oestrogen Dominance: What It Is and Whether You Have It", meta: "7 min read · IR + IN types", category: "Hormones", section: "HORMONES & YOUR CYCLE" },
   { title: "Blood Sugar Basics: Why Every Meal Matters for PCOS", meta: "5 min read · IR type", category: "Nutrition", section: "NUTRITION" },
   { title: "Anti-Inflammatory Eating for PCOS: Where to Start", meta: "6 min read · IN type", category: "Nutrition", section: "NUTRITION" },
   { title: "Seed Cycling: The Evidence, the Hype, and What Actually Works", meta: "8 min read · All types", category: "Nutrition", section: "NUTRITION" },
-  { title: "Why PCOS Causes Hair Loss — and What You Can Do", meta: "6 min read · AD + IR types", category: "Symptoms", section: "SYMPTOMS EXPLAINED" },
+  { title: "Why PCOS Causes Hair Loss and What You Can Do", meta: "6 min read · AD + IR types", category: "Symptoms", section: "SYMPTOMS EXPLAINED" },
   { title: "Acne and PCOS: The Androgen Connection Explained", meta: "5 min read · AD type", category: "Symptoms", section: "SYMPTOMS EXPLAINED" },
   { title: "Brain Fog with PCOS: Is It Real? (Yes. Here's Why.)", meta: "7 min read · All types", category: "Symptoms", section: "SYMPTOMS EXPLAINED" },
-  { title: "What Blood Tests to Ask For — and What the Numbers Mean", meta: "8 min read · All types", category: "Tests & Diagnosis", section: "TESTS & DIAGNOSIS" },
+  { title: "What Blood Tests to Ask For and What the Numbers Mean", meta: "8 min read · All types", category: "Tests & Diagnosis", section: "TESTS & DIAGNOSIS" },
   { title: "The Rotterdam Criteria: What Doctors Use to Diagnose PCOS", meta: "6 min read · All types", category: "Tests & Diagnosis", section: "TESTS & DIAGNOSIS" },
 ];
 
@@ -56,7 +56,7 @@ const Cyclopedia = () => {
           </p>
           <div className="mx-auto" style={{ width: 48, height: 4, backgroundColor: "hsl(var(--accent))", borderRadius: 2, marginTop: 12 }} />
           <p className="text-center font-body" style={{ fontSize: 15, color: "var(--text-muted)", lineHeight: 1.6, marginTop: 14, marginBottom: 24 }}>
-            Everything you were never told about your body — explained clearly, backed by research, personalised to your pattern.
+            Everything you were never told about your body, explained clearly, backed by research, personalised to your pattern.
           </p>
 
           {/* Search */}
@@ -106,7 +106,7 @@ const Cyclopedia = () => {
               <div style={{ padding: 20 }}>
                 <p className="font-body" style={{ fontSize: 10, textTransform: "uppercase", letterSpacing: 1.5, color: "hsl(var(--accent))", fontWeight: 700, marginBottom: 8 }}>FEATURED</p>
                 <p className="font-display" style={{ fontSize: 20, fontWeight: 700, color: "var(--text-ink)", lineHeight: 1.3 }}>
-                  What is Insulin Resistance PCOS — and why does it affect everything?
+                  What is Insulin Resistance PCOS and why does it affect everything?
                 </p>
                 <p className="font-body" style={{ fontSize: 12, color: "var(--text-muted)", marginTop: 6 }}>8 min read</p>
               </div>

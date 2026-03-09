@@ -279,7 +279,7 @@ const Settings = () => {
           {/* ABOUT */}
           <SectionLabel>ABOUT</SectionLabel>
           <Card>
-            <SettingsRow label="Cyclopedia — PCOS Science Library" right="→" onClick={() => navigate("/cyclopedia")} />
+            <SettingsRow label="Cyclopedia: PCOS Science Library" right="→" onClick={() => navigate("/cyclopedia")} />
             <Divider />
             <SettingsRow label="Privacy Policy" right="→" onClick={() => window.open("#", "_blank")} />
             <Divider />
