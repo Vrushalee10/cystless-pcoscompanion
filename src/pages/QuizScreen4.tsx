@@ -54,7 +54,7 @@ const QuizScreen4 = () => {
       });
       addScores(totalScores);
     }
-    navigate("/quiz/5");
+    navigate(getNextRoute(4));
   };
 
   const hasSelection = selected.size > 0 || none;
