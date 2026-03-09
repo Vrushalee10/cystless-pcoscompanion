@@ -265,9 +265,14 @@ const Plan = () => {
       <div className="w-full max-w-[390px] min-h-[100dvh] flex flex-col pb-20">
         <div className="px-5">
           {/* Header */}
-          <h1 className="font-display" style={{ fontSize: 32, fontWeight: 800, color: "var(--text-ink)", marginTop: 20 }}>
-            Your Plan
-          </h1>
+          <div className="flex items-center gap-3" style={{ marginTop: 20 }}>
+            <button onClick={() => navigate("/home")}>
+              <ArrowLeft className="h-5 w-5" style={{ color: "var(--text-muted)" }} />
+            </button>
+            <h1 className="font-display" style={{ fontSize: 32, fontWeight: 800, color: "var(--text-ink)" }}>
+              Your Plan
+            </h1>
+          </div>
           <p className="font-body" style={{ fontSize: 14, color: "var(--text-muted)", marginTop: 4 }}>
             Insulin Resistance · {cs === "regular" && cycleData.currentPhase ? `${cycleData.currentPhase} Phase` : cs === "post_pill" ? "Post-pill recovery" : cs ? "Building your baseline" : "Cycle not set"}
           </p>

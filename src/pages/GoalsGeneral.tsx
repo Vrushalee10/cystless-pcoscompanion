@@ -63,6 +63,9 @@ const GoalsGeneral = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4 }}
         >
+          <button onClick={() => navigate(-1)} className="pt-6 pb-3 self-start">
+            <ArrowLeft className="h-5 w-5" style={{ color: "var(--text-muted)" }} />
+          </button>
           {/* Header */}
           <p
             className="font-display"
