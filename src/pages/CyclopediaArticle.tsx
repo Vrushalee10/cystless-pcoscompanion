@@ -47,7 +47,7 @@ const CyclopediaArticle = () => {
             <div style={{ width: 48, height: 4, backgroundColor: "hsl(var(--accent))", borderRadius: 2, marginTop: 12, marginBottom: 20 }} />
 
             <p className="font-body" style={bodyText}>
-              If you have PCOS, there's a 70% chance insulin resistance is at the root of it. Not just a contributing factor — the actual driver. Yet most women with PCOS are never told this clearly. They're given a diet sheet and sent home.
+              If you have PCOS, there's a 70% chance insulin resistance is at the root of it. Not just a contributing factor, the actual driver. Yet most women with PCOS are never told this clearly. They're given a diet sheet and sent home.
             </p>
 
             <p className="font-body" style={sectionLabel}>WHAT IS INSULIN RESISTANCE?</p>
