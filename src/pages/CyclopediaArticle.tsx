@@ -52,7 +52,7 @@ const CyclopediaArticle = () => {
 
             <p className="font-body" style={sectionLabel}>WHAT IS INSULIN RESISTANCE?</p>
             <p className="font-body" style={bodyText}>
-              Insulin is the hormone that unlocks your cells to let glucose in. When cells become resistant to insulin, your pancreas produces more and more of it trying to get the job done. High insulin levels then signal your ovaries to produce more androgens — the male hormones that cause acne, hair loss, and irregular periods.
+              Insulin is the hormone that unlocks your cells to let glucose in. When cells become resistant to insulin, your pancreas produces more and more of it trying to get the job done. High insulin levels then signal your ovaries to produce more androgens, the male hormones that cause acne, hair loss, and irregular periods.
             </p>
 
             <p className="font-body" style={sectionLabel}>WHY IT AFFECTS EVERYTHING</p>
