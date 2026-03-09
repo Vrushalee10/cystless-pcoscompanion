@@ -15,16 +15,16 @@ const options: { id: string; text: string; scores: Partial<Scores> }[] = [
 const QuizScreen8 = () => {
   const [selected, setSelected] = useState<string | null>(null);
   const navigate = useNavigate();
-  const { addScores } = useQuiz();
+  const { addScores, getNextRoute } = useQuiz();
 
   const handleContinue = () => {
     const opt = options.find((o) => o.id === selected);
     if (opt) addScores(opt.scores);
-    navigate("/quiz/9");
+    navigate(getNextRoute(8));
   };
 
   return (
-    <QuizShell step={8}>
+    <QuizShell questionId={8}>
       <div className="mt-7">
         <h1
           className="font-display"

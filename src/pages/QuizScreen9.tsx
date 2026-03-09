@@ -60,7 +60,7 @@ const QuizScreen9 = () => {
   const hasSelection = selected.size > 0 || none;
 
   return (
-    <QuizShell step={9}>
+    <QuizShell questionId={9}>
       <div className="mt-7">
         <h1
           className="font-display"

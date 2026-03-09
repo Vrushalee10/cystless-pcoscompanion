@@ -40,7 +40,7 @@ const QuizScreen1 = () => {
   };
 
   return (
-    <QuizShell step={1}>
+    <QuizShell questionId={1}>
       <div className="mt-7">
         <h1
           className="font-display"

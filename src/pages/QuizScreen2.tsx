@@ -17,17 +17,19 @@ const QuizScreen2 = () => {
   const navigate = useNavigate();
   const { addScores, setFlag } = useQuiz();
 
+  const { addScores, setFlag, getNextRoute } = useQuiz();
+
   const handleContinue = () => {
     const opt = options.find((o) => o.id === selected);
     if (opt) {
       addScores(opt.scores);
       if ("flag" in opt && opt.flag) setFlag(opt.flag, true);
     }
-    navigate("/quiz/3");
+    navigate(getNextRoute(2));
   };
 
   return (
-    <QuizShell step={2}>
+    <QuizShell questionId={2}>
       <div className="mt-7">
         <h1
           className="font-display"
