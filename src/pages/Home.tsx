@@ -30,7 +30,7 @@ const Home = () => {
                 Vrushali
               </h1>
               <button
-                onClick={() => navigate("/cycle")}
+                onClick={() => hasCycle ? navigate("/cycle") : navigate("/cycle-setup")}
                 className="mt-[10px] inline-block font-body"
                 style={{
                   fontSize: 13,
@@ -41,7 +41,9 @@ const Home = () => {
                   borderRadius: 100,
                 }}
               >
-                Day 18 · Luteal Phase
+                {hasCycle
+                  ? `Day ${cycleData.currentCycleDay} · ${cycleData.currentPhase} Phase`
+                  : "Set up cycle tracking →"}
               </button>
               <button
                 onClick={() => navigate("/cycle")}

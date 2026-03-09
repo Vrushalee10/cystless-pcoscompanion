@@ -144,7 +144,9 @@ const Log = () => {
               padding: "5px 10px", borderRadius: 100,
             }}
           >
-            Day 18 · Luteal Phase
+            {cycleData.currentCycleDay
+              ? `Day ${cycleData.currentCycleDay} · ${cycleData.currentPhase} Phase`
+              : "Cycle not set up"}
           </div>
 
           {/* Pill Tabs */}
