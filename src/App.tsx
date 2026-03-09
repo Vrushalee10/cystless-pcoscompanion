@@ -81,6 +81,8 @@ const App = () => (
             <Route path="/settings" element={<Settings />} />
             <Route path="/settings/cycle" element={<CycleSettings />} />
             <Route path="/goals/update" element={<GoalsUpdate />} />
+            <Route path="/cyclopedia" element={<Cyclopedia />} />
+            <Route path="/cyclopedia/insulin-resistance" element={<CyclopediaArticle />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
