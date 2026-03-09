@@ -141,12 +141,17 @@ const Log = () => {
             className="mt-2 inline-block font-body"
             style={{
               fontSize: 13, fontWeight: 600,
-              color: "hsl(var(--primary))", backgroundColor: "hsl(var(--primary-light))",
+              color: cycleData.cycleStatus === "regular" ? "hsl(var(--primary))" : cycleData.cycleStatus ? "#92400E" : "var(--text-muted)",
+              backgroundColor: cycleData.cycleStatus === "regular" ? "hsl(var(--primary-light))" : cycleData.cycleStatus ? "#FFF8ED" : "#E2DDD7",
               padding: "5px 10px", borderRadius: 100,
             }}
           >
-            {cycleData.currentCycleDay
+            {cycleData.cycleStatus === "regular" && cycleData.currentCycleDay
               ? `Day ${cycleData.currentCycleDay} · ${cycleData.currentPhase} Phase`
+              : cycleData.cycleStatus === "post_pill"
+              ? "Post-pill recovery"
+              : cycleData.cycleStatus
+              ? "Irregular cycle · Building baseline"
               : "Cycle not set up"}
           </div>
 

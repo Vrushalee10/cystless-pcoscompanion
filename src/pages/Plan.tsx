@@ -248,6 +248,7 @@ const MindsetTab = () => (
 const Plan = () => {
   const navigate = useNavigate();
   const { userGoal, cycleData } = useQuiz();
+  const cs = cycleData.cycleStatus;
   const [activeTab, setActiveTab] = useState<Tab>(() => getInitialTab(userGoal));
 
   // Show cycle note for cycle/fertility goals
@@ -268,7 +269,7 @@ const Plan = () => {
             Your Plan
           </h1>
           <p className="font-body" style={{ fontSize: 14, color: "var(--text-muted)", marginTop: 4 }}>
-            Insulin Resistance · {cycleData.currentPhase ? `${cycleData.currentPhase} Phase` : "Cycle not set"}
+            Insulin Resistance · {cs === "regular" && cycleData.currentPhase ? `${cycleData.currentPhase} Phase` : cs === "post_pill" ? "Post-pill recovery" : cs ? "Building your baseline" : "Cycle not set"}
           </p>
           <div style={{ width: 48, height: 4, backgroundColor: "hsl(var(--accent))", borderRadius: 2, marginTop: 10 }} />
 

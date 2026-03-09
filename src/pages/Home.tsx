@@ -8,7 +8,37 @@ import { useQuiz } from "@/context/QuizContext";
 const Home = () => {
   const navigate = useNavigate();
   const { cycleData } = useQuiz();
-  const hasCycle = cycleData.currentCycleDay !== null;
+  const cs = cycleData.cycleStatus;
+
+  const getBadgeProps = () => {
+    if (cs === "regular" && cycleData.currentCycleDay) return {
+      text: `Day ${cycleData.currentCycleDay} · ${cycleData.currentPhase} Phase`,
+      bg: "hsl(var(--primary-light))", color: "hsl(var(--primary))", route: "/cycle",
+    };
+    if (cs === "irregular_short") return {
+      text: "Cycle irregular · Tracking in progress",
+      bg: "#FFF8ED", color: "#92400E", route: "/cycle",
+    };
+    if (cs === "irregular_medium") return {
+      text: "Irregular cycle · Building your baseline",
+      bg: "#FFF8ED", color: "#92400E", route: "/cycle",
+    };
+    if (cs === "irregular_long" || cs === "never_regular") return {
+      text: "Cycle monitoring · See Cysta",
+      bg: "#FCECEA", color: "#D4614F", route: "/chat",
+    };
+    if (cs === "post_pill") return {
+      text: `Post-pill recovery · ${cycleData.postPillStage?.replace("_", " ") || ""}`,
+      bg: "hsl(var(--primary-light))", color: "hsl(var(--primary))", route: "/cycle",
+    };
+    return {
+      text: "Set up cycle tracking →",
+      bg: "#E2DDD7", color: "var(--text-muted)", route: "/cycle-setup",
+    };
+  };
+
+  const badge = getBadgeProps();
+
   return (
     <div className="min-h-[100dvh] bg-background flex justify-center">
       <div className="w-full max-w-[390px] min-h-[100dvh] flex flex-col px-5 pb-[80px]">
@@ -30,20 +60,18 @@ const Home = () => {
                 Vrushali
               </h1>
               <button
-                onClick={() => hasCycle ? navigate("/cycle") : navigate("/cycle-setup")}
+                onClick={() => navigate(badge.route)}
                 className="mt-[10px] inline-block font-body"
                 style={{
                   fontSize: 13,
                   fontWeight: 600,
-                  color: "hsl(var(--primary))",
-                  backgroundColor: "hsl(var(--primary-light))",
+                  color: badge.color,
+                  backgroundColor: badge.bg,
                   padding: "5px 10px",
                   borderRadius: 100,
                 }}
               >
-                {hasCycle
-                  ? `Day ${cycleData.currentCycleDay} · ${cycleData.currentPhase} Phase`
-                  : "Set up cycle tracking →"}
+                {badge.text}
               </button>
               <button
                 onClick={() => navigate("/cycle")}

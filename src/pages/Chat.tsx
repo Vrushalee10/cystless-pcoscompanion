@@ -11,13 +11,21 @@ interface Message {
   time: string;
 }
 
-const getOpeningMessage = (userGoal: string | null): string => {
+const getOpeningMessage = (userGoal: string | null, cycleStatus: string | null): string => {
+  // Post-pill override
+  if (cycleStatus === "post_pill") {
+    return "Hey Vrushali 💚 Post-pill recovery is one of the most confusing times for your hormones. I've got your back. Your plan is focused on helping your body find its own rhythm again. What's on your mind?";
+  }
+  // Irregular override
+  if (cycleStatus === "irregular_short" || cycleStatus === "irregular_medium" || cycleStatus === "irregular_long" || cycleStatus === "never_regular") {
+    return "Hey Vrushali 💚 I know an irregular cycle can feel really unsettling. We're going to track your patterns carefully and build a picture over time. What would help you most today?";
+  }
   switch (userGoal) {
     case "symptoms":
       return "Hey 💚 You're here to feel better day to day. I've got your pattern and your cycle in front of me. What's going on today?";
     case "cycle":
     case "fertility":
-      return "Hey 💚 You're working on your cycle. Day 18 right now, luteal phase. That's actually really useful timing. What would you like to know?";
+      return "Hey 💚 You're working on your cycle. I've got your phase data in front of me. What would you like to know?";
     case "weight":
       return "Hey 💚 Sustainable weight loss with PCOS is about insulin, not calories. I know your pattern. Let's talk about what's actually going on.";
     case "understand":
@@ -123,11 +131,11 @@ const TypingIndicator = () => (
 
 const Chat = () => {
   const navigate = useNavigate();
-  const { userGoal } = useQuiz();
+  const { userGoal, cycleData } = useQuiz();
   
   const [messages, setMessages] = useState<Message[]>(() => [{
     role: "ai",
-    text: getOpeningMessage(userGoal),
+    text: getOpeningMessage(userGoal, cycleData.cycleStatus),
     time: "9:02 AM",
   }]);
   const [input, setInput] = useState("");
