@@ -1,5 +1,6 @@
 import { useState, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
+import { ArrowLeft } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useQuiz, calculateCycleInfo, CycleStatus, PostPillStage } from "@/context/QuizContext";
 import { Calendar } from "@/components/ui/calendar";
