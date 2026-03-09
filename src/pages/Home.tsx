@@ -9,6 +9,7 @@ import { useQuiz } from "@/context/QuizContext";
 const Home = () => {
   const navigate = useNavigate();
   const { cycleData } = useQuiz();
+  const [menuOpen, setMenuOpen] = useState(false);
   const cs = cycleData.cycleStatus;
 
   const getBadgeProps = () => {
