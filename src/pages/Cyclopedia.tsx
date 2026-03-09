@@ -21,7 +21,7 @@ const articles: Article[] = [
   { title: "Blood Sugar Basics: Why Every Meal Matters for PCOS", meta: "5 min read · IR type", category: "Nutrition", section: "NUTRITION" },
   { title: "Anti-Inflammatory Eating for PCOS: Where to Start", meta: "6 min read · IN type", category: "Nutrition", section: "NUTRITION" },
   { title: "Seed Cycling: The Evidence, the Hype, and What Actually Works", meta: "8 min read · All types", category: "Nutrition", section: "NUTRITION" },
-  { title: "Why PCOS Causes Hair Loss — and What You Can Do", meta: "6 min read · AD + IR types", category: "Symptoms", section: "SYMPTOMS EXPLAINED" },
+  { title: "Why PCOS Causes Hair Loss and What You Can Do", meta: "6 min read · AD + IR types", category: "Symptoms", section: "SYMPTOMS EXPLAINED" },
   { title: "Acne and PCOS: The Androgen Connection Explained", meta: "5 min read · AD type", category: "Symptoms", section: "SYMPTOMS EXPLAINED" },
   { title: "Brain Fog with PCOS: Is It Real? (Yes. Here's Why.)", meta: "7 min read · All types", category: "Symptoms", section: "SYMPTOMS EXPLAINED" },
   { title: "What Blood Tests to Ask For — and What the Numbers Mean", meta: "8 min read · All types", category: "Tests & Diagnosis", section: "TESTS & DIAGNOSIS" },
