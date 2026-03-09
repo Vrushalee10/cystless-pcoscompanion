@@ -47,7 +47,7 @@ const Index = () => {
           <Button
             variant="hero"
             size="hero"
-            onClick={() => navigate("/onboarding/1")}
+            onClick={() => navigate("/signup")}
             className="w-full relative"
           >
             Get Started
@@ -56,7 +56,7 @@ const Index = () => {
 
           <p className="text-center mt-[14px] font-body" style={{ fontSize: '14px', color: 'var(--text-muted)' }}>
             Already have an account?{" "}
-            <button className="text-primary font-semibold hover:underline">
+            <button onClick={() => navigate("/signin")} className="text-primary font-semibold hover:underline">
               Sign in
             </button>
           </p>
