@@ -32,6 +32,9 @@ import PlanChanges from "./pages/PlanChanges";
 import Insights from "./pages/Insights";
 import ConnectDevice from "./pages/ConnectDevice";
 import Onboarding from "./pages/Onboarding";
+import Settings from "./pages/Settings";
+import CycleSettings from "./pages/CycleSettings";
+import GoalsUpdate from "./pages/GoalsUpdate";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
