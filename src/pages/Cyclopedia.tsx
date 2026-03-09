@@ -24,7 +24,7 @@ const articles: Article[] = [
   { title: "Why PCOS Causes Hair Loss and What You Can Do", meta: "6 min read · AD + IR types", category: "Symptoms", section: "SYMPTOMS EXPLAINED" },
   { title: "Acne and PCOS: The Androgen Connection Explained", meta: "5 min read · AD type", category: "Symptoms", section: "SYMPTOMS EXPLAINED" },
   { title: "Brain Fog with PCOS: Is It Real? (Yes. Here's Why.)", meta: "7 min read · All types", category: "Symptoms", section: "SYMPTOMS EXPLAINED" },
-  { title: "What Blood Tests to Ask For — and What the Numbers Mean", meta: "8 min read · All types", category: "Tests & Diagnosis", section: "TESTS & DIAGNOSIS" },
+  { title: "What Blood Tests to Ask For and What the Numbers Mean", meta: "8 min read · All types", category: "Tests & Diagnosis", section: "TESTS & DIAGNOSIS" },
   { title: "The Rotterdam Criteria: What Doctors Use to Diagnose PCOS", meta: "6 min read · All types", category: "Tests & Diagnosis", section: "TESTS & DIAGNOSIS" },
 ];
 
