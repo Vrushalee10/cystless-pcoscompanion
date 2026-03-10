@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { Eye, EyeOff, ArrowLeft } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
+import { lovable } from "@/integrations/lovable/index";
 import { toast } from "sonner";
 
 const GoogleIcon = () => (
@@ -24,9 +25,8 @@ const SignUp = () => {
   const isValid = name.trim().length > 0 && email.trim().length > 0 && password.length >= 6;
 
   const handleGoogleSignUp = async () => {
-    const { error } = await supabase.auth.signInWithOAuth({
-      provider: "google",
-      options: { redirectTo: `${window.location.origin}/onboarding/1` },
+    const { error } = await lovable.auth.signInWithOAuth("google", {
+      redirect_uri: window.location.origin,
     });
     if (error) toast.error(error.message);
   };
