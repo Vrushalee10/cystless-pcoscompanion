@@ -84,29 +84,6 @@ const SignUp = () => {
           </p>
         </div>
 
-        {/* Google button */}
-        <button
-          onClick={handleGoogleSignUp}
-          className="w-full flex items-center justify-center gap-3 bg-card"
-          style={{
-            height: 58,
-            borderRadius: 18,
-            border: "1.5px solid #E2DDD7",
-            boxShadow: "var(--shadow-card)",
-          }}
-        >
-          <GoogleIcon />
-          <span className="font-body" style={{ fontSize: 16, fontWeight: 600, color: "#111111" }}>
-            Continue with Google
-          </span>
-        </button>
-
-        {/* Divider */}
-        <div className="flex items-center gap-3" style={{ margin: "20px 0" }}>
-          <div className="flex-1" style={{ height: 1, backgroundColor: "#E2DDD7" }} />
-          <span className="font-body" style={{ fontSize: 13, color: "#6B7280" }}>or</span>
-          <div className="flex-1" style={{ height: 1, backgroundColor: "#E2DDD7" }} />
-        </div>
 
         {/* Name */}
         <div style={{ marginBottom: 16 }}>
