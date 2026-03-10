@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { Eye, EyeOff, ArrowLeft } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
+import { lovable } from "@/integrations/lovable/index";
 import { toast } from "sonner";
 
 const GoogleIcon = () => (
@@ -24,9 +25,8 @@ const SignUp = () => {
   const isValid = name.trim().length > 0 && email.trim().length > 0 && password.length >= 6;
 
   const handleGoogleSignUp = async () => {
-    const { error } = await supabase.auth.signInWithOAuth({
-      provider: "google",
-      options: { redirectTo: `${window.location.origin}/onboarding/1` },
+    const { error } = await lovable.auth.signInWithOAuth("google", {
+      redirect_uri: window.location.origin,
     });
     if (error) toast.error(error.message);
   };
@@ -84,6 +84,31 @@ const SignUp = () => {
           </p>
         </div>
 
+        {/* Google sign up */}
+        <button
+          onClick={handleGoogleSignUp}
+          className="w-full font-body flex items-center justify-center gap-3"
+          style={{
+            height: 52,
+            borderRadius: 14,
+            border: "1.5px solid #E2DDD7",
+            backgroundColor: "white",
+            fontSize: 15,
+            fontWeight: 500,
+            color: "#111111",
+            marginBottom: 24,
+          }}
+        >
+          <GoogleIcon />
+          Continue with Google
+        </button>
+
+        {/* Divider */}
+        <div className="flex items-center gap-3" style={{ marginBottom: 24 }}>
+          <div className="flex-1 h-px bg-border" />
+          <span className="font-body text-xs" style={{ color: "#6B7280" }}>or</span>
+          <div className="flex-1 h-px bg-border" />
+        </div>
 
         {/* Name */}
         <div style={{ marginBottom: 16 }}>
