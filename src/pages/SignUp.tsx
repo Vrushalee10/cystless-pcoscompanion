@@ -84,6 +84,31 @@ const SignUp = () => {
           </p>
         </div>
 
+        {/* Google sign up */}
+        <button
+          onClick={handleGoogleSignUp}
+          className="w-full font-body flex items-center justify-center gap-3"
+          style={{
+            height: 52,
+            borderRadius: 14,
+            border: "1.5px solid #E2DDD7",
+            backgroundColor: "white",
+            fontSize: 15,
+            fontWeight: 500,
+            color: "#111111",
+            marginBottom: 24,
+          }}
+        >
+          <GoogleIcon />
+          Continue with Google
+        </button>
+
+        {/* Divider */}
+        <div className="flex items-center gap-3" style={{ marginBottom: 24 }}>
+          <div className="flex-1 h-px bg-border" />
+          <span className="font-body text-xs" style={{ color: "#6B7280" }}>or</span>
+          <div className="flex-1 h-px bg-border" />
+        </div>
 
         {/* Name */}
         <div style={{ marginBottom: 16 }}>
