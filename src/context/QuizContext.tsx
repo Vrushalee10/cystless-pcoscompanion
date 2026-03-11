@@ -38,6 +38,18 @@ export type CycleStatus =
   | null;
 export type PostPillStage = "very_recent" | "recent" | "recovering" | "late_recovery" | null;
 
+export interface CycleHistoryEntry {
+  cycleNumber: number;
+  predictedStartDate: string;
+  actualStartDate: string;
+  daysLate: number;
+  periodLength: number | null;
+  flow: string | null;
+  cycleLength: number | null;
+  symptoms: string[];
+  notes: string;
+}
+
 export interface CycleData {
   periodStartDate: Date | null;
   cycleLength: number;
