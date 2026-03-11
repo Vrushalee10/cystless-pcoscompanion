@@ -132,6 +132,7 @@ interface QuizState {
   userGoal: UserGoal;
   quizFlow: number[];
   cycleData: CycleData;
+  cycleHistory: CycleHistoryEntry[];
   biometrics: BiometricData;
   addScores: (deltas: Partial<Scores>) => void;
   setFlag: <K extends keyof Flags>(key: K, value: Flags[K]) => void;
@@ -142,6 +143,8 @@ interface QuizState {
   setPostPillInfo: (stage: PostPillStage) => void;
   clearCycleInfo: () => void;
   setBiometrics: (data: Partial<BiometricData>) => void;
+  confirmPeriodArrived: (date: string, flow: string | null) => void;
+  confirmPeriodEnded: (date: string) => void;
   resetQuiz: () => void;
   getNextRoute: (questionId: number) => string;
   getPrevRoute: (questionId: number) => string;
