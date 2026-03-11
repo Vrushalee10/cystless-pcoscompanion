@@ -4,6 +4,7 @@ import { Plus, Minus, Mic, ArrowLeft } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import BottomNav from "@/components/BottomNav";
 import LogHistory from "@/components/log/LogHistory";
+import PeriodLogCard from "@/components/log/PeriodLogCard";
 import { useQuiz } from "@/context/QuizContext";
 
 const moods = ["😞", "😕", "😐", "🙂", "😊"];
@@ -189,6 +190,9 @@ const Log = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3 }}
           >
+            {/* Period Log Card */}
+            <PeriodLogCard />
+
             {/* LAYER 1 */}
             <p className="text-label mt-6" style={{ color: "var(--text-muted)" }}>
               HOW ARE YOU TODAY?
