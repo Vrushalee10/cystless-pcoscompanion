@@ -273,6 +273,68 @@ export const QuizProvider = ({ children }: { children: ReactNode }) => {
     setQuizFlow([...DEFAULT_FLOW]);
   };
 
+  const confirmPeriodArrived = (date: string, flow: string | null) => {
+    const prevCycles = cycleHistory;
+    const lastCycle = prevCycles.length > 0 ? prevCycles[prevCycles.length - 1] : null;
+
+    // Calculate cycle length from previous cycle
+    let newCycleLength: number | null = null;
+    if (lastCycle) {
+      const lastStart = new Date(lastCycle.actualStartDate);
+      const thisStart = new Date(date);
+      newCycleLength = Math.round((thisStart.getTime() - lastStart.getTime()) / (1000 * 60 * 60 * 24));
+      // Update previous cycle's cycleLength
+      if (lastCycle.cycleLength === null) {
+        setCycleHistory((prev) =>
+          prev.map((c, i) => i === prev.length - 1 ? { ...c, cycleLength: newCycleLength } : c)
+        );
+      }
+    }
+
+    // Calculate predicted date and days late
+    const predictedDate = lastCycle
+      ? new Date(new Date(lastCycle.actualStartDate).getTime() + (cycleData.cycleLength || 28) * 86400000).toISOString().split("T")[0]
+      : date;
+    const daysLate = lastCycle
+      ? Math.round((new Date(date).getTime() - new Date(predictedDate).getTime()) / 86400000)
+      : 0;
+
+    const newEntry: CycleHistoryEntry = {
+      cycleNumber: prevCycles.length + 1,
+      predictedStartDate: predictedDate,
+      actualStartDate: date,
+      daysLate: Math.max(0, daysLate),
+      periodLength: null,
+      flow,
+      cycleLength: null,
+      symptoms: [],
+      notes: "",
+    };
+
+    setCycleHistory((prev) => [...prev, newEntry]);
+
+    // Update cycle data with new period start
+    const startDate = new Date(date);
+    const info = calculateCycleInfo(startDate, cycleData.cycleLength);
+    setCycleDataState((prev) => ({
+      ...prev,
+      periodStartDate: startDate,
+      ...info,
+      cycleStatus: "regular",
+    }));
+  };
+
+  const confirmPeriodEnded = (date: string) => {
+    setCycleHistory((prev) => {
+      if (prev.length === 0) return prev;
+      const last = prev[prev.length - 1];
+      const startDate = new Date(last.actualStartDate);
+      const endDate = new Date(date);
+      const periodLength = Math.round((endDate.getTime() - startDate.getTime()) / 86400000) + 1;
+      return prev.map((c, i) => i === prev.length - 1 ? { ...c, periodLength } : c);
+    });
+  };
+
   const getNextRoute = useCallback((questionId: number): string => {
     const idx = quizFlow.indexOf(questionId);
     if (idx === -1 || idx === quizFlow.length - 1) return "/loading";
@@ -292,10 +354,10 @@ export const QuizProvider = ({ children }: { children: ReactNode }) => {
 
   return (
     <QuizContext.Provider value={{
-      scores, flags, diagnosisStatus, userGoal, quizFlow, cycleData, biometrics,
+      scores, flags, diagnosisStatus, userGoal, quizFlow, cycleData, cycleHistory, biometrics,
       addScores, setFlag, setDiagnosisStatus, setUserGoal,
       setCycleInfo, setCycleStatus: setCycleStatusFn, setPostPillInfo, clearCycleInfo,
-      setBiometrics,
+      setBiometrics, confirmPeriodArrived, confirmPeriodEnded,
       resetQuiz, getNextRoute, getPrevRoute, getFlowPosition,
     }}>
       {children}
