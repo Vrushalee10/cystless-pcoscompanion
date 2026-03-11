@@ -190,6 +190,9 @@ const Log = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3 }}
           >
+            {/* Period Log Card */}
+            <PeriodLogCard />
+
             {/* LAYER 1 */}
             <p className="text-label mt-6" style={{ color: "var(--text-muted)" }}>
               HOW ARE YOU TODAY?
