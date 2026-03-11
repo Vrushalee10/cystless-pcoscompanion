@@ -188,6 +188,7 @@ export const QuizProvider = ({ children }: { children: ReactNode }) => {
   const [userGoal, setUserGoalState] = useState<UserGoal>(null);
   const [quizFlow, setQuizFlow] = useState<number[]>([...DEFAULT_FLOW]);
   const [cycleData, setCycleDataState] = useState<CycleData>({ ...defaultCycleData });
+  const [cycleHistory, setCycleHistory] = useState<CycleHistoryEntry[]>([]);
   const [biometrics, setBiometricsState] = useState<BiometricData>({ ...defaultBiometrics });
 
   const addScores = (deltas: Partial<Scores>) => {
