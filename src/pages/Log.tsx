@@ -6,6 +6,7 @@ import BottomNav from "@/components/BottomNav";
 import LogHistory from "@/components/log/LogHistory";
 import PeriodLogCard from "@/components/log/PeriodLogCard";
 import { useQuiz } from "@/context/QuizContext";
+import { toast } from "sonner";
 
 const moods = ["😞", "😕", "😐", "🙂", "😊"];
 const moodCopy = [
