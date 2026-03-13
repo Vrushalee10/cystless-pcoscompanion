@@ -316,22 +316,50 @@ const Log = () => {
 
             <div className="grid grid-cols-2 gap-[10px] mt-3">
               {foodMethods.map((m) => {
+                const isComingSoon = m.id === "voice" || m.id === "photo";
                 const sel = foodMethod === m.id;
                 return (
                   <button
                     key={m.id}
-                    onClick={() => setFoodMethod(sel ? null : m.id)}
-                    className="bg-card flex flex-col items-center justify-center p-[18px] transition-all"
+                    onClick={() => {
+                      if (isComingSoon) {
+                        toast("Coming in the next version! 🚀", {
+                          description: `${m.label} logging will be available soon.`,
+                          duration: 2500,
+                        });
+                        return;
+                      }
+                      setFoodMethod(sel ? null : m.id);
+                    }}
+                    className="bg-card flex flex-col items-center justify-center p-[18px] transition-all relative"
                     style={{
                       borderRadius: 14, boxShadow: "var(--shadow-card)",
                       border: sel ? "2px solid hsl(var(--primary))" : "2px solid transparent",
                       backgroundColor: sel ? "hsl(var(--primary-light))" : undefined,
+                      opacity: isComingSoon ? 0.55 : 1,
                     }}
                   >
                     <span style={{ fontSize: 24 }}>{m.emoji}</span>
                     <span className="font-body mt-[6px]" style={{ fontSize: 13, color: "var(--text-body)" }}>
                       {m.label}
                     </span>
+                    {isComingSoon && (
+                      <span
+                        className="font-body absolute top-2 right-2"
+                        style={{
+                          fontSize: 9,
+                          fontWeight: 700,
+                          color: "hsl(var(--primary))",
+                          backgroundColor: "hsl(var(--primary-light))",
+                          padding: "2px 6px",
+                          borderRadius: 6,
+                          textTransform: "uppercase",
+                          letterSpacing: "0.5px",
+                        }}
+                      >
+                        Soon
+                      </span>
+                    )}
                   </button>
                 );
               })}
