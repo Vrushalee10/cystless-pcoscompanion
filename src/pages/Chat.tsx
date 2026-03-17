@@ -4,6 +4,7 @@ import { ArrowLeft, Send } from "lucide-react";
 import { motion } from "framer-motion";
 import BottomNav from "@/components/BottomNav";
 import { useQuiz } from "@/context/QuizContext";
+import { useUserProfile } from "@/hooks/useUserProfile";
 
 interface Message {
   role: "ai" | "user";
