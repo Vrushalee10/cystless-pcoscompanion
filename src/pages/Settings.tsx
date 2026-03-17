@@ -75,6 +75,7 @@ const ToggleRow = ({ label, sub, on, onToggle }: { label: string; sub?: string; 
 const Settings = () => {
   const navigate = useNavigate();
   const { userGoal } = useQuiz();
+  const userProfile = useUserProfile();
 
   const [age, setAge] = useState("");
   const [weightUnit, setWeightUnit] = useState<"kg" | "lbs">("kg");

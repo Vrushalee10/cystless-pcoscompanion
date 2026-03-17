@@ -73,6 +73,7 @@ const goalLabels: Record<string, string> = {
 const CycleSetup = () => {
   const navigate = useNavigate();
   const { setCycleInfo, setCycleStatus, setPostPillInfo, clearCycleInfo, setBiometrics, userGoal, scores } = useQuiz();
+  const { firstName } = useUserProfile();
 
   const [step, setStep] = useState<Step>("period_check");
   const [periodAnswer, setPeriodAnswer] = useState<string | null>(null);
