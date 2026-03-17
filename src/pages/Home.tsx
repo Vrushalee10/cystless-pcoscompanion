@@ -34,6 +34,7 @@ const Home = () => {
   const navigate = useNavigate();
   const { cycleData } = useQuiz();
   const ci = useCycleIntelligence();
+  const { firstName, initial } = useUserProfile();
   const cs = cycleData.cycleStatus;
   const insight = cycleData.currentPhase ? phaseInsights[cycleData.currentPhase] : defaultInsight;
 
