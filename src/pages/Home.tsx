@@ -4,6 +4,7 @@ import BottomNav from "@/components/BottomNav";
 import InlineCheckIn from "@/components/InlineCheckIn";
 import { useQuiz } from "@/context/QuizContext";
 import { useCycleIntelligence } from "@/hooks/useCycleIntelligence";
+import { useUserProfile } from "@/hooks/useUserProfile";
 
 const phaseInsights: Record<string, { headline: string; body: string }> = {
   Menstrual: {
