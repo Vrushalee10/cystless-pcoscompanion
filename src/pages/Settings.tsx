@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { useQuiz } from "@/context/QuizContext";
+import { useUserProfile } from "@/hooks/useUserProfile";
 
 const goalLabels: Record<string, string> = {
   symptoms: "Manage my symptoms day to day",
