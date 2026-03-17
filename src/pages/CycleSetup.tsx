@@ -7,6 +7,7 @@ import { Calendar } from "@/components/ui/calendar";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { format, subDays } from "date-fns";
 import { cn } from "@/lib/utils";
+import { useUserProfile } from "@/hooks/useUserProfile";
 
 const cycleLengths = [21, 24, 26, 28, 30, 32, 35];
 
@@ -72,6 +73,7 @@ const goalLabels: Record<string, string> = {
 const CycleSetup = () => {
   const navigate = useNavigate();
   const { setCycleInfo, setCycleStatus, setPostPillInfo, clearCycleInfo, setBiometrics, userGoal, scores } = useQuiz();
+  const { firstName } = useUserProfile();
 
   const [step, setStep] = useState<Step>("period_check");
   const [periodAnswer, setPeriodAnswer] = useState<string | null>(null);
@@ -380,7 +382,7 @@ const CycleSetup = () => {
               <div style={{ backgroundColor: "#EAF3F3", borderRadius: 18, padding: 18, marginTop: 16 }} className="flex items-start">
                 <div className="flex items-center justify-center flex-shrink-0 font-display" style={{ width: 36, height: 36, borderRadius: "50%", backgroundColor: "hsl(var(--primary))", color: "white", fontSize: 16, fontWeight: 700 }}>C</div>
                 <p className="font-body" style={{ fontSize: 14, color: "hsl(var(--primary))", lineHeight: 1.6, marginLeft: 12 }}>
-                  Hey Vrushali 💚 I've got everything I need to get started. Your plan is ready and I'll get smarter the more you log. Let's go.
+                  Hey {firstName} 💚 I've got everything I need to get started. Your plan is ready and I'll get smarter the more you log. Let's go.
                 </p>
               </div>
 

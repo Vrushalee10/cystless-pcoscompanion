@@ -4,6 +4,7 @@ import BottomNav from "@/components/BottomNav";
 import InlineCheckIn from "@/components/InlineCheckIn";
 import { useQuiz } from "@/context/QuizContext";
 import { useCycleIntelligence } from "@/hooks/useCycleIntelligence";
+import { useUserProfile } from "@/hooks/useUserProfile";
 
 const phaseInsights: Record<string, { headline: string; body: string }> = {
   Menstrual: {
@@ -33,6 +34,7 @@ const Home = () => {
   const navigate = useNavigate();
   const { cycleData } = useQuiz();
   const ci = useCycleIntelligence();
+  const { firstName, initial } = useUserProfile();
   const cs = cycleData.cycleStatus;
   const insight = cycleData.currentPhase ? phaseInsights[cycleData.currentPhase] : defaultInsight;
 
@@ -75,7 +77,7 @@ const Home = () => {
                 Good morning,
               </p>
               <h1 className="font-display mt-[2px]" style={{ fontSize: 30, fontWeight: 700, color: "var(--text-ink)" }}>
-                Vrushali
+                {firstName}
               </h1>
               <button
                 onClick={() => navigate(badge.route)}
@@ -97,7 +99,7 @@ const Home = () => {
               className="flex items-center justify-center font-display flex-shrink-0"
               style={{ width: 44, height: 44, borderRadius: "50%", backgroundColor: "hsl(var(--primary))", color: "white", fontSize: 18, fontWeight: 700, marginTop: 4 }}
             >
-              V
+              {initial}
             </button>
           </div>
 

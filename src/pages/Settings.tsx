@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { useQuiz } from "@/context/QuizContext";
+import { useUserProfile } from "@/hooks/useUserProfile";
 
 const goalLabels: Record<string, string> = {
   symptoms: "Manage my symptoms day to day",
@@ -74,6 +75,7 @@ const ToggleRow = ({ label, sub, on, onToggle }: { label: string; sub?: string; 
 const Settings = () => {
   const navigate = useNavigate();
   const { userGoal } = useQuiz();
+  const userProfile = useUserProfile();
 
   const [age, setAge] = useState("");
   const [weightUnit, setWeightUnit] = useState<"kg" | "lbs">("kg");
@@ -153,10 +155,10 @@ const Settings = () => {
               className="flex items-center justify-center font-display"
               style={{ width: 64, height: 64, borderRadius: "50%", backgroundColor: "hsl(var(--primary))", color: "white", fontSize: 24, fontWeight: 700 }}
             >
-              V
+              {userProfile.initial}
             </div>
-            <p className="font-display" style={{ fontSize: 18, fontWeight: 700, color: "#111111", marginTop: 12 }}>Vrushali</p>
-            <p className="font-body" style={{ fontSize: 13, color: "#6B7280", marginTop: 4 }}>vrushali@email.com</p>
+            <p className="font-display" style={{ fontSize: 18, fontWeight: 700, color: "#111111", marginTop: 12 }}>{userProfile.fullName || userProfile.firstName}</p>
+            <p className="font-body" style={{ fontSize: 13, color: "#6B7280", marginTop: 4 }}>{userProfile.email || "—"}</p>
             <button onClick={() => navigate("/settings/profile")} className="font-body" style={{ fontSize: 13, fontWeight: 600, color: "hsl(var(--primary))", marginTop: 8 }}>
               Edit profile →
             </button>
