@@ -7,6 +7,7 @@ import { Calendar } from "@/components/ui/calendar";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { format, subDays } from "date-fns";
 import { cn } from "@/lib/utils";
+import { useUserProfile } from "@/hooks/useUserProfile";
 
 const cycleLengths = [21, 24, 26, 28, 30, 32, 35];
 
