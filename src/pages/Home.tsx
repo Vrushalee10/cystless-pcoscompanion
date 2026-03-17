@@ -77,7 +77,7 @@ const Home = () => {
                 Good morning,
               </p>
               <h1 className="font-display mt-[2px]" style={{ fontSize: 30, fontWeight: 700, color: "var(--text-ink)" }}>
-                Vrushali
+                {firstName}
               </h1>
               <button
                 onClick={() => navigate(badge.route)}
