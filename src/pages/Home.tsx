@@ -99,7 +99,7 @@ const Home = () => {
               className="flex items-center justify-center font-display flex-shrink-0"
               style={{ width: 44, height: 44, borderRadius: "50%", backgroundColor: "hsl(var(--primary))", color: "white", fontSize: 18, fontWeight: 700, marginTop: 4 }}
             >
-              V
+              {initial}
             </button>
           </div>
 

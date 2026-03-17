@@ -154,10 +154,10 @@ const Settings = () => {
               className="flex items-center justify-center font-display"
               style={{ width: 64, height: 64, borderRadius: "50%", backgroundColor: "hsl(var(--primary))", color: "white", fontSize: 24, fontWeight: 700 }}
             >
-              V
+              {userProfile.initial}
             </div>
-            <p className="font-display" style={{ fontSize: 18, fontWeight: 700, color: "#111111", marginTop: 12 }}>Vrushali</p>
-            <p className="font-body" style={{ fontSize: 13, color: "#6B7280", marginTop: 4 }}>vrushali@email.com</p>
+            <p className="font-display" style={{ fontSize: 18, fontWeight: 700, color: "#111111", marginTop: 12 }}>{userProfile.fullName || userProfile.firstName}</p>
+            <p className="font-body" style={{ fontSize: 13, color: "#6B7280", marginTop: 4 }}>{userProfile.email || "—"}</p>
             <button onClick={() => navigate("/settings/profile")} className="font-body" style={{ fontSize: 13, fontWeight: 600, color: "hsl(var(--primary))", marginTop: 8 }}>
               Edit profile →
             </button>

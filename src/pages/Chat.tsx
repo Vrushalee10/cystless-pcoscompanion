@@ -11,14 +11,14 @@ interface Message {
   time: string;
 }
 
-const getOpeningMessage = (userGoal: string | null, cycleStatus: string | null): string => {
+const getOpeningMessage = (userGoal: string | null, cycleStatus: string | null, firstName: string): string => {
   // Post-pill override
   if (cycleStatus === "post_pill") {
-    return "Hey Vrushali 💚 Post-pill recovery is one of the most confusing times for your hormones. I've got your back. Your plan is focused on helping your body find its own rhythm again. What's on your mind?";
+    return `Hey ${firstName} 💚 Post-pill recovery is one of the most confusing times for your hormones. I've got your back. Your plan is focused on helping your body find its own rhythm again. What's on your mind?`;
   }
   // Irregular override
   if (cycleStatus === "irregular_short" || cycleStatus === "irregular_medium" || cycleStatus === "irregular_long" || cycleStatus === "never_regular") {
-    return "Hey Vrushali 💚 I know an irregular cycle can feel really unsettling. We're going to track your patterns carefully and build a picture over time. What would help you most today?";
+    return `Hey ${firstName} 💚 I know an irregular cycle can feel really unsettling. We're going to track your patterns carefully and build a picture over time. What would help you most today?`;
   }
   switch (userGoal) {
     case "symptoms":
